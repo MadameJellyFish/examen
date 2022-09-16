@@ -16,6 +16,10 @@ class Examen
     #[ORM\Column]
     private ?int $id = null;
 
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?competence $competence = null;
+
     #[ORM\Column(length: 255)]
     private ?string $ville = null;
 
@@ -25,11 +29,7 @@ class Examen
     #[ORM\Column]
     private ?bool $valide = null;
 
-    #[ORM\ManyToOne(inversedBy: 'examens')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Competence $competence = null;
-
-    #[ORM\ManyToMany(targetEntity: Inscription::class, mappedBy: 'examen')]
+    #[ORM\OneToMany(mappedBy: 'examen', targetEntity: Inscription::class)]
     private Collection $inscriptions;
 
     public function __construct()
@@ -40,6 +40,18 @@ class Examen
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getCompetence(): ?competence
+    {
+        return $this->competence;
+    }
+
+    public function setCompetence(?competence $competence): self
+    {
+        $this->competence = $competence;
+
+        return $this;
     }
 
     public function getVille(): ?string
@@ -78,18 +90,6 @@ class Examen
         return $this;
     }
 
-    public function getCompetence(): ?Competence
-    {
-        return $this->competence;
-    }
-
-    public function setCompetence(?Competence $competence): self
-    {
-        $this->competence = $competence;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, Inscription>
      */
@@ -102,7 +102,7 @@ class Examen
     {
         if (!$this->inscriptions->contains($inscription)) {
             $this->inscriptions->add($inscription);
-            $inscription->addExaman($this);
+            $inscription->setExamen($this);
         }
 
         return $this;
@@ -111,7 +111,10 @@ class Examen
     public function removeInscription(Inscription $inscription): self
     {
         if ($this->inscriptions->removeElement($inscription)) {
-            $inscription->removeExaman($this);
+            // set the owning side to null (unless already changed)
+            if ($inscription->getExamen() === $this) {
+                $inscription->setExamen(null);
+            }
         }
 
         return $this;

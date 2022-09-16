@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\InscriptionRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: InscriptionRepository::class)]
@@ -15,67 +13,39 @@ class Inscription
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(targetEntity: Examen::class, inversedBy: 'inscriptions')]
-    private Collection $examen;
+    #[ORM\ManyToOne(inversedBy: 'inscriptions')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?examen $examen = null;
 
-    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'inscriptions')]
-    private Collection $user;
-
-    public function __construct()
-    {
-        $this->examen = new ArrayCollection();
-        $this->user = new ArrayCollection();
-    }
+    #[ORM\ManyToOne(inversedBy: 'inscriptions')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?utilisateur $utilisateur = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return Collection<int, Examen>
-     */
-    public function getExamen(): Collection
+    public function getExamen(): ?examen
     {
         return $this->examen;
     }
 
-    public function addExaman(Examen $examan): self
+    public function setExamen(?examen $examen): self
     {
-        if (!$this->examen->contains($examan)) {
-            $this->examen->add($examan);
-        }
+        $this->examen = $examen;
 
         return $this;
     }
 
-    public function removeExaman(Examen $examan): self
+    public function getUtilisateur(): ?utilisateur
     {
-        $this->examen->removeElement($examan);
-
-        return $this;
+        return $this->utilisateur;
     }
 
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUser(): Collection
+    public function setUtilisateur(?utilisateur $utilisateur): self
     {
-        return $this->user;
-    }
-
-    public function addUser(User $user): self
-    {
-        if (!$this->user->contains($user)) {
-            $this->user->add($user);
-        }
-
-        return $this;
-    }
-
-    public function removeUser(User $user): self
-    {
-        $this->user->removeElement($user);
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }
