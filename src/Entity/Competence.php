@@ -71,7 +71,7 @@ class Competence
     {
         if (!$this->examens->contains($examen)) {
             $this->examens->add($examen);
-            $examen->setIdCompetence($this);
+            $examen->setCompetence($this);
         }
 
         return $this;
@@ -81,8 +81,8 @@ class Competence
     {
         if ($this->examens->removeElement($examen)) {
             // set the owning side to null (unless already changed)
-            if ($examen->getIdCompetence() === $this) {
-                $examen->setIdCompetence(null);
+            if ($examen->getCompetence() === $this) {
+                $examen->setCompetence(null);
             }
         }
 

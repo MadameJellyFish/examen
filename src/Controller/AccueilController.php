@@ -18,11 +18,10 @@ class AccueilController extends AbstractController
     #[Route('/', name: 'app_accueil')]
     public function index(): Response
     {
-        $max = 5;
         $currentDate = new \DateTime('now');
 
-        $examens = $this->repo->findBy(array("date" => "date"), array("date" => "DESC"), 5);
-
+        $examens = $this->repo->findBy(array(), array("date" => "DESC"), 5);
+        // dd($examens);
         return $this->render('accueil/index.html.twig', [ "examens" => $examens ]);
     }
 }
