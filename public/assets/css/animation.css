@@ -1,0 +1,14 @@
+.anim__banner {
+    overflow: hidden;
+    width: 100%;
+    height: 5rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    margin: 0;
+}

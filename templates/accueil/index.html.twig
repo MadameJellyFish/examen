@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Accueil!
+{% endblock %}
+
+{% block banniere_text %}
+  ACCUEIL - ACCUEIL - ACCUEIL - ACCUEIL - ACCUEIL - ACCUEIL -
+{% endblock %}
+
+{% block body %}
+  {% for examen in examens %}
+    <h1>
+      {{ examen.competence.nom }}
+    </h1>
+
+    <p>
+      {{ examen.competence.description }}
+    </p>
+
+    <small>{{ examen.ville }}</small>
+  {% endfor %}
+{% endblock %}
