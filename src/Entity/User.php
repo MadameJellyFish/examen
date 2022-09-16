@@ -195,7 +195,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->inscriptions->contains($inscription)) {
             $this->inscriptions->add($inscription);
-            $inscription->addUser($this);
+            // $inscription->addUser($this);
         }
 
         return $this;
@@ -204,7 +204,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function removeInscription(Inscription $inscription): self
     {
         if ($this->inscriptions->removeElement($inscription)) {
-            $inscription->removeUser($this);
+            // $inscription->removeUser($this);
         }
 
         return $this;
