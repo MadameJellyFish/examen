@@ -15,11 +15,11 @@ class Inscription
 
     #[ORM\ManyToOne(inversedBy: 'inscriptions')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?examen $examen = null;
+    private ?Examen $examen = null;
 
     #[ORM\ManyToOne(inversedBy: 'inscriptions')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?utilisateur $utilisateur = null;
+    private ?Utilisateur $utilisateur = null;
 
     public function getId(): ?int
     {
