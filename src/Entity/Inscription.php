@@ -49,4 +49,20 @@ class Inscription
 
         return $this;
     }
+
+     public function addUser(User $user): self
+    {
+        if (!$this->user->contains($user)) {
+            $this->user->add($user);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        $this->user->removeElement($user);
+
+        return $this;
+    }
 }
