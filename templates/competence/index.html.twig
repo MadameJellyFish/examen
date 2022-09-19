@@ -9,5 +9,14 @@ COMPETENCES - COMPETENCES - COMPETENCES - COMPETENCES - COMPETENCES
 {% endblock %}
 
 {% block body %}
+{% for competence in competences %}
+
+<h1>{{competence.nom}}</h1>
+<p>{{competence.description}}</p>
+    
+{% endfor %}
+
+
+{# {% include 'inscription/index.html.twig' %} #}
  
 {% endblock %}
