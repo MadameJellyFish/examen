@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
     --colorwhite : rgba(255, 255, 255, 1);
     --colorblack : rgba(0, 0, 0, 1);
@@ -7,7 +8,33 @@
     --bgavatar   : rgba(217, 217, 217, 1);  
 }
 
+=======
+@font-face {
+    font-family: "Gambetta";
+    src: url("../fonts/Gambetta-Bold.otf");
+    src: url("../fonts/Gambetta-BoldItalic.otf");
+    src: url("../fonts/Gambetta-Italic.otf");
+    src: url("../fonts/Gambetta-Light.otf");
+    src: url("../fonts/Gambetta-LightItalic.otf");
+    src: url("../fonts/Gambetta-Medium.otf");
+    src: url("../fonts/Gambetta-MediumItalic.otf");
+    src: url("../fonts/Gambetta-Regular.otf");
+    src: url("../fonts/Gambetta-Semibold.otf");
+    src: url("../fonts/Gambetta-SemiboldItalic.otf");
 
+    font-family: "CabinetGrotesk";
+    src: url("../fonts/CabinetGrotesk-Bold.otf");
+    src: url("../fonts/CabinetGrotesk-Black.otf");
+    src: url("../fonts/CabinetGrotesk-Bold.otf");
+    src: url("../fonts/CabinetGrotesk-Extrabold.otf");
+    src: url("../fonts/CabinetGrotesk-Extralight.otf");
+    src: url("../fonts/CabinetGrotesk-Light.otf");
+    src: url("../fonts/CabinetGrotesk-Medium.otf");
+    src: url("../fonts/CabinetGrotesk-Regular.otf");
+    src: url("../fonts/CabinetGrotesk-Thin.otf");
+}
+
+>>>>>>> 7fb924d98afdc1346265f5cea8a8df5a7753d90f
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     box-sizing : border-box;
