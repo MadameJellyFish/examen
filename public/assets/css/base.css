@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/* <<<<<<< HEAD */
+>>>>>>> 3ed41520bd007e72493319feaf9fd6b339fc0126
 :root {
     --colorwhite : rgba(255, 255, 255, 1);
     --colorblack : rgba(0, 0, 0, 1);
@@ -6,6 +10,11 @@
     --bgfooter   : rgba(22, 22, 26, 1);
     --bgavatar   : rgba(217, 217, 217, 1);  
 }
+<<<<<<< HEAD
+=======
+
+/* ======= */
+>>>>>>> 3ed41520bd007e72493319feaf9fd6b339fc0126
 @font-face {
     font-family: "Gambetta";
     src: url("../fonts/Gambetta-Bold.otf");
@@ -30,6 +39,11 @@
     src: url("../fonts/CabinetGrotesk-Regular.otf");
     src: url("../fonts/CabinetGrotesk-Thin.otf");
 }
+<<<<<<< HEAD
+=======
+
+/* >>>>>>> 7fb924d98afdc1346265f5cea8a8df5a7753d90f */
+>>>>>>> 3ed41520bd007e72493319feaf9fd6b339fc0126
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     box-sizing : border-box;
