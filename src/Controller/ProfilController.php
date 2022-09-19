@@ -15,12 +15,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProfilController extends AbstractController
 {
-    private UserRepository $repo;
-    public function __construct(UserRepository $repo)
-    {
-        $this->repo = $repo;
-    }
-
     #[Route('/profil', name: 'app_profil')]
     public function index(InscriptionRepository $repoInscript): Response
     {
@@ -65,6 +59,7 @@ class ProfilController extends AbstractController
     public function editPassword(Request $request, EntityManagerInterface $em, UserPasswordHasherInterface $hasher): Response
     {
         if ($request->isMethod("POST")) {
+            // $user = $this->repo->findOneBy(array('id' => 1));
             $user = $this->getUser();
 
             if ($request->request->get('password1') == $request->request->get('password2')) {
@@ -87,5 +82,12 @@ class ProfilController extends AbstractController
         return $this->renderForm('profil/edit_password.html.twig');
     }
 
-    // #[Route('/user/profil/delete')]
+    #[Route('/profil/delete', name:'app_delete')]
+    public function delete(EntityManagerInterface $em): Response
+    {
+        $user = $this->getUser()->setOnline(false);
+        $em->flush();
+
+        return $this->redirectToRoute('app_logout');
+    }
 }
