@@ -18,27 +18,27 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('nom' , options:[
-                "label"=>"Nom :",
+                "label"=>"Nom : ",
                 "attr"=>["class"=>"form-control-mb4"],
                 'label_attr'=>["class"=>"form-label"]
             ])
             ->add('prenom', options:[
-                "label"=>"Prenom :",
+                "label"=>"Prenom : ",
                 "attr"=>["class"=>"form-control-mb4"],
                 "label_attr"=>["class"=>"form-label"]
                 ])
                 ->add('date',options:[
-                "label"=>"Date de naissance :",
+                "label"=>"Date de naissance : ",
                 "attr"=>["class"=>"form-control-mb4"],
                 "label_attr"=>["class"=>"form-label"]
             ])
             ->add('telephone', options:[
-                "label"=>"Téléphone :",
+                "label"=>"Téléphone : ",
                 "attr"=>["class"=>"form-control-mb4"],
                 "label_attr"=>["class"=>"form-label"]
             ])
             ->add('email' , options:[
-                "label"=>"Email :",
+                "label"=>"Email : ",
                 "attr"=>["class"=>"form-control-mb4"],
                 "label_attr"=>["class"=>"form-label"]
             ])
