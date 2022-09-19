@@ -9,6 +9,11 @@
 {% endblock %}
 
 {% block body %}
+  {% for message in app.flashes('message') %}
+    <p>
+      {{ message }}
+    </p>
+  {% endfor %}
   <h1>
     {{ user.prenom }} {{ user.nom }}
   </h1>
@@ -41,7 +46,9 @@
   <div style="background-color: palegreen;">
     {% for examen in examPassed %}
       <p>
-        {{ examen.date|date('d/m/Y') }}
+        {{ examen.competence.nom }} <br />
+        {{ examen.date|date('d/m/Y') }} <br />
+        {{ examen.ville }}
       </p>
     {% endfor %}
   </div>
