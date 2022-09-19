@@ -18,7 +18,6 @@ class ProfilController extends AbstractController
     #[Route('/profil', name: 'app_profil')]
     public function index(InscriptionRepository $repoInscript): Response
     {
-        // $user = $this->repo->findOneBy(array('id' => 1));
         $user = $this->getUser();
         $inscriptions = $repoInscript->findBy(['user' => $user]);
 
@@ -41,7 +40,6 @@ class ProfilController extends AbstractController
     #[Route('/profil/edit', name:'app_edit_profil')]
     public function edit(Request $request, EntityManagerInterface $em): Response
     {
-        // $user = $this->repo->findOneBy(array('id' => 1));
         $user = $this->getUser();
         $form = $this->createForm(EditUtilisateurType::class, $user);
         $form->handleRequest($request);
