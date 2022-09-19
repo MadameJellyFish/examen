@@ -15,41 +15,29 @@ class Inscription
 
     #[ORM\ManyToOne(inversedBy: 'inscriptions')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?examen $examen = null;
+    private ?Examen $examen = null;
 
     #[ORM\ManyToOne(inversedBy: 'inscriptions')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?utilisateur $utilisateur = null;
+    private ?User $user = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getExamen(): ?examen
+    public function getExamen(): ?Examen
     {
         return $this->examen;
     }
 
-    public function setExamen(?examen $examen): self
+    public function setExamen(?Examen $examen): self
     {
         $this->examen = $examen;
 
         return $this;
     }
-
-    public function getUtilisateur(): ?utilisateur
-    {
-        return $this->utilisateur;
-    }
-
-    public function setUtilisateur(?utilisateur $utilisateur): self
-    {
-        $this->utilisateur = $utilisateur;
-
-        return $this;
-    }
-
+    
      public function addUser(User $user): self
     {
         if (!$this->user->contains($user)) {
