@@ -17,30 +17,30 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom' , options:[
-                "label"=>"Nom : ",
-                "attr"=>["class"=>"form-control-mb4"],
-                'label_attr'=>["class"=>"form-label"]
+            ->add('nom', options: [
+                "label" => "Nom : ",
+                "attr" => ["class" => "form-control-mb4"],
+                'label_attr' => ["class" => "form-label"]
             ])
-            ->add('prenom', options:[
-                "label"=>"Prenom : ",
-                "attr"=>["class"=>"form-control-mb4"],
-                "label_attr"=>["class"=>"form-label"]
-                ])
-                ->add('date',options:[
-                "label"=>"Date de naissance : ",
-                "attr"=>["class"=>"form-control-mb4"],
-                "label_attr"=>["class"=>"form-label"]
+            ->add('prenom', options: [
+                "label" => "Prenom : ",
+                "attr" => ["class" => "form-control-mb4"],
+                "label_attr" => ["class" => "form-label"]
             ])
-            ->add('telephone', options:[
-                "label"=>"Téléphone : ",
-                "attr"=>["class"=>"form-control-mb4"],
-                "label_attr"=>["class"=>"form-label"]
+            ->add('date', options: [
+                "label" => "Date de naissance : ",
+                "attr" => ["class" => "form-control-mb4"],
+                "label_attr" => ["class" => "form-label"]
             ])
-            ->add('email' , options:[
-                "label"=>"Email : ",
-                "attr"=>["class"=>"form-control-mb4"],
-                "label_attr"=>["class"=>"form-label"]
+            ->add('telephone', options: [
+                "label" => "Téléphone : ",
+                "attr" => ["class" => "form-control-mb4"],
+                "label_attr" => ["class" => "form-label"]
+            ])
+            ->add('email', options: [
+                "label" => "Email : ",
+                "attr" => ["class" => "form-control-mb4"],
+                "label_attr" => ["class" => "form-label"]
             ])
 
             ->add('agreeTerms', CheckboxType::class, [
@@ -67,8 +67,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
