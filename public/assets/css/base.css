@@ -1,13 +1,23 @@
+:root {
+    --colorwhite : rgba(255, 255, 255, 1);
+    --colorblack : rgba(0, 0, 0, 1);
+    --colorpurple: rgba(127, 90, 240, 1);
+    --bgmauve    : rgba(209, 209, 233, 1);
+    --bgfooter   : rgba(22, 22, 26, 1);
+    --bgavatar   : rgba(217, 217, 217, 1);  
+}
+
+
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    box-sizing: border-box;
+    box-sizing : border-box;
 }
 
 body {
-    margin: 0;
+    margin : 0;
     padding: 0;
-    height: 100%;
-    width: 100%;
+    height : 100%;
+    width  : 100%;
 }
 
 main {
