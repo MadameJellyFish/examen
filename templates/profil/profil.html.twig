@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Profil de {{ user.prenom }} {{ user.nom }}
+{% endblock %}
+
+{% block banniere_text %}
+  {{ user.prenom }} {{ user.nom }}
+{% endblock %}
+
+{% block body %}
+  <h1>
+    {{ user.prenom }} {{ user.nom }}
+  </h1>
+  <p>
+    {{ user.date|date('m/d/Y') }} <br />
+    {{ user.email }} <br />
+    {{ user.telephone }}
+
+    {% if user.online == true %}
+      <small>is online</small>
+    {% else %}
+      <small>is offline</small>
+    {% endif %}
+  </p>
+
+  <button><a href="">Modifier mes informations</a></button>
+  <button><a href="">Modifier mon mot de passe</a></button>
+  <button><a href="">Supprimer mon profil</a></button>
+
+  <div style="background-color: violet;">
+    {% for examen in examToCome %}
+      <p>
+        {{ examen.competence.nom }} <br />
+        {{ examen.date|date('d/m/Y') }} <br />
+        {{ examen.ville }}
+      </p>
+    {% endfor %}
+  </div>
+
+  <div style="background-color: palegreen;">
+    {% for examen in examPassed %}
+      <p>
+        {{ examen.date|date('d/m/Y') }}
+      </p>
+    {% endfor %}
+  </div>
+{% endblock %}
