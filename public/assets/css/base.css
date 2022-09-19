@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+/* <<<<<<< HEAD */
 :root {
     --colorwhite : rgba(255, 255, 255, 1);
     --colorblack : rgba(0, 0, 0, 1);
@@ -8,7 +8,7 @@
     --bgavatar   : rgba(217, 217, 217, 1);  
 }
 
-=======
+/* ======= */
 @font-face {
     font-family: "Gambetta";
     src: url("../fonts/Gambetta-Bold.otf");
@@ -34,7 +34,7 @@
     src: url("../fonts/CabinetGrotesk-Thin.otf");
 }
 
->>>>>>> 7fb924d98afdc1346265f5cea8a8df5a7753d90f
+/* >>>>>>> 7fb924d98afdc1346265f5cea8a8df5a7753d90f */
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     box-sizing : border-box;
