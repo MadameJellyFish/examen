@@ -18,7 +18,7 @@ class Examen
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?competence $competence = null;
+    private ?Competence $competence = null;
 
     #[ORM\Column(length: 255)]
     private ?string $ville = null;
