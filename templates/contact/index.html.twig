@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Contact
+{% endblock %}
+
+{% block banniere_text %}
+  CONTACT - CONTACT - CONTACT - CONTACT - CONTACT - CONTACT -
+{% endblock %}
+
+{% block body %}
+  <section>
+    <h2>
+      Je m'informe
+    </h2>
+
+    <p>
+      Nous contacter par téléphone
+    </p>
+    <span>+ 02 52 56 06 21</span>
+
+    <p>
+      Lundi au Jeudi : 9h00 à 18h30
+    </p>
+    <p>
+      Vendredi : 9h00 à 17h30
+    </p>
+    <p>
+      Samedi : 9h30 à 12h30
+    </p>
+
+    <div class="reseauxsocial">
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-instagram"></i>
+     <i class="fa-brands fa-twitter"></i>
+    </div>
+  </section>
+
+  <section>
+    <h2>
+      Contactez-nous
+    </h2>
+    <label for="Nom">Nom :</label>
+    <input type="text" />
+    <br />
+    <label for="Nom">Email :</label>
+    <input type="text" />
+    <br />
+    <label for="Message">Message :</label>
+    <textarea name="" id="message" cols="30" rows="10"></textarea>
+    <br />
+    <button type="submit">Connexion</button>
+  </section>
+{% endblock %}
