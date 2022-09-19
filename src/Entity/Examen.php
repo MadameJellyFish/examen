@@ -42,12 +42,12 @@ class Examen
         return $this->id;
     }
 
-    public function getCompetence(): ?competence
+    public function getCompetence(): ?Competence
     {
         return $this->competence;
     }
 
-    public function setCompetence(?competence $competence): self
+    public function setCompetence(?Competence $competence): self
     {
         $this->competence = $competence;
 
