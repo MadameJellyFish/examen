@@ -2,8 +2,11 @@
 
 namespace App\Entity;
 
+use App\Entity\User;
 use App\Repository\InscriptionRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\ManyToOne;
 
 #[ORM\Entity(repositoryClass: InscriptionRepository::class)]
 class Inscription
@@ -19,11 +22,7 @@ class Inscription
 
     #[ORM\ManyToOne(inversedBy: 'inscriptions')]
     #[ORM\JoinColumn(nullable: false)]
-<<<<<<< HEAD
     private ?User $user = null;
-=======
-    private ?Utilisateur $utilisateur = null;
->>>>>>> 18a2a5ce8d4abfdf6b31faed42930adf5bfe920a
 
     public function getId(): ?int
     {
@@ -41,7 +40,6 @@ class Inscription
 
         return $this;
     }
-<<<<<<< HEAD
     
      public function addUser(User $user): self
     {
@@ -58,20 +56,4 @@ class Inscription
 
         return $this;
     }
-=======
-
-    public function getUtilisateur(): ?utilisateur
-    {
-        return $this->utilisateur;
-    }
-
-    public function setUtilisateur(?utilisateur $utilisateur): self
-    {
-        $this->utilisateur = $utilisateur;
-
-        return $this;
-    }
-
-    
->>>>>>> 18a2a5ce8d4abfdf6b31faed42930adf5bfe920a
 }
