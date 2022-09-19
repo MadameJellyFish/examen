@@ -5,20 +5,10 @@
 {% endblock %}
 
 {% block banniere_text %}
-  REGISTRATION - REGISTRATION - REGISTRATION - REGISTRATION - REGISTRATION - REGISTRATION - 
+INSCRIPTION COMPETENCE - INSCRIPTION COMPETENCE - INSCRIPTION COMPETENCE
 {% endblock %}
 
 {% block body %}
-  {# {% for examen in examens %}
-    <h1>
-      {{ examen.competence.nom }}
-    </h1>
-
-    <p>
-      {{ examen.competence.description }}
-    </p>
-
-    <small>{{ examen.date|date('m/d/Y') }}</small>
-  {% endfor %} #}
+{{ form(form) }}
 {% endblock %}
 
