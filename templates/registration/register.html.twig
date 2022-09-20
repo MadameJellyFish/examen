@@ -9,7 +9,8 @@
 
 {% block body %}
 	<div></div>
-    <div><h1>Registration</h1>
+    <div>
+    <div><h1>Inscription</h1>
 
 	{{ form_start(registrationForm) }}
 	{{ form_row(registrationForm.nom) }}
@@ -24,5 +25,6 @@
 
 	<button type="submit" class="btn">Register</button>
 	{{ form_end(registrationForm) }}
+    </div>
     </div>
 {% endblock %}
