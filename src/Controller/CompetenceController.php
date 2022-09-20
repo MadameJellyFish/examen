@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Examen;
 use App\Form\CompetenceType;
 use App\Repository\CompetenceRepository;
+use App\Repository\ExamenRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -28,14 +30,17 @@ class CompetenceController extends AbstractController
         ]);
     }
 
-    #[Route('/competence/{id}', name: 'competence.show', methods: ['GET'])]
-    public function show($id): Response
+    #[Route('/competence/{id}', name: 'competence.show', methods: ['GET', 'POST'])]
+    public function show($id, ExamenRepository $examRepo): Response
     {
 
         $competence = $this->repo->find($id);
-        // return $this->render('/competence/show.html.twig', ['competence' => $competence]);
-
         $form = $this->createForm(CompetenceType::class);
-        return $this->render('/competence/show.html.twig', ['form' => $form->createView(), 'competence' => $competence]);
+        
+        $examens = $examRepo->findBy(['competence' => $competence]);
+        // $examens->getInscriptions();
+        dd($examens);
+
+        return $this->render('/competence/show.html.twig', ['form' => $form->createView(), 'competence' => $competence, 'examens'=> $examens]);
     }
 }

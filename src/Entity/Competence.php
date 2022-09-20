@@ -22,6 +22,9 @@ class Competence
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
+    #[ORM\OneToMany(mappedBy: 'Examen', targetEntity: Examen::class)]
+    private $examens;
+
     public function __construct()
     {
         $this->examens = new ArrayCollection();
@@ -56,4 +59,34 @@ class Competence
         return $this;
     }
 
+    /**
+     * @return Collection<int, Examen>
+     */
+
+    public function getExamens(): Collection
+    {
+        return $this->examens;
+    }
+
+    public function addExamen(Examen $examen): self
+    {
+        if (!$this->examens->contains($examen)) {
+            $this->comments[] = $examen;
+            $examen->setCompetence($this);
+        }
+
+        return $this;
+    }
+
+    public function removeExamen(Examen $examen): self
+    {
+        if ($this->examens->removeElement($examen)) {
+            // set the owning side to null (unless already changed)
+            if ($examen->getCompetence() === $this) {
+                $examen->setCompetence(null);
+            }
+        }
+
+        return $this;
+    }
 }

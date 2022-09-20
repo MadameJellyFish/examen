@@ -16,7 +16,29 @@
 	</div>
 
 	<div>
-		{{form(form)}}
-			<button type="submit">Valider</button>
+
+		{% for examen in examens %}
+			<p>{{examen.ville}}</p>
+			<p>{{examen.date|date('d/m/Y')}}</p>
+		{% endfor %}
+
 	</div>
+
+	<div>
+
+		{# {{form_start(form)}}
+		
+					{{ form_label(form.examens)}}
+					{{ form_widget(form.examens)}}
+		
+		
+					{{form_rest(form)}}
+					<button type="submit">Valider</button>
+					{{form_end(form)}} #}
+		{# {{form(form)}} #}
+			{{form_start(form)}}
+			<button type="submit">Valider</button>
+			{{form_end(form)}}
+
+		</div>
 	{% endblock %}
