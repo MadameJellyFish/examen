@@ -35,6 +35,14 @@ class ProfilController extends AbstractController
             }
         }
 
+        usort($examToCome, function ($a, $b) {
+            return strtotime($a->getDate()->format('d-m-Y')) - strtotime($b->getDate()->format('d-m-Y'));
+        });
+
+        usort($examPassed, function ($a, $b) {
+            return strtotime($b->getDate()->format('d-m-Y')) - strtotime($a->getDate()->format('d-m-Y'));
+        });
+
         $form = $this->createForm(EditUtilisateurType::class, $user, ['attr' => ['class' => 'formModif']]);
         $form->handleRequest($request);
 

@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block body %}
-  {% for examen in examens %}
+  {% for examen in examens|sort((a, b) => a.date > b.date) %}
     <h1>
       {{ examen.competence.nom }}
     </h1>
@@ -18,6 +18,6 @@
       {{ examen.competence.description }}
     </p>
 
-    <small>{{ examen.date|date('m/d/Y') }}</small>
+    <small>{{ examen.date|date('d/m/Y') }}</small>
   {% endfor %}
 {% endblock %}

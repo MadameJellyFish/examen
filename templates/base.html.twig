@@ -16,6 +16,25 @@
 
 	</head>
 	<body>
+	<header>
+		<nav>
+		<p>CENTRE EXAMEN</p>
+		<ul>
+			<li><a href="{{ path('app_competence') }}">Toutes les compétences</a></li>
+			<li><a href="{{ path('app_contact') }}">Contact</a></li>
+		</ul>
+
+		<ul>
+			{% if app.user %}
+				<li><a href="{{ path('app_profil') }}">Mon profil</a></li>
+				<li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+			{% else %}
+				<li><a href="{{ path('app_login') }}">Connexion</a></li>
+				<li><a href="{{ path('app_register') }}">Inscription</a></li>
+			{% endif %}
+		</ul>
+		</nav>
+	</header>
 		<p class="anim__banner"> {% block banniere_text %}{% endblock %}
 			</p>
 			<main>
