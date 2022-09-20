@@ -30,7 +30,8 @@ class RegistrationFormType extends AbstractType
             ->add('date', options: [
                 "label" => "Date de naissance : ",
                 "attr" => ["class" => "form-control-mb4"],
-                "label_attr" => ["class" => "form-label"]
+                "label_attr" => ["class" => "form-label"],
+                "years"=>range(date('Y'), date('Y')-100)
             ])
             ->add('telephone', options: [
                 "label" => "Téléphone : ",
