@@ -12,13 +12,13 @@ class InscriptionController extends AbstractController
     #[Route('/inscription', name: 'app_inscription')]
     public function index(): Response
     {
+        // return $this->render('inscription/index.html.twig', [
+        //     'controller_name' => 'InscriptionController', 'form' => $form->createView()
+        // ]);
+        
         $form = $this->createForm(InscriptionType::class);
         return $this->render('inscription/index.html.twig', [
-            'controller_name' => 'InscriptionController', 'form' => $form->createView()
+            'form' => $form->createView()
         ]);
-
-        // return $this->render('inscription/index.html.twig', [
-        //     'form' => $form->createView()
-        // ]);
     }
 }

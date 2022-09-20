@@ -10,7 +10,10 @@ DETAILS COMPETENCES - DETAILS COMPETENCES - DETAILS COMPETENCES - DETAILS COMPET
 
 {% block body %}
 
-
+<a href={"/competence/{{competence.id}}"}>
+<p>{{competence.nom}}</p>
+<p>{{competence.description}}</p>
+</a>
 {% include 'inscription/index.html.twig' %}
  
 {% endblock %}
