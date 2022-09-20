@@ -14,9 +14,7 @@
       {{ message }}
     </p>
   {% endfor %}
-  <h1>
-    {{ user.prenom }} {{ user.nom }}
-  </h1>
+  <input type="text" value="{{ user.prenom }} {{ user.nom }}" disabled />
   <p>
     {{ user.date|date('m/d/Y') }} <br />
     {{ user.email }} <br />
@@ -29,11 +27,16 @@
     {% endif %}
   </p>
 
-  <button><a href="">Modifier mes informations</a></button>
-  <button><a href="">Modifier mon mot de passe</a></button>
-  <button><a href="">Supprimer mon profil</a></button>
+  <style>
+    a { color: white; text-decoration: none; }
+  </style>
+  <a href="{{ path('app_edit_profil') }}" id="modif_link" data-true="0">
+    Modifier mes informations
+  </a>
+  <a href="{{ path('app_edit_password') }}">Modifier mon mot de passe</a>
+  <a href="{{ path('app_delete') }}">Supprimer mon profil</a>
 
-  <div style="background-color: violet;">
+  <div>
     {% for examen in examToCome %}
       <p>
         {{ examen.competence.nom }} <br />
@@ -43,7 +46,7 @@
     {% endfor %}
   </div>
 
-  <div style="background-color: palegreen;">
+  <div>
     {% for examen in examPassed %}
       <p>
         {{ examen.competence.nom }} <br />
@@ -52,4 +55,6 @@
       </p>
     {% endfor %}
   </div>
+
+  <script src={{asset('assets/js/profil.js')}}></script>
 {% endblock %}

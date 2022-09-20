@@ -27,7 +27,13 @@ class CompetenceController extends AbstractController
         ]);
     }
 
-    
+    #[Route('/competence/{id}', name: 'competence.show', methods:['GET'])]
+    public function show($id) : Response{
+
+        $competence = $this->repo->find($id);
+        return $this->render('/competence/show.html.twig', ['competence' => $competence]);
+    }
+
 
 
 }
