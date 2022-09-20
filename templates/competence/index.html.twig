@@ -1,22 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-Competence
+	Competence
 {% endblock %}
 
 {% block banniere_text %}
-COMPETENCES - COMPETENCES - COMPETENCES - COMPETENCES - COMPETENCES 
+	COMPETENCES - COMPETENCES - COMPETENCES - COMPETENCES - COMPETENCES
 {% endblock %}
 
 {% block body %}
-{% for competence in competences %}
+	{% for competence in competences %}
+		<a href="/competence/{{competence.id}}">
+			<h1>{{competence.nom}}</h1>
+			<p>{{competence.description}}</p>
+		</a>
+	{% endfor %}
 
-<h1>{{competence.nom}}</h1>
-<p>{{competence.description}}</p>
-    
-{% endfor %}
-
-
-{# {% include 'inscription/index.html.twig' %} #}
- 
 {% endblock %}

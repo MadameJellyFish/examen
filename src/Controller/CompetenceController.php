@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\CompetenceType;
 use App\Repository\CompetenceRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,13 +28,14 @@ class CompetenceController extends AbstractController
         ]);
     }
 
-    #[Route('/competence/{id}', name: 'competence.show', methods:['GET'])]
-    public function show($id) : Response{
+    #[Route('/competence/{id}', name: 'competence.show', methods: ['GET'])]
+    public function show($id): Response
+    {
 
         $competence = $this->repo->find($id);
-        return $this->render('/competence/show.html.twig', ['competence' => $competence]);
+        // return $this->render('/competence/show.html.twig', ['competence' => $competence]);
+
+        $form = $this->createForm(CompetenceType::class);
+        return $this->render('/competence/show.html.twig', ['form' => $form->createView(), 'competence' => $competence]);
     }
-
-
-
 }

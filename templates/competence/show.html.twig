@@ -1,19 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-Competence
+	Competence
 {% endblock %}
 
 {% block banniere_text %}
-DETAILS COMPETENCES - DETAILS COMPETENCES - DETAILS COMPETENCES - DETAILS COMPETENCES - DETAILS COMPETENCES 
+	DETAILS COMPETENCES - DETAILS COMPETENCES - DETAILS COMPETENCES - DETAILS COMPETENCES - DETAILS COMPETENCES
 {% endblock %}
 
 {% block body %}
 
-<a href={"/competence/{{competence.id}}"}>
-<p>{{competence.nom}}</p>
-<p>{{competence.description}}</p>
-</a>
-{% include 'inscription/index.html.twig' %}
- 
-{% endblock %}
+	<div>
+		<p>{{competence.nom}}</p>
+		<p>{{competence.description}}</p>
+	</div>
+
+	<div>
+		{{form(form)}}
+			<button type="submit">Valider</button>
+	</div>
+	{% endblock %}
