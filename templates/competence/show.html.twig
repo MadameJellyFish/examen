@@ -19,9 +19,10 @@
 
 		{% for examen in examens %}
 			<p>{{examen.ville}}</p>
-			<p>{{examen.date|date('d/m/Y')}}</p>
-		{% endfor %}
-
+			<p>{{examen.date|date('d/m/Y H:i')}}</p>
+			<p>{{examen.inscriptions|length}}</p>
+	 {% endfor %} 
+			
 	</div>
 
 	<div>

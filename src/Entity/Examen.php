@@ -90,9 +90,13 @@ class Examen
     /**
      * @return Collection<int, Inscription>
      */
+
+    
     public function getInscriptions(): Collection
     {
         return $this->inscriptions;
+
+      
     }
 
     public function addInscription(Inscription $inscription): self
