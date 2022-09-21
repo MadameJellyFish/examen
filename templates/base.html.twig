@@ -16,28 +16,48 @@
 
 	</head>
 	<body>
-	<header>
-		<nav>
-		<p><a href="{{ path('app_accueil') }}">CENTRE EXAMEN</a></p>
-		<ul>
-			<li><a href="{{ path('app_competence') }}">Toutes les compétences</a></li>
-			<li><a href="{{ path('app_contact') }}">Contact</a></li>
-		</ul>
+		<header>
+			<nav>
+				<p>
+					<a href="{{ path('app_accueil') }}">CENTRE EXAMEN</a>
+				</p>
+				<ul>
+					<li>
+						<a href="{{ path('app_competence') }}">Toutes les compétences</a>
+					</li>
+					<li>
+						<a href="{{ path('app_contact') }}">Contact</a>
+					</li>
+				</ul>
 
-		<ul>
-			{% if app.user %}
-				<li><a href="{{ path('app_profil') }}">Mon profil</a></li>
-				<li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
-			{% else %}
-				<li><a href="{{ path('app_login') }}">Connexion</a></li>
-				<li><a href="{{ path('app_register') }}">Inscription</a></li>
-			{% endif %}
-		</ul>
-		</nav>
-	</header>
+				<ul>
+					{% if app.user %}
+						<li>
+							<a href="{{ path('app_profil') }}">Mon profil</a>
+						</li>
+						<li>
+							<a href="{{ path('app_logout') }}">Déconnexion</a>
+						</li>
+					{% else %}
+						<li>
+							<a href="{{ path('app_login') }}">Connexion</a>
+						</li>
+						<li>
+							<a href="{{ path('app_register') }}">Inscription</a>
+						</li>
+					{% endif %}
+				</ul>
+			</nav>
+		</header>
 		<p class="anim__banner"> {% block banniere_text %}{% endblock %}
 			</p>
 			<main>
+				{% for message in app.flashes('success') %}
+					<div class="alert alert-success">
+						{{message}}
+					</div>
+				{% endfor %}
+
 				{% block body %}{% endblock %}
 			</main>
 			<!-- Footer -->
@@ -66,13 +86,13 @@
 							<a href="{{ path('app_faq') }}" class="text-white">FAQ</a>
 						</div>
 					</div>
-				<!-- Grid container -->
+					<!-- Grid container -->
 
-				<!-- Copyright -->
-				<div class="text-end p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-					© 2022 Copyright
-				</div>
-			</footer>
-			
+					<!-- Copyright -->
+					<div class="text-end p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+						© 2022 Copyright
+					</div>
+				</footer>
+			</body>
 		</body>
 	</html>
