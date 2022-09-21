@@ -42,5 +42,60 @@ body {
     padding: 0;
     height: 100%;
     width: 100%;
+}
+
+/* main */
+
+main{
     min-height: 100vh;
 }
+
+/* registration form */
+
+.expe{
+    border-radius: 50px;
+    border: var(--colorpurple) solid 2px;
+}
+
+.containerFooter{
+    background-color: var(--colorblack);
+}
+
+.containerLogo{
+    flex-basis: 200px;
+}
+
+.logoFooter{
+    font-family: "CabinetGrotesk";
+    font-size: 60px;
+    font-weight:bold;
+    color: var(--colorwhite);
+    line-height: 70px;
+}
+
+.containerMenuFooter{
+    gap: 60px;
+    margin-top: 50px;
+}
+
+.menuFooter{
+    margin-bottom: 30px;
+}
+
+.liensFooter{
+    text-decoration: none;
+    color:var(--colorwhite);
+    font-family: "Gambetta";
+}
+
+.liensFooter:hover{
+    color:var(--colorpurple);
+}
+
+.copyright{
+    align-self: flex-end;
+    color: var(--colorwhite);
+    text-align: right;
+    font-family: "Gambetta";
+}
+

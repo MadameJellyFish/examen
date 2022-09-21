@@ -19,12 +19,12 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('nom', options: [
                 "label" => "Nom : ",
-                "attr" => ["class" => "form-control-mb4"],
+                "attr" => ["class" => "expe"],
                 'label_attr' => ["class" => "form-label"]
             ])
             ->add('prenom', options: [
                 "label" => "Prenom : ",
-                "attr" => ["class" => "form-control-mb4"],
+                "attr" => ["class" => "expe"],
                 "label_attr" => ["class" => "form-label"]
             ])
             ->add('date', options: [
@@ -35,7 +35,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('telephone', options: [
                 "label" => "Téléphone : ",
-                "attr" => ["class" => "form-control-mb4"],
+                "attr" => ["class" => "expe"],
                 "label_attr" => ["class" => "form-label"]
             ])
             ->add('email', options: [
