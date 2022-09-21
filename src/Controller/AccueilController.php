@@ -36,4 +36,16 @@ class AccueilController extends AbstractController
 
         return $this->render('accueil/index.html.twig', [ "examens" => $examens ]);
     }
+
+    #[Route('/mentions-legales', name: 'app_cgu')]
+    public function cgu(): Response
+    {
+        return $this->render('accueil/cgu.html.twig');
+    }
+
+    #[Route('/faq', name: 'app_faq')]
+    public function faq(): Response
+    {
+        return $this->render('accueil/faq.html.twig');
+    }
 }
