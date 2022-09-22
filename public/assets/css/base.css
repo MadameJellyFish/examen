@@ -42,60 +42,143 @@ body {
     padding: 0;
     height: 100%;
     width: 100%;
+    min-height: 100vh;
 }
 
 /* main */
 
-main{
+main {
     min-height: 100vh;
+}
+
+/* Partie Header */
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.1)), url('../img/etudierNB.jpg');
+    background-position: 70% 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+nav {
+    padding-top: 15em;
+    color: var(--colorwhite);
+
+}
+
+/* Slogan + Centre examen gros titre  */
+
+span {
+    font-family: "Gambetta";
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 41.6px;
+}
+
+nav>p {
+    font-size: 240px;
+    line-height: 297.6px;
+    font-weight: 700;
+
+}
+
+p>a {
+    font-family: "CabinetGrotesk";
+    text-decoration: none;
+    color: var(--colorwhite);
+}
+
+#title {
+    text-align: left;
+    margin-left: 1em;
+}
+
+#subtitle {
+    text-align: center;
+    margin-left: 0.5em;
+}
+
+/* partie navbar (contact/Connexion/Inscription)*/
+
+nav>ul {
+    display: inline-flex;
+}
+
+.nav-link {
+    margin-right: 1em;
+    list-style-type: none;
+    color: var(--colorwhite);
+}
+
+.contact {
+    margin-left: 13em;
+}
+
+.connexion {
+    margin-left: 20em;
+}
+
+li>a {
+    font-family: "Gambetta";
+    color: var(--colorwhite);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+a:hover {
+    cursor: pointer;
+    color: var(--colorwh);
 }
 
 /* registration form */
 
-.expe{
+.expe {
     border-radius: 50px;
     border: var(--colorpurple) solid 2px;
 }
 
-.containerFooter{
+.containerFooter {
     background-color: var(--colorblack);
 }
 
-.containerLogo{
+.containerLogo {
     flex-basis: 200px;
 }
 
-.logoFooter{
+.logoFooter {
     font-family: "CabinetGrotesk";
     font-size: 60px;
-    font-weight:bold;
+    font-weight: bold;
     color: var(--colorwhite);
     line-height: 70px;
 }
 
-.containerMenuFooter{
+.containerMenuFooter {
     gap: 60px;
     margin-top: 50px;
 }
 
-.menuFooter{
+.menuFooter {
     margin-bottom: 30px;
 }
 
-.liensFooter{
+.liensFooter {
     text-decoration: none;
-    color:var(--colorwhite);
+    color: var(--colorwhite);
     font-family: "Gambetta";
 }
 
-.liensFooter:hover{
-    color:var(--colorpurple);
+.liensFooter:hover {
+    color: var(--colorpurple);
 }
 
-.copyright{
+.copyright {
     align-self: flex-end;
     color: var(--colorwhite);
     text-align: right;
     font-family: "Gambetta";
 }
-
