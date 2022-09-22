@@ -1,101 +1,185 @@
 :root {
-    --colorwhite: rgba(255, 255, 255, 1);
-    --colorblack: rgba(0, 0, 0, 1);
+    --colorwhite : rgba(255, 255, 255, 1);
+    --colorblack : rgba(0, 0, 0, 1);
     --colorpurple: rgba(127, 90, 240, 1);
-    --bgmauve: rgba(209, 209, 233, 1);
-    --bgfooter: rgba(22, 22, 26, 1);
-    --bgavatar: rgba(217, 217, 217, 1);
+    --bgmauve    : rgba(209, 209, 233, 1);
+    --bgfooter   : rgba(22, 22, 26, 1);
+    --bgavatar   : rgba(217, 217, 217, 1);
 }
 
 @font-face {
     font-family: "Gambetta";
-    src: url("../fonts/Gambetta-Bold.otf");
-    src: url("../fonts/Gambetta-BoldItalic.otf");
-    src: url("../fonts/Gambetta-Italic.otf");
-    src: url("../fonts/Gambetta-Light.otf");
-    src: url("../fonts/Gambetta-LightItalic.otf");
-    src: url("../fonts/Gambetta-Medium.otf");
-    src: url("../fonts/Gambetta-MediumItalic.otf");
-    src: url("../fonts/Gambetta-Regular.otf");
-    src: url("../fonts/Gambetta-Semibold.otf");
-    src: url("../fonts/Gambetta-SemiboldItalic.otf");
+    src        : url("../fonts/Gambetta-Bold.otf");
+    src        : url("../fonts/Gambetta-BoldItalic.otf");
+    src        : url("../fonts/Gambetta-Italic.otf");
+    src        : url("../fonts/Gambetta-Light.otf");
+    src        : url("../fonts/Gambetta-LightItalic.otf");
+    src        : url("../fonts/Gambetta-Medium.otf");
+    src        : url("../fonts/Gambetta-MediumItalic.otf");
+    src        : url("../fonts/Gambetta-Regular.otf");
+    src        : url("../fonts/Gambetta-Semibold.otf");
+    src        : url("../fonts/Gambetta-SemiboldItalic.otf");
 
     font-family: "CabinetGrotesk";
-    src: url("../fonts/CabinetGrotesk-Bold.otf");
-    src: url("../fonts/CabinetGrotesk-Black.otf");
-    src: url("../fonts/CabinetGrotesk-Bold.otf");
-    src: url("../fonts/CabinetGrotesk-Extrabold.otf");
-    src: url("../fonts/CabinetGrotesk-Extralight.otf");
-    src: url("../fonts/CabinetGrotesk-Light.otf");
-    src: url("../fonts/CabinetGrotesk-Medium.otf");
-    src: url("../fonts/CabinetGrotesk-Regular.otf");
-    src: url("../fonts/CabinetGrotesk-Thin.otf");
+    src        : url("../fonts/CabinetGrotesk-Bold.otf");
+    src        : url("../fonts/CabinetGrotesk-Black.otf");
+    src        : url("../fonts/CabinetGrotesk-Bold.otf");
+    src        : url("../fonts/CabinetGrotesk-Extrabold.otf");
+    src        : url("../fonts/CabinetGrotesk-Extralight.otf");
+    src        : url("../fonts/CabinetGrotesk-Light.otf");
+    src        : url("../fonts/CabinetGrotesk-Medium.otf");
+    src        : url("../fonts/CabinetGrotesk-Regular.otf");
+    src        : url("../fonts/CabinetGrotesk-Thin.otf");
 }
 
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    box-sizing: border-box;
+    box-sizing : border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
+    margin    : 0;
+    padding   : 0;
+    height    : 100%;
+    width     : 100%;
+    min-height: 100vh;
 }
 
 /* main */
 
-main{
+main {
     min-height: 100vh;
+}
+
+/* Partie Header */
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.1)), url('../img/etudierNB.jpg');
+    background-position: 70% 30%;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    text-align         : center;
+}
+
+nav {
+    padding-top: 15em;
+    color      : var(--colorwhite);
+
+}
+
+/* Slogan + Centre examen gros titre  */
+
+span {
+    font-family: "Gambetta";
+    font-weight: 400;
+    font-size  : 32px;
+    line-height: 41.6px;
+}
+
+nav>p {
+    font-size  : 240px;
+    line-height: 297.6px;
+    font-weight: 700;
+
+}
+
+p>a {
+    font-family    : "CabinetGrotesk";
+    text-decoration: none;
+    color          : var(--colorwhite);
+}
+
+#title {
+    text-align : left;
+    margin-left: 1em;
+}
+
+#subtitle {
+    text-align : center;
+    margin-left: 0.5em;
+}
+
+/* partie navbar (contact/Connexion/Inscription)*/
+
+nav>ul {
+    display: inline-flex;
+}
+
+li {
+    margin-right   : 1em;
+    list-style-type: none;
+    color          : var(--colorwhite);
+}
+
+.contact {
+    margin-left: 13em;
+}
+
+.connexion {
+    margin-left: 20em;
+}
+
+li>a {
+    font-family    : "Gambetta";
+    color          : var(--colorwhite);
+    text-decoration: none;
+    font-size      : 20px;
+    font-weight    : 700;
+    line-height    : 26px;
+}
+
+a:hover {
+    cursor: pointer;
+    color : var(--colorwh);
 }
 
 /* registration form */
 
-.expe{
+.expe {
     border-radius: 50px;
-    border: var(--colorpurple) solid 2px;
+    border       : var(--colorpurple) solid 2px;
 }
 
-.containerFooter{
+.containerFooter {
     background-color: var(--colorblack);
 }
 
-.containerLogo{
+.containerLogo {
     flex-basis: 200px;
 }
 
-.logoFooter{
+.logoFooter {
     font-family: "CabinetGrotesk";
-    font-size: 60px;
-    font-weight:bold;
-    color: var(--colorwhite);
+    font-size  : 60px;
+    font-weight: bold;
+    color      : var(--colorwhite);
     line-height: 70px;
 }
 
-.containerMenuFooter{
-    gap: 60px;
+.containerMenuFooter {
+    gap       : 60px;
     margin-top: 50px;
 }
 
-.menuFooter{
+.menuFooter {
     margin-bottom: 30px;
 }
 
-.liensFooter{
+.liensFooter {
     text-decoration: none;
-    color:var(--colorwhite);
-    font-family: "Gambetta";
+    color          : var(--colorwhite);
+    font-family    : "Gambetta";
 }
 
-.liensFooter:hover{
-    color:var(--colorpurple);
+.liensFooter:hover {
+    color: var(--colorpurple);
 }
 
-.copyright{
-    align-self: flex-end;
-    color: var(--colorwhite);
-    text-align: right;
+.copyright {
+    align-self : flex-end;
+    color      : var(--colorwhite);
+    text-align : right;
     font-family: "Gambetta";
 }
 

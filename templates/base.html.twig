@@ -21,10 +21,15 @@
 	<body>
 		<header>
 			<nav>
-				<p>
-					<a href="{{ path('app_accueil') }}">CENTRE EXAMEN</a>
+				<span>Un slogan d'accroche pour le centre d'examen</span>
+				<p id="title">
+					<a href ="{{ path('app_accueil') }}">Centre
+					</a>
 				</p>
-				<ul>
+				<p id="subtitle">
+					<a href="{{ path('app_accueil') }}">examen</a>
+				</p>
+				<ul class="contact">
 					<li>
 						<a href="{{ path('app_competence') }}">Toutes les compétences</a>
 					</li>
@@ -32,8 +37,7 @@
 						<a href="{{ path('app_contact') }}">Contact</a>
 					</li>
 				</ul>
-
-				<ul>
+				<ul class="connexion">
 					{% if app.user %}
 						<li>
 							<a href="{{ path('app_profil') }}">Mon profil</a>
