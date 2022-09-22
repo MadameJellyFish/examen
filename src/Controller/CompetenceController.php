@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Inscription;
-use App\Form\CompetenceType;
 use App\Repository\CompetenceRepository;
 use App\Repository\ExamenRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -39,22 +38,45 @@ class CompetenceController extends AbstractController
         $competence = $this->repo->find($id);
         $examens = $examRepo->findBy(['competence' => $competence]);
 
-        $form = $this->createForm(CompetenceType::class);
-        $form->handleRequest($request);
-    
-        $user = $this->getUser();
+        $submit = $request->get('submit');
+
+        // $user = $this->getUser();
         $inscription = new Inscription;
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if (isset($submit)) {
 
-            $inscription->setUser($user)->getId();
-            $inscription->setExamen($form['Examen']->getData()); // get data recupere la valeur de l'input
+            // $inscription->setUser($user)->getId();
+            // $inscription->setExamen($examen); 
+
+            $inscription->setUser($request->get('user'));
+            $inscription->setExamen($request->get('examen'));
+            
 
             $entityManager->persist($inscription);
             $entityManager->flush();
+            // dd($request->get('examen'));
 
             return $this->redirectToRoute('app_profil');
         }
-        return $this->render('/competence/show.html.twig', ['form' => $form->createView(), 'competence' => $competence, 'examens' => $examens]);
+        return $this->render('/competence/show.html.twig', ['competence' => $competence, 'examens' => $examens]);
     }
 }
+
+// $form = $this->createForm(ExamenType::class);
+
+// $form->handleRequest($request);
+
+// $user = $this->getUser();
+// $inscription = new Inscription;
+
+// if ($form->isSubmitted() && $form->isValid()) {
+
+//     $inscription->setUser($user)->getId();
+//     $inscription->setExamen($form['Examen']->getData()); // get data recupere la valeur de l'input
+
+    // $entityManager->persist($inscription);
+    // $entityManager->flush();
+
+//     return $this->redirectToRoute('app_profil');
+// }
+// return $this->render('/competence/show.html.twig', ['form' => $form->createView(), 'competence' => $competence, 'examens' => $examens]);

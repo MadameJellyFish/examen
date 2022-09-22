@@ -29,6 +29,11 @@ class Inscription
         return $this->id;
     }
 
+    // public function __toString()
+    // {
+    //     return $this->examen;
+    // }
+
     public function getExamen(): ?Examen
     {
         return $this->examen;

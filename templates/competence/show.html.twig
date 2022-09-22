@@ -16,30 +16,23 @@
 	</div>
 
 	<div>
-
 		{% for examen in examens %}
 			<p>{{examen.ville}}</p>
 			<p>{{examen.date|date('d/m/Y H:i')}}</p>
 			<p>{{examen.inscriptions|length}}</p>
-	 {% endfor %} 
-			
+		{% endfor %}
 	</div>
 
 	<div>
-
-		{# {{form_start(form)}}
-		
-					{{ form_label(form.examens)}}
-					{{ form_widget(form.examens)}}
-		
-		
-					{{form_rest(form)}}
-					<button type="submit">Valider</button>
-					{{form_end(form)}} #}
-		{# {{form(form)}} #}
-			{{form_start(form)}}
-			<button type="submit">Valider</button>
-			{{form_end(form)}}
-
-		</div>
-	{% endblock %}
+		<form action="/competence/{{competence.id}}" method="POST">
+			{# je reucpere l'id de examen avant de m'inscrire je dosi cherhcer que l'identifiant est dans la base de donnee #}
+			<libelle>Inscription à un examen</libelle>
+			<select name="examen">
+				{% for examen in examens %}
+					<option value="{{examen.id}}">{{examen.ville}}{{examen.date|date('d/m/Y H:i')}}</option>
+				{% endfor %}
+			</select>
+			<button name="submit" type="submit">Inscription</button>
+		</form>
+	</div>
+{% endblock %}
