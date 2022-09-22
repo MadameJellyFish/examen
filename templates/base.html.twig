@@ -9,7 +9,10 @@
 		<link
 		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 		<!-- CSS only -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+		<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+		<!-- Font Awesome icons (free version)-->
+		<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"/>
 		<link rel="stylesheet" href={{asset('assets/css/base.css')}}>
 		<link rel="stylesheet" href={{asset('assets/css/animation.css')}}>
@@ -65,38 +68,33 @@
 				{% block body %}{% endblock %}
 			</main>
 			<!-- Footer -->
-			<footer
-				class="bg-black text-white text-center text-md-start">
-				<!-- Grid container -->
-				<div
-					class="container p-4">
-					<!--Grid row-->
-					<div
-						class="row">
-						<!--Grid column-->
-						<div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-							<h5 class="text">Centre d'examens</h5>
+			<footer class="containerFooter px-3 py-5">
+				<div class="container">
+					<div class="d-block d-md-flex d-lg-flex">
+						<div class="col-lg-5 col-md-6 text-start">
+							<h5 class="logoFooter">
+								<b>
+									Centre d'examens
+								</b>
+							</h5>
 						</div>
-						<!--Grid column-->
-						<div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-							<a href="{{ path('app_contact') }}" class="text-white">Contact</a>
-						</div>
-						<!--Grid column-->
-						<div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-							<a href="{{ path('app_cgu') }}" class="text-white">Mentions Légales</a>
-						</div>
-						<!--Grid column-->
-						<div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-							<a href="{{ path('app_faq') }}" class="text-white">FAQ</a>
+						<div class="containerMenuFooter col-md-6 d-block d-md-flex d-lg-flex text-start align-md-middle">
+							<div class="col-lg-2 col-md-2  menuFooter">
+								<a href="{{ path('app_contact') }}" class="liensFooter">Contact</a>
+							</div>
+							<div class="col-lg-3 col-md-4 menuFooter">
+								<a href="{{ path('app_cgu') }}" class="liensFooter">Mentions Légales</a>
+							</div>
+							<div class="col-lg-2 col-md-6 menuFooter">
+								<a href="{{ path('app_faq') }}" class="liensFooter">FAQ</a>
+							</div>
 						</div>
 					</div>
-					<!-- Grid container -->
-
-					<!-- Copyright -->
-					<div class="text-end p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+					<div class="copyright text-start text-md-end text-lg-end">
 						© 2022 Copyright
 					</div>
-				</footer>
-			</body>
+				</div>
+			</footer>
+			<!-- Fin footer -->
 		</body>
 	</html>

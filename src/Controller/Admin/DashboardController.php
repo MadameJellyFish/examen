@@ -5,6 +5,8 @@ namespace App\Controller\Admin;
 use App\Entity\Competence;
 use App\Entity\Examen;
 use App\Entity\Inscription;
+use App\Entity\User;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -39,8 +41,22 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToRoute('Retour sur le site', 'fa-solid fa-arrow-left', 'app_accueil');
         yield MenuItem::section('Compétences et examens', 'fas fa-list');
-        yield MenuItem::subMenu('Compétences', 'fas fa-list', Competence::class);
-        yield MenuItem::subMenu('Examen', 'fas fa-list', Examen::class);
-        yield MenuItem::subMenu('Inscription', 'fas fa-list', Inscription::class);
+        yield MenuItem::subMenu('Compétences', 'fa fa-tags')->setSubItems([
+                MenuItem::linkToCrud('All Compétences', 'fa fa-file-text', Competence::class)->setAction(Crud::PAGE_INDEX),
+                MenuItem::linkToCrud('Add Compétence', 'fas fa-plus', Competence::class)->setAction(Crud::PAGE_NEW)
+        ]);
+        yield MenuItem::subMenu('Examen', 'fa fa-tags')->setSubItems([
+                MenuItem::linkToCrud('All Examens', 'fa fa-file-text', Examen::class)->setAction(Crud::PAGE_INDEX),
+                MenuItem::linkToCrud('Add Examen', 'fas fa-plus', Examen::class)->setAction(Crud::PAGE_NEW)
+        ]);
+        yield MenuItem::subMenu('Inscription', 'fa fa-tags')->setSubItems([
+                MenuItem::linkToCrud('All inscriptions', 'fa fa-file-text', Inscription::class)->setAction(Crud::PAGE_INDEX),
+                MenuItem::linkToCrud('Add inscription', 'fas fa-plus', Inscription::class)->setAction(Crud::PAGE_NEW)
+        ]);
+        yield MenuItem::section('Apprenants', 'fas fa-list');
+        yield MenuItem::subMenu('Utilisateurs', 'fa fa-tags')->setSubItems([
+                MenuItem::linkToCrud('All Utilisateurs', 'fa fa-file-text', User::class)->setAction(Crud::PAGE_INDEX),
+                MenuItem::linkToCrud('Add Utilisateur', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW)
+        ]);
     }
 }
