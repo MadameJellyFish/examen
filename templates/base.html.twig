@@ -30,26 +30,26 @@
 					<a href="{{ path('app_accueil') }}">examen</a>
 				</p>
 				<ul class="contact">
-					<li>
+					<li class="nav-link">
 						<a href="{{ path('app_competence') }}">Toutes les compétences</a>
 					</li>
-					<li>
+					<li class="nav-link">
 						<a href="{{ path('app_contact') }}">Contact</a>
 					</li>
 				</ul>
 				<ul class="connexion">
 					{% if app.user %}
-						<li>
+						<li class="nav-link">
 							<a href="{{ path('app_profil') }}">Mon profil</a>
 						</li>
-						<li>
+						<li class="nav-link">
 							<a href="{{ path('app_logout') }}">Déconnexion</a>
 						</li>
 					{% else %}
-						<li>
+						<li class="nav-link">
 							<a href="{{ path('app_login') }}">Connexion</a>
 						</li>
-						<li>
+						<li class="nav-link">
 							<a href="{{ path('app_register') }}">Inscription</a>
 						</li>
 					{% endif %}
