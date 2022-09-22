@@ -48,4 +48,10 @@ class AccueilController extends AbstractController
     {
         return $this->render('accueil/faq.html.twig');
     }
+
+    #[Route('/rgpd', name: 'app_rgpd')]
+    public function rgpd(): Response
+    {
+        return $this->render('accueil/rgpd.html.twig');
+    }
 }
