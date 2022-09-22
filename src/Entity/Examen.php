@@ -120,4 +120,8 @@ class Examen
 
         return $this;
     }
+
+    public function __toString(){
+        return $this->competence." à ".$this->ville;
+    }
 }

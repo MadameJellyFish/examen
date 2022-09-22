@@ -1,36 +1,50 @@
-let btnModif = document.querySelector('#modif_link');
+let btnModif = document.querySelector('#edit_utilisateur_submit');
+let formModif = document.querySelector('.formModif');
+let inputForm = [formModif[0], formModif[1], formModif[2], formModif[3], formModif[4],
+formModif[5], formModif[6]];
+console.log(inputForm)
 
-btnModif.addEventListener('click', seeModifForm)
+btnModif.addEventListener('click', modifForm)
 
-// Fonction SendComm utilisé pour l'event
-function seeModifForm() {
-    fetch('/profil/edit', {
-        method: "POST",
-        headers: { 'content-type': 'Application/json' },
-        body: JSON.stringify({
-            'content': content.value,
+function modifForm(e) {
+    e.preventDefault();
+    let dataId = btnModif.getAttribute('data-id');
+
+    if (dataId == "modifier") {
+        btnModif.setAttribute('data-id', "valider");
+        btnModif.textContent = "Valider";
+
+        inputForm.forEach(element => {
+            element.removeAttribute('disabled');
+        });
+
+    } else if (dataId == "valider") {
+        btnModif.setAttribute('data-id', "modifier");
+        btnModif.textContent = "Modifier mon profil";
+
+        inputForm.forEach(element => {
+            element.setAttribute('disabled', 'disabled');
+        });
+
+        fetch('/profil/edit', {
+            method: "POST",
+            headers: { 'content-type': 'Application/json' },
+            body: JSON.stringify({
+                'email': inputForm[0].value,
+                'nom': inputForm[1].value,
+                'prenom': inputForm[2].value,
+                'date_day': inputForm[3].value,
+                'date_month': inputForm[4].value,
+                'date_year': inputForm[5].value,
+                'telephone': inputForm[6].value,
+            })
         })
-    })
-        .then(function (res) {
-            return res.json();
-        }).then(function (data) {
-            nbComm.textContent = data.numberOfComm;
-
-            let comment = document.createElement("p");
-            comment.classList.add("js-comment");
-
-            if (data.userRole.includes('ROLE_EDITOR',) || data.userRole.includes('ROLE_ADMIN') || data.currentUserUsername === data.user) {
-                comment.innerHTML = "<div class='fw-bolder'>" + data.user + "<small class='ms-3'>" + data.createAt + "</small></div> <div>" + data.content + "</div>  <button class='btn btn-danger rounded-3 js-remove-comment' comment-id='{{ comment.id }}'>Delete</button>"
-            } else {
-                comment.innerHTML = "<div class='fw-bolder'>" + data.user + "<small class='ms-3'>" + data.createAt + "</small></div> <div>" + data.content + "</div>"
-            }
-
-            containerCom.prepend(comment);
-
-            content.value = "";
-
-            console.log(data)
-        }).catch(function (error) {
-            console.log(error);
-        })
+            .then(function (res) {
+                return res.json();
+            }).then(function (data) {
+                console.log(data)
+            }).catch(function (error) {
+                console.log(error);
+            })
+    }
 }

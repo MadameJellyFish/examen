@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProfilController extends AbstractController
 {
     #[Route('/profil', name: 'app_profil')]
-    public function index(InscriptionRepository $repoInscript): Response
+    public function index(InscriptionRepository $repoInscript, Request $request): Response
     {
         $user = $this->getUser();
         $inscriptions = $repoInscript->findBy(['user' => $user]);
@@ -34,25 +34,42 @@ class ProfilController extends AbstractController
                 array_push($examPassed, $exam);
             }
         }
-        return $this->render('profil/profil.html.twig', ['user' => $user, "examToCome" => $examToCome, "examPassed" => $examPassed]);
+
+        usort($examToCome, function ($a, $b) {
+            return strtotime($a->getDate()->format('d-m-Y')) - strtotime($b->getDate()->format('d-m-Y'));
+        });
+
+        usort($examPassed, function ($a, $b) {
+            return strtotime($b->getDate()->format('d-m-Y')) - strtotime($a->getDate()->format('d-m-Y'));
+        });
+
+        $form = $this->createForm(EditUtilisateurType::class, $user, ['attr' => ['class' => 'formModif']]);
+        $form->handleRequest($request);
+
+        return $this->renderForm('profil/profil.html.twig', ['form' => $form, "examToCome" => $examToCome, "examPassed" => $examPassed]);
     }
 
     #[Route('/profil/edit', name:'app_edit_profil')]
     public function edit(Request $request, EntityManagerInterface $em): Response
     {
         $user = $this->getUser();
-        $form = $this->createForm(EditUtilisateurType::class, $user);
-        $form->handleRequest($request);
+        $form = $request->toArray();
 
-        if($form->isSubmitted() && $form->isValid()) {
-            $em->persist($user);
-            $em->flush();
+        $date = (new DateTime())->setDate($form["date_year"], $form["date_month"], $form["date_day"]);
+        $user->setNom($form["nom"])->setPrenom($form['prenom'])->setDate($date)->setTelephone($form["telephone"]);
+        $em->flush();
 
-            $this->addFlash('message', 'Ton profil a bien été mis à jour.');
-            return $this->redirectToRoute('app_profil');
-        }
+        $user = $this->getUser();
 
-        return $this->renderForm('profil/edit.html.twig', ['form' => $form]); 
+        $info = [
+                "email" => $user->getEmail(),
+                "nom" => $user->getNom(),
+                "prenom" => $user->getPrenom(),
+                "date" => $user->getDate(),
+                "telephone" => $user->getTelephone()
+            ];
+
+        return $this->json($info); 
     }
 
     #[Route('/profil/edit/password', name:'app_edit_password')]

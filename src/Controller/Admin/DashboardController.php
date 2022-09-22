@@ -5,6 +5,8 @@ namespace App\Controller\Admin;
 use App\Entity\Competence;
 use App\Entity\Examen;
 use App\Entity\Inscription;
+use App\Entity\User;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -17,16 +19,16 @@ class DashboardController extends AbstractDashboardController
 {
     
     #[Route('/admin', name: 'admin')]
-    // #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_ADMIN')]
     public function index(): Response
     {
         $url = $this->container->get(AdminUrlGenerator::class);
-        return $this->redirect($url->setController(CompetenceCrudController::class)->generateUrl());
-
-        // Option 3. You can render some custom template to display a proper dashboard with widgets, etc.
-        // (tip: it's easier if your template extends from @EasyAdmin/page/content.html.twig)
-        //
-        // return $this->render('some/path/my-dashboard.html.twig');
+        
+        if ($this->isGranted('ROLE_ADMIN')) {
+            return $this->redirect($url->setController(UserCrudController::class)->generateUrl());
+        } else {
+            return $this->redirectToRoute('app_cgu');
+        }
     }
 
     public function configureDashboard(): Dashboard
@@ -39,8 +41,22 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToRoute('Retour sur le site', 'fa-solid fa-arrow-left', 'app_accueil');
         yield MenuItem::section('Compétences et examens', 'fas fa-list');
-        yield MenuItem::subMenu('Compétences', 'fas fa-list', Competence::class);
-        yield MenuItem::subMenu('Examen', 'fas fa-list', Examen::class);
-        yield MenuItem::subMenu('Inscription', 'fas fa-list', Inscription::class);
+        yield MenuItem::subMenu('Compétences', 'fa fa-tags')->setSubItems([
+                MenuItem::linkToCrud('Toutes les Compétences', 'fa fa-file-text', Competence::class)->setAction(Crud::PAGE_INDEX),
+                MenuItem::linkToCrud('Ajouter une Compétence', 'fas fa-plus', Competence::class)->setAction(Crud::PAGE_NEW)
+        ]);
+        yield MenuItem::subMenu('Examen', 'fa-solid fa-folder-open')->setSubItems([
+                MenuItem::linkToCrud('Tous les Examens', 'fa fa-file-text', Examen::class)->setAction(Crud::PAGE_INDEX),
+                MenuItem::linkToCrud('Ajouter un Examen', 'fas fa-plus', Examen::class)->setAction(Crud::PAGE_NEW)
+        ]);
+        yield MenuItem::subMenu('Inscription', 'fa-solid fa-stamp')->setSubItems([
+                MenuItem::linkToCrud('Toutes les inscriptions', 'fa fa-file-text', Inscription::class)->setAction(Crud::PAGE_INDEX),
+                MenuItem::linkToCrud('Ajouter une inscription', 'fas fa-plus', Inscription::class)->setAction(Crud::PAGE_NEW)
+        ]);
+        yield MenuItem::section('Apprenants', 'fas fa-list');
+        yield MenuItem::subMenu('Utilisateurs', 'fa-solid fa-user')->setSubItems([
+                MenuItem::linkToCrud('Tous les Utilisateurs', 'fa fa-file-text', User::class)->setAction(Crud::PAGE_INDEX),
+                MenuItem::linkToCrud('Ajouter un Utilisateur', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW)
+        ]);
     }
 }

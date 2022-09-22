@@ -2,29 +2,34 @@
 
 {% block title %}Registration
 {% endblock %}
+{% block stylesheet %} {% endblock %}
 
 {% block banniere_text %}
 	REGISTRATION - REGISTRATION - REGISTRATION - REGISTRATION - REGISTRATION -
 {% endblock %}
 
 {% block body %}
-	<div></div>
-    <div>
-    <div><h1>Inscription</h1>
+	<div class="containerInscription d-md-flex">
+		<div class="containerImgInscription col-md-5 d-none d-md-block">
+			<img  src={{asset('assets/img/inscription.jpg')}} alt="" class="imgInscription">
+		</div>
+		<div class="col-md-7 p-md-5 d-flex justify-content-center">
+			<div class="box containerRegisterForm col-md-10 m-md-5 my-5 mx-2">
+				<h1>Inscription</h1>
 
-	{{ form_start(registrationForm) }}
-	{{ form_row(registrationForm.nom) }}
-	{{ form_row(registrationForm.prenom) }}
-	{{ form_row(registrationForm.date) }}
-	{{ form_row(registrationForm.telephone) }}
-	{{ form_row(registrationForm.email) }}
-	{{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-	{{ form_row(registrationForm.agreeTerms) }}
+				{{ form_start(registrationForm) }}
+				{{ form_row(registrationForm.nom) }}
+				{{ form_row(registrationForm.prenom) }}
+				{{ form_row(registrationForm.date) }}
+				{{ form_row(registrationForm.telephone) }}
+				{{ form_row(registrationForm.email) }}
+				{{ form_row(registrationForm.plainPassword, {
+            		label: 'Password :'}) }}
+				{{ form_row(registrationForm.agreeTerms) }}
 
-	<button type="submit" class="btn">Register</button>
-	{{ form_end(registrationForm) }}
-    </div>
-    </div>
+				<button type="submit" class="btnPurple col-12 col-md-6">Submit</button>
+				{{ form_end(registrationForm) }}
+			</div>
+		</div>
+	</div>
 {% endblock %}

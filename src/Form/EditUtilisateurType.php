@@ -8,6 +8,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -19,16 +20,28 @@ class EditUtilisateurType extends AbstractType
         $lastYear = (new DateTime())->format('Y')-70;
 
         $builder
-            ->add('email')
-            ->add('nom')
-            ->add('prenom')
-            ->add('date', DateType::class, [
-                'help' => 'Note ici ta date de naissance',
-                'years' => range($lastYear, $majorYear)
+            ->add('email', TextType::class, [
+                "disabled" => true
             ])
-            ->add('telephone')
+            ->add('nom', TextType::class, [
+                "disabled" => true
+            ])
+            ->add('prenom', TextType::class, [
+                "disabled" => true
+            ])
+            ->add('date', DateType::class, [
+                'years' => range($lastYear, $majorYear),
+                'format' => 'dd MM yyyy',
+                "disabled" => true
+            ])
+            ->add('telephone', TextType::class, [
+                "disabled" => true
+            ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Envoyer les modifications'
+                'label' => 'Modifier mon profil',
+                'attr' => [
+                    "data-id" => "modifier"
+                ]
             ])
         ;
     }
