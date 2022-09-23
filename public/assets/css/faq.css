@@ -29,3 +29,43 @@
         transform: rotate(0deg);
     }
 }
+
+main {
+    margin: 2rem 0;
+}
+
+hr {
+    width: 80%;
+    margin: 1rem auto;
+    background-color: var(--bgfooter);
+}
+
+.question-box {
+    width: 80%;
+    margin: auto;
+    padding: 1.5rem;
+    border: 3px solid var(--colorblack);
+    box-shadow: -5px 5px var(--colorblack);
+    border-radius: 20px;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.question h4 {
+    margin: 0;
+    color: var(--colorpurple);
+}
+
+.arrow {
+    font-size: 2rem;
+    color: var(--colorpurple);
+}
+
+.response {
+    margin: 1rem;
+}
