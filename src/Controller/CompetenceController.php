@@ -5,6 +5,9 @@ namespace App\Controller;
 use App\Entity\Inscription;
 use App\Repository\CompetenceRepository;
 use App\Repository\ExamenRepository;
+use App\Repository\InscriptionRepository;
+use App\Repository\UserRepository;
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -33,17 +36,23 @@ class CompetenceController extends AbstractController
     }
 
     #[Route('/competence/{id}', name: 'competence.show', methods: ['GET', 'POST'])]
-    public function show($id, ExamenRepository $examRepo, Request $request, EntityManagerInterface $entityManager): Response
+    public function show($id, ExamenRepository $examRepo, CompetenceRepository $compRepo, UserRepository $useRepo, InscriptionRepository $inscriRepo,Request $request, EntityManagerInterface $entityManager): Response
     {
 
         $competence = $this->repo->find($id);
         $examens = $examRepo->findBy(['competence' => $competence]);
 
+        
+        
         $submit = $request->get('submit');
-
+        
         $user = $this->getUser();
         $inscription = new Inscription;
         
+        $userExamToCome = $useRepo->examenDate($inscriRepo, $user); // je recupere tous les examens pas encore passe // cote user
+
+        $examDispo = $compRepo->examenDate($examRepo, $competence); // renvoie un tableua des examns pas encore passe vis a vis de la date d'aujourd'hui
+
         if (isset($submit)) {
             
             $examen_id = $request->get('examen_id');
@@ -54,13 +63,17 @@ class CompetenceController extends AbstractController
             // que la date sois passer ou non l'inscription à des est limité à 3
             // 3 faire une difference entre les examens passe et à venir pour que le user ne soit pas bloqué par ces anciennes isncriptions 
 
-            // dd($user->getInscriptions()->count());
+            if(count($userExamToCome)>= 3 || $examen->getInscriptions()->count() >=5){
 
-            // dd($examen->getInscriptions()->count());
+                if(count($userExamToCome)>= 3){
+                    $this->addFlash('erreur', 'Vous avez dépassé votre nombre d\'inscriptions');
+                    return $this->redirectToRoute(('app_accueil'));
 
-            if($user->getInscriptions()->count()>= 3 || $examen->getInscriptions()->count() >=5){
+                } else if($examen->getInscriptions()->count() >=5){
 
-                return $this->redirectToRoute(('app_accueil'));
+                    $this->addFlash('erreur', 'L\examen est complet');
+                    return $this->redirectToRoute(('app_accueil'));
+                }
             }
             
             $user->getId();
@@ -72,7 +85,7 @@ class CompetenceController extends AbstractController
 
             return $this->redirectToRoute('app_profil');
         }
-        return $this->render('/competence/show.html.twig', ['competence' => $competence, 'examens' => $examens]);
+        return $this->render('/competence/show.html.twig', ['competence' => $competence, 'examens' => $examens, 'examDispo' => $examDispo]);
     }
 }
 

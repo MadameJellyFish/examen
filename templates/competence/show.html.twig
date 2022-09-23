@@ -20,14 +20,17 @@
 			<p>{{examen.ville}}</p>
 			<p>{{examen.date|date('d/m/Y H:i')}}</p>
 			<p>{{examen.inscriptions|length}}</p>
+
+			{# et limiter l'affichage des examens à 5 à partir du plus récent #}
 		{% endfor %}
 	</div>
 
 	<div>
 		<form action="/competence/{{competence.id}}" method="POST">
-			{# je reucpere l'id de examen avant de m'inscrire je dosi cherhcer que l'identifiant est dans la base de donnee #}
+
 			<libelle>Inscription à un examen</libelle>
 			<select name="examen_id">
+				{# verifier if si l'examen est passe ou non au moment ou je m'inscris pour ne pas proposer un examen deja passe #}
 				{% for examen in examens %}
 					<option value="{{examen.id}}">{{examen.ville}}{{examen.date|date('d/m/Y H:i')}}</option>
 				{% endfor %}
