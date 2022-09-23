@@ -45,11 +45,6 @@ body {
     min-height: 100vh;
 }
 
-/* main */
-
-main {
-    min-height: 100vh;
-}
 
 /* Partie Header */
 
@@ -134,12 +129,7 @@ a:hover {
     color: var(--colorwh);
 }
 
-/* registration form */
-
-.expe {
-    border-radius: 50px;
-    border: var(--colorpurple) solid 2px;
-}
+/* footer */
 
 .containerFooter {
     background-color: var(--colorblack);
