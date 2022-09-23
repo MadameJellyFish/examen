@@ -1,12 +1,12 @@
 
 .containerImgInscription {
-    height: 850px;
+    height: 670px;
 }
 
 .imgInscription {
     width: 100%;
     object-fit: cover;
-    height: 850px;
+    height: 670px;
 }
 
 .containerRegisterForm>h1 {
@@ -18,11 +18,13 @@
 
 /* box noir avec ombre */
 .box {
-    border-radius: 5px;
-    border: solid 3px var(--colorblack);
-    -webkit-box-shadow: -5px 5px 0px 2px var(--colorblack);
-    box-shadow: -5px 5px 0px 2px var(--colorblack);
-    padding: 50px;
+    /* width: 80%; */
+    margin: auto;
+    padding: 1.5rem;
+     /* padding: 50px; */
+    border: 3px solid var(--colorblack);
+    box-shadow: -5px 5px var(--colorblack);
+    border-radius: 20px;
 }
 /* fin box noire avec ombre */
 

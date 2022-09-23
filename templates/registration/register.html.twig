@@ -2,22 +2,20 @@
 
 {% block title %}Registration
 {% endblock %}
-{% block stylesheet %}{% endblock %}
 
 {% block banniere_text %}
 	REGISTRATION - REGISTRATION - REGISTRATION - REGISTRATION - REGISTRATION -
 {% endblock %}
 
 {% block body %}
-	<link rel="stylesheet" href={{ asset('assets/css/register.css') }}>
-	<script src={{ asset('assets/js/register.js') }} defer></script>
+	<link rel="stylesheet" href={{asset('assets/css/register.css')}}>
 
 	<div class="containerInscription d-md-flex">
 		<div class="containerImgInscription col-md-5 d-none d-md-block">
 			<img src={{asset('assets/img/inscription.jpg')}} alt="" class="imgInscription">
 		</div>
-		<div class="col-md-7 p-md-5 d-flex justify-content-center">
-			<div class="box containerRegisterForm col-md-10 m-md-5 my-5 mx-2">
+		<div class="col-md-7 justify-content-center">
+			<div class="box containerRegisterForm col-md-10 m-md-5 my-5 mx-5">
 				<h1>Inscription</h1>
 
 				{{ form_start(registrationForm) }}
