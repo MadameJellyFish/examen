@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\Length;
 
 class CompetenceController extends AbstractController
 {
@@ -42,14 +43,28 @@ class CompetenceController extends AbstractController
 
         $user = $this->getUser();
         $inscription = new Inscription;
-
+        
         if (isset($submit)) {
-
-            $user->getId();
-            $inscription->setUser($user);
-
+            
             $examen_id = $request->get('examen_id');
             $examen = $examRepo->find($examen_id);
+            
+            // 1 verfier user nb inscription ==3 max et verfier que ca soit sur les examens pas encore passer
+            // 2 verifier nb par examen <= 5 max
+            // que la date sois passer ou non l'inscription à des est limité à 3
+            // 3 faire une difference entre les examens passe et à venir pour que le user ne soit pas bloqué par ces anciennes isncriptions 
+
+            // dd($user->getInscriptions()->count());
+
+            // dd($examen->getInscriptions()->count());
+
+            if($user->getInscriptions()->count()>= 3 || $examen->getInscriptions()->count() >=5){
+
+                return $this->redirectToRoute(('app_accueil'));
+            }
+            
+            $user->getId();
+            $inscription->setUser($user);
             $inscription->setExamen($examen);
             
             $entityManager->persist($inscription);
@@ -63,14 +78,7 @@ class CompetenceController extends AbstractController
 
 // 1 correspond à l'id de l'examen
 
-// $inscription->setUser($request->get('user'))->getId();
-// $inscription->setExamen($request->get('examen'))->getId();
-// $inscription->setExamen($examen); 
-
-// $inscription->setUser($this->getUser());
-// $inscription->setExamen($this->getExamen());
-
-
+/////////// verison formulaire symfony /////////
 // $form = $this->createForm(ExamenType::class);
 
 // $form->handleRequest($request);

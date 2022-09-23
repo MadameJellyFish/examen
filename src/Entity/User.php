@@ -47,7 +47,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?bool $online = null;
 
-    #[ORM\ManyToMany(targetEntity: Inscription::class, mappedBy: 'user')]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Inscription::class)]
     private Collection $inscriptions;
 
     public function __construct()
