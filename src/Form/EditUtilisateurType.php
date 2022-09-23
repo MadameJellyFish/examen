@@ -21,26 +21,47 @@ class EditUtilisateurType extends AbstractType
 
         $builder
             ->add('email', TextType::class, [
-                "disabled" => true
+                "disabled" => true,
+                'attr' => [
+                    'class' => 'my-1',
+                    'id' => 'email_input'
+                ]
             ])
             ->add('nom', TextType::class, [
-                "disabled" => true
+                "disabled" => true,
+                'attr' => [
+                    'class' => 'my-1',
+                    'id' => 'nom_input'
+                ]
             ])
             ->add('prenom', TextType::class, [
-                "disabled" => true
+                "disabled" => true,
+                'attr' => [
+                    'class' => 'my-1',
+                    'id' => 'prenom_input'
+                ]
             ])
             ->add('date', DateType::class, [
                 'years' => range($lastYear, $majorYear),
                 'format' => 'dd MM yyyy',
-                "disabled" => true
+                "disabled" => true,
+                'attr' => [
+                    'class' => 'my-1',
+                    'id' => 'date_input'
+                ]
             ])
             ->add('telephone', TextType::class, [
-                "disabled" => true
+                "disabled" => true,
+                'attr' => [
+                    'class' => 'my-1',
+                    'id' => 'telephone_input'
+                ]
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Modifier mon profil',
                 'attr' => [
-                    "data-id" => "modifier"
+                    "data-id" => "modifier",
+                    "class" => "btn btn-outline-secondary"
                 ]
             ])
         ;

@@ -9,76 +9,81 @@
 {% endblock %}
 
 {% block body %}
-	<section>
-		<h2>
-			Je m'informe
-		</h2>
+	<link rel="stylesheet" href={{ asset('assets/css/contact.css') }}>
+	<script src={{ asset('assets/js/contact.js') }} defer></script>
 
-		<p>
-			Nous contacter par téléphone
-		</p>
-		<span>+ 02 52 56 06 21</span>
+	<div class="containerContact d-md-flex">
+		<section class="col-md-5 m-md-5 text-center text-md-start">
+			<h2>
+				Je m'informe
+			</h2>
 
-		<p>
-			Lundi au Jeudi : 9h00 à 18h30
-		</p>
-		<p>
-			Vendredi : 9h00 à 17h30
-		</p>
-		<p>
-			Samedi : 9h30 à 12h30
-		</p>
+			<p>
+				Nous contacter par téléphone
+			</p>
+			<span>+ 02 52 56 06 21</span>
 
-		<div class="reseauxsocial">
-			<i class="fa-brands fa-facebook"></i>
-			<i class="fa-brands fa-instagram"></i>
-			<i class="fa-brands fa-twitter"></i>
-		</div>
-	</section>
+			<p>
+				Lundi au Jeudi : 9h00 à 18h30
+			</p>
+			<p>
+				Vendredi : 9h00 à 17h30
+			</p>
+			<p>
+				Samedi : 9h30 à 12h30
+			</p>
 
-	<section>
-		<h2>
-			Contactez-nous
-		</h2>
+			<div class="reseauxsocial">
+				<i class="fa-brands fa-facebook"></i>
+				<i class="fa-brands fa-instagram"></i>
+				<i class="fa-brands fa-twitter"></i>
+			</div>
+		</section>
 
-		<form action="/contact" method:'post'>
+		<section class="box containerContactForm col-md-5 my-5 mx-2">
+			<h1>
+				Contactez-nous
+			</h1>
 
-			{% for message in app.flashes('success') %}
-				<div class="alert alert-success">
-					{{message}}
+			<form action="/contact" method:'post'>
+
+				{% for message in app.flashes('success') %}
+					<div class="alert alert-success">
+						{{message}}
+					</div>
+				{% endfor %}
+
+
+				<div class="form-group ">
+					<label for="nom ">Nom :</label>
+					<input class="col-sm-2 col-form-label inputStyle inputClassic" name="nom" id="nom" type="text" value=""/>
+
+					{% if errors.nom is defined %}
+						<div class="text-danger">{{errors.nom}}</div>
+					{% endif %}
 				</div>
-			{% endfor %}
 
+				<div class="form-group">
+					<label for="email">
+						Email :</label>
+					<input class="col-sm-2 col-form-label inputStyle inputClassic" name="email" id="email" type="text" value=""/>
+					{% if errors.email is defined %}
+						<div class="text-danger">{{errors.email}}</div>
+					{% endif %}
+				</div>
 
-			<div class="form-group">
-				<label for="nom">Nom :</label>
-				<input class="col-sm-2 col-form-label" name="nom" id="nom" type="text" value=""/>
+				<div class="form-group">
+					<label for="message">Message :</label>
+					<textarea class="col-sm-2 col-form-label inputStyle inputGrand" id="message" name="message" value="" style="height: 12rem"></textarea>
+					{% if errors.message is defined %}
+						<div class="text-danger">{{errors.message}}</div>
+					{% endif %}
 
-				{% if errors.nom is defined %}
-					<div class="text-danger">{{errors.nom}}</div>
-				{% endif %}
-			</div>
+				</div>
 
-			<div class="form-group">
-				<label for="email">
-					Email :</label>
-				<input class="col-sm-2 col-form-label" name="email" id="email" type="text" value=""/>
-				{% if errors.email is defined %}
-					<div class="text-danger">{{errors.email}}</div>
-				{% endif %}
-			</div>
-
-			<div class="form-group">
-				<label for="message">Message</label>
-				<textarea class="col-sm-2 col-form-label" id="message" name="message" value="" style="height: 12rem"></textarea>
-				{% if errors.message is defined %}
-					<div class="text-danger">{{errors.message}}</div>
-				{% endif %}
-
-			</div>
-
-			<button class="btn btn-secondary" id="submitButton" name='submit' type="submit">
-				Connexion</button>
-		</form>
-	</section>
+				<button class="btnPurple col-12 col-md-6" id="submitButton" name='submit' type="submit">
+					Connexion</button>
+			</form>
+		</section>
+	</div>
 {% endblock %}
