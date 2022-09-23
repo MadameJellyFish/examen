@@ -198,6 +198,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         if (!$this->inscriptions->contains($inscription)) {
             $this->inscriptions->add($inscription);
             $inscription->addUser($this);
+        } else if ($this->inscriptions === 3) {
+            return $this;
         }
 
         return $this;

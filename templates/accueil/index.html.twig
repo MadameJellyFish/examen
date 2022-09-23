@@ -1,23 +1,76 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  Accueil!
+	Accueil!
+{% endblock %}
+
+{% block header %}
+	<header>
+		<!-- header -->
+		<div id="header-wrapper" class="d-none d-md-flex d-lg-flex text-start align-md-middle">
+			<div class="container-fluid text-center">
+				<div class="align-items-center">
+					<div class="text-white text-center">
+						<h1 class="header-title">Un slogan d'accroche pour le centre d'examen</h1>
+						<div id="title">
+							<a href="{{ path('app_accueil') }}">
+								<p class="title-left">Centre</p>
+								<p class="title-right">examen</p>
+							</a>
+						</div>
+						<!-- Navbar -->
+						<nav class="navbar d-flex">
+							<ul class="navbar-left d-flex">
+								<li class="nav-link">
+									<a href="{{ path('app_competence') }}">Toutes les compétences</a>
+								</li>
+								<li class="nav-link ">
+									<a href="{{ path('app_contact') }}">Contact</a>
+								</li>
+							</ul>
+							<ul class="navbar-right d-flex">
+								{% if app.user %}
+									<li class="nav-link">
+										<a href="{{ path('app_profil') }}">Mon profil</a>
+									</li>
+									<li class="nav-link">
+										<a href="{{ path('app_logout') }}">Déconnexion</a>
+									</li>
+								{% else %}
+									<li class="nav-link">
+										<a href="{{ path('app_login') }}">Connexion</a>
+									</li>
+									<li class="nav-link">
+										<a href="{{ path('app_register') }}">Inscription</a>
+									</li>
+								{% endif %}
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
 {% endblock %}
 
 {% block banniere_text %}
-  ACCUEIL - ACCUEIL - ACCUEIL - ACCUEIL - ACCUEIL - ACCUEIL -
+	ACCUEIL - ACCUEIL - ACCUEIL - ACCUEIL - ACCUEIL - ACCUEIL -
 {% endblock %}
 
 {% block body %}
+	{% for examen in examens|sort((a, b) => a.date > b.date) %}
+		<h1>
+			{{ examen.competence.nom }}
+		</h1>
   {% for examen in examens|sort((a, b) => a.date > b.date) %}
     <h1>
       <a href="{{ path('competence.show', { id: examen.competence.id }) }}">{{ examen.competence.nom }}</a>
     </h1>
 
-    <p>
-      {{ examen.competence.description }}
-    </p>
+		<p>
+			{{ examen.competence.description }}
+		</p>
 
-    <small>{{ examen.date|date('d/m/Y') }}</small>
-  {% endfor %}
+		<small>{{ examen.date|date('d/m/Y') }}</small>
+	{% endfor %}
 {% endblock %}

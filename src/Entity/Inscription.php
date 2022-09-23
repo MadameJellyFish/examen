@@ -29,6 +29,11 @@ class Inscription
         return $this->id;
     }
 
+    // public function __toString()
+    // {
+    //     return $this->examen;
+    // }
+
     public function getExamen(): ?Examen
     {
         return $this->examen;
@@ -41,6 +46,19 @@ class Inscription
         return $this;
     }
     
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
      public function addUser(User $user): self
     {
         if (!$this->user->contains($user)) {
@@ -56,4 +74,6 @@ class Inscription
 
         return $this;
     }
+
+   
 }
