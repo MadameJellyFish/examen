@@ -58,10 +58,6 @@
 {% endblock %}
 
 {% block body %}
-	{% for examen in examens|sort((a, b) => a.date > b.date) %}
-		<h1>
-			{{ examen.competence.nom }}
-		</h1>
   {% for examen in examens|sort((a, b) => a.date > b.date) %}
     <h1>
       <a href="{{ path('competence.show', { id: examen.competence.id }) }}">{{ examen.competence.nom }}</a>
