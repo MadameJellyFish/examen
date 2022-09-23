@@ -1,26 +1,38 @@
-
 /* registration form */
 
 
 /* contact form */
 
 
-.containerContact > section > p , span{
+.containerContact {}
+
+.containerContact>section>div>p,
+span {
     font-family: "Gambeta";
 }
 
-.containerContact > section >h2{
+.containerContact>section>div>p{
+    margin-bottom: 0px;
+}
+
+.containerContact>section>div>span {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.containerContact>section>div>h2 {
     color: var(--colorpurple);
     font-family: "Gambeta";
     font-weight: bold;
-    font-size: 36px; 
+    font-size: 36px;
+    margin-bottom: 2rem;
 }
 
-.inputGrand{
+.inputGrand {
     border-radius: 25px;
 }
 
-.containerContact >section> h1{
+.containerContact>section>h1 {
     color: var(--colorpurple);
     font-family: "Gambeta";
     font-weight: bold;
@@ -35,8 +47,68 @@
     font-family: "Gambeta";
 }
 
-.reseauxsocial{
+.reseauxsocial {
     display: flex;
-    gap:20px;
+    gap: 20px;
     color: var(--colorpurple);
+    font-size: 30px;
+    margin-top: 3rem;
 }
+
+.box {
+    margin: auto;
+    padding: 1.5rem;
+    border: 3px solid var(--colorblack);
+    box-shadow: -5px 5px var(--colorblack);
+    border-radius: 20px;
+}
+
+.inputStyle {
+    border: var(--colorpurple) solid 2px;
+    width: 100%;
+    font-family: "Gambeta";
+}
+
+.inputClassic {
+    border-radius: 50px;
+}
+
+
+/* btn purple */
+.btnPurple {
+    border-radius: 20px;
+    border-color: var(--colorpurple);
+    background-color: var(--colorpurple);
+    color: var(--colorwhite);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    border-style: none;
+    padding: 4px;
+    font-family: "Gambeta";
+    font-weight: bold;
+}
+
+.btnPurple:hover {
+    border: var(--colorblack);
+    background-color: var(--colorblack);
+}
+
+@media screen and (max-width: 767px) {
+
+    .containerContact{
+        display: flex;
+        flex-direction: column;
+    }
+
+    section:last-child{
+        flex:1;
+        order: 1;
+    }
+
+    section:first-child{
+        flex:1;
+        order: 2;
+    }
+  }
