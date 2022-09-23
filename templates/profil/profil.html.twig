@@ -17,7 +17,7 @@
     </p>
   {% endfor %}
 
-  <section class="d-flex flex-column flex-lg-row justify-content-center align-items-lg-center gap-4 mx-auto my-5">
+  <section class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-4 mx-auto my-5">
 
     <div class="">
       <svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><mask id="mask__beam" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" rx="72" fill="#FFFFFF"></rect></mask><g mask="url(#mask__beam)"><rect width="36" height="36" fill="#7f5af0"></rect><rect x="0" y="0" width="36" height="36" transform="translate(-5 9) rotate(189 18 18) scale(1)" fill="#405059" rx="36"></rect><g transform="translate(-5 4.5) rotate(9 18 18)"><path d="M13,19 a1,0.75 0 0,0 10,0" fill="#FFFFFF"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect></g></g></svg>
@@ -25,16 +25,18 @@
 
     <div>
       {{ form_start(form) }} 
-        <p>{{ user.nom }} {{ user.prenom }}</p>
+        <p id="profil_name" class="fs-2 fw-bolder text-sm-center text-lg-start">{{ user.nom }} {{ user.prenom }}</p>
       <div class="d-flex gap-3">
-        <div class="d-flex flex-column justify-content-evenly">
-          {{ form_widget(form.nom) }}
-          {{ form_widget(form.prenom) }} 
+        <div id="label_form" class="d-flex flex-column justify-content-evenly">
+          {{ form_label(form.nom) }}
+          {{ form_label(form.prenom) }} 
           {{ form_label(form.email) }}
           {{ form_label(form.date) }}
           {{ form_label(form.telephone) }}
         </div>
         <div class="d-flex flex-column justify-content-evenly">
+          {{ form_widget(form.nom) }}
+          {{ form_widget(form.prenom) }} 
           {{ form_widget(form.email) }} 
           {{ form_widget(form.date) }} 
           {{ form_widget(form.telephone) }} 
