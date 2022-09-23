@@ -46,7 +46,7 @@ class ProfilController extends AbstractController
         $form = $this->createForm(EditUtilisateurType::class, $user, ['attr' => ['class' => 'formModif']]);
         $form->handleRequest($request);
 
-        return $this->renderForm('profil/profil.html.twig', ['form' => $form, "examToCome" => $examToCome, "examPassed" => $examPassed]);
+        return $this->renderForm('profil/profil.html.twig', ['user' => $user,'form' => $form, "examToCome" => $examToCome, "examPassed" => $examPassed]);
     }
 
     #[Route('/profil/edit', name:'app_edit_profil')]

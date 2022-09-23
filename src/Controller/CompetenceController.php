@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
-use App\Form\CompetenceType;
+use App\Entity\Inscription;
 use App\Repository\CompetenceRepository;
+use App\Repository\ExamenRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -28,14 +31,61 @@ class CompetenceController extends AbstractController
         ]);
     }
 
-    #[Route('/competence/{id}', name: 'competence.show', methods: ['GET'])]
-    public function show($id): Response
+    #[Route('/competence/{id}', name: 'competence.show', methods: ['GET', 'POST'])]
+    public function show($id, ExamenRepository $examRepo, Request $request, EntityManagerInterface $entityManager): Response
     {
 
         $competence = $this->repo->find($id);
-        // return $this->render('/competence/show.html.twig', ['competence' => $competence]);
+        $examens = $examRepo->findBy(['competence' => $competence]);
 
-        $form = $this->createForm(CompetenceType::class);
-        return $this->render('/competence/show.html.twig', ['form' => $form->createView(), 'competence' => $competence]);
+        $submit = $request->get('submit');
+
+        $user = $this->getUser();
+        $inscription = new Inscription;
+
+        if (isset($submit)) {
+
+            $user->getId();
+            $inscription->setUser($user);
+
+            $examen_id = $request->get('examen_id');
+            $examen = $examRepo->find($examen_id);
+            $inscription->setExamen($examen);
+            
+            $entityManager->persist($inscription);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_profil');
+        }
+        return $this->render('/competence/show.html.twig', ['competence' => $competence, 'examens' => $examens]);
     }
 }
+
+// 1 correspond à l'id de l'examen
+
+// $inscription->setUser($request->get('user'))->getId();
+// $inscription->setExamen($request->get('examen'))->getId();
+// $inscription->setExamen($examen); 
+
+// $inscription->setUser($this->getUser());
+// $inscription->setExamen($this->getExamen());
+
+
+// $form = $this->createForm(ExamenType::class);
+
+// $form->handleRequest($request);
+
+// $user = $this->getUser();
+// $inscription = new Inscription;
+
+// if ($form->isSubmitted() && $form->isValid()) {
+
+//     $inscription->setUser($user)->getId();
+//     $inscription->setExamen($form['Examen']->getData()); // get data recupere la valeur de l'input
+
+    // $entityManager->persist($inscription);
+    // $entityManager->flush();
+
+//     return $this->redirectToRoute('app_profil');
+// }
+// return $this->render('/competence/show.html.twig', ['form' => $form->createView(), 'competence' => $competence, 'examens' => $examens]);

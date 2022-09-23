@@ -62,7 +62,6 @@ class Examen
     public function setVille(string $ville): self
     {
         $this->ville = $ville;
-
         return $this;
     }
 
@@ -74,7 +73,6 @@ class Examen
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
-
         return $this;
     }
 
@@ -86,16 +84,19 @@ class Examen
     public function setValide(bool $valide): self
     {
         $this->valide = $valide;
-
         return $this;
     }
 
     /**
      * @return Collection<int, Inscription>
      */
+
+    
     public function getInscriptions(): Collection
     {
         return $this->inscriptions;
+
+      
     }
 
     public function addInscription(Inscription $inscription): self

@@ -19,29 +19,29 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('nom', options: [
                 "label" => "Nom : ",
-                "attr" => ["class" => "expe"],
-                'label_attr' => ["class" => "form-label"]
+                "attr" => ["class" => "inputStyle inputClassic form-control-mb4"],
+                'label_attr' => ["class" => ""]
             ])
             ->add('prenom', options: [
                 "label" => "Prenom : ",
-                "attr" => ["class" => "expe"],
-                "label_attr" => ["class" => "form-label"]
+                "attr" => ["class" => "inputStyle inputClassic form-control-mb4"],
+                "label_attr" => ["class" => ""]
             ])
             ->add('date', options: [
                 "label" => "Date de naissance : ",
                 "attr" => ["class" => "form-control-mb4"],
-                "label_attr" => ["class" => "form-label"],
+                "label_attr" => ["class" => ""],
                 "years"=>range(date('Y'), date('Y')-100)
             ])
             ->add('telephone', options: [
                 "label" => "Téléphone : ",
-                "attr" => ["class" => "expe"],
-                "label_attr" => ["class" => "form-label"]
+                "attr" => ["class" => "inputStyle inputClassic"],
+                "label_attr" => ["class" => ""]
             ])
             ->add('email', options: [
                 "label" => "Email : ",
-                "attr" => ["class" => "form-control-mb4"],
-                "label_attr" => ["class" => "form-label"]
+                "attr" => ["class" => "inputStyle inputGrand form-control-mb4"],
+                "label_attr" => ["class" => ""]
             ])
 
             ->add('agreeTerms', CheckboxType::class, [

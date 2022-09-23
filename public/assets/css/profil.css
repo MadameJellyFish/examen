@@ -1,0 +1,29 @@
+input:disabled {
+    color: var(--colorpurple);
+    border: none;
+}
+
+#edit_utilisateur_nom:disabled,
+#edit_utilisateur_prenom:disabled {
+    display: none;
+}
+
+select:disabled {
+    color: var(--colorpurple);
+    border: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+#label_form label:nth-child(1),
+#label_form label:nth-child(2) {
+    display: none;
+}
+
+.active {
+    display: block !important;
+}
+
+label {
+    font-weight: bolder;
+}
