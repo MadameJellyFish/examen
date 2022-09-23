@@ -40,7 +40,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('email', options: [
                 "label" => "Email : ",
-                "attr" => ["class" => "inputStyle inputGrand form-control-mb4"],
+                "attr" => ["class" => "inputStyle inputClassic form-control-mb4"],
                 "label_attr" => ["class" => ""]
             ])
 
