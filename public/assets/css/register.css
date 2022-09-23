@@ -1,0 +1,99 @@
+
+.containerImgInscription {
+    height: 850px;
+}
+
+.imgInscription {
+    width: 100%;
+    object-fit: cover;
+    height: 850px;
+}
+
+.containerRegisterForm>h1 {
+    color: var(--colorpurple);
+    font-family: "Gambeta";
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* box noir avec ombre */
+.box {
+    border-radius: 5px;
+    border: solid 3px var(--colorblack);
+    -webkit-box-shadow: -5px 5px 0px 2px var(--colorblack);
+    box-shadow: -5px 5px 0px 2px var(--colorblack);
+    padding: 50px;
+}
+/* fin box noire avec ombre */
+
+.inputStyle {
+    border: var(--colorpurple) solid 2px;
+    width: 100%;
+    font-family: "Gambeta";
+}
+
+.inputClassic{
+    border-radius: 50px;
+}
+
+#registration_form_plainPassword {
+    border-radius: 50px;
+    border: var(--colorpurple) solid 2px;
+    width: 100%;
+}
+
+.containerRegisterForm>form>div {
+    margin-top: 10px;
+}
+
+.containerRegisterForm>form>div>label {
+    font-family: "Gambeta";
+}
+
+#registration_form_date {
+    display: flex;
+    gap:10px;
+    font-family: "Gambeta";
+}
+
+#registration_form_date>select {
+    background-color: var(--colorwhite);
+    border-color: var(--colorpurple);
+    border-radius: 20px;
+    padding: 4px;
+    border-style: solid;
+}
+
+.containerRegisterForm>form>div:nth-child(7) {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#registration_form_agreeTerms {
+    margin-left: 10px;
+}
+
+/* btn purple */
+.btnPurple {
+    border-radius: 20px;
+    border-color: var(--colorpurple);
+    background-color: var(--colorpurple);
+    color: var(--colorwhite);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    border-style: none;
+    padding: 4px;
+    font-family: "Gambeta";
+    font-weight: bold;
+}
+
+.btnPurple:hover {
+    border: var(--colorblack);
+    background-color: var(--colorblack);
+}
+/* fin btn purple */
+
+/* fin registration form */
+

@@ -1,0 +1,42 @@
+
+/* registration form */
+
+
+/* contact form */
+
+
+.containerContact > section > p , span{
+    font-family: "Gambeta";
+}
+
+.containerContact > section >h2{
+    color: var(--colorpurple);
+    font-family: "Gambeta";
+    font-weight: bold;
+    font-size: 36px; 
+}
+
+.inputGrand{
+    border-radius: 25px;
+}
+
+.containerContact >section> h1{
+    color: var(--colorpurple);
+    font-family: "Gambeta";
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.containerContactForm>form>div {
+    margin-top: 10px;
+}
+
+.containerContactForm>form>div>label {
+    font-family: "Gambeta";
+}
+
+.reseauxsocial{
+    display: flex;
+    gap:20px;
+    color: var(--colorpurple);
+}
