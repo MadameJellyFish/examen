@@ -27,7 +27,7 @@
 		<form action="/competence/{{competence.id}}" method="POST">
 			{# je reucpere l'id de examen avant de m'inscrire je dosi cherhcer que l'identifiant est dans la base de donnee #}
 			<libelle>Inscription à un examen</libelle>
-			<select name="examen">
+			<select name="examen_id">
 				{% for examen in examens %}
 					<option value="{{examen.id}}">{{examen.ville}}{{examen.date|date('d/m/Y H:i')}}</option>
 				{% endfor %}

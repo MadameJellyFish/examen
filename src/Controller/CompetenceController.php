@@ -40,27 +40,36 @@ class CompetenceController extends AbstractController
 
         $submit = $request->get('submit');
 
-        // $user = $this->getUser();
+        $user = $this->getUser();
         $inscription = new Inscription;
 
         if (isset($submit)) {
 
-            // $inscription->setUser($user)->getId();
-            // $inscription->setExamen($examen); 
+            $user->getId();
+            $inscription->setUser($user);
 
-            $inscription->setUser($request->get('user'));
-            $inscription->setExamen($request->get('examen'));
+            $examen_id = $request->get('examen_id');
+            $examen = $examRepo->find($examen_id);
+            $inscription->setExamen($examen);
             
-
             $entityManager->persist($inscription);
             $entityManager->flush();
-            // dd($request->get('examen'));
 
             return $this->redirectToRoute('app_profil');
         }
         return $this->render('/competence/show.html.twig', ['competence' => $competence, 'examens' => $examens]);
     }
 }
+
+// 1 correspond à l'id de l'examen
+
+// $inscription->setUser($request->get('user'))->getId();
+// $inscription->setExamen($request->get('examen'))->getId();
+// $inscription->setExamen($examen); 
+
+// $inscription->setUser($this->getUser());
+// $inscription->setExamen($this->getExamen());
+
 
 // $form = $this->createForm(ExamenType::class);
 
