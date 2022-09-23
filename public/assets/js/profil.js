@@ -12,7 +12,7 @@ function modifForm(e) {
 
     if (dataId == "modifier") {
         btnModif.setAttribute('data-id', "valider");
-        btnModif.textContent = "Valider";
+        btnModif.textContent = "Valider mon profil";
 
         inputForm.forEach(element => {
             element.removeAttribute('disabled');
@@ -30,9 +30,9 @@ function modifForm(e) {
             method: "POST",
             headers: { 'content-type': 'Application/json' },
             body: JSON.stringify({
-                'email': inputForm[0].value,
-                'nom': inputForm[1].value,
-                'prenom': inputForm[2].value,
+                'email': inputForm[2].value,
+                'nom': inputForm[0].value,
+                'prenom': inputForm[1].value,
                 'date_day': inputForm[3].value,
                 'date_month': inputForm[4].value,
                 'date_year': inputForm[5].value,

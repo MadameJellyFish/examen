@@ -1,0 +1,15 @@
+input:disabled {
+    color: var(--colorpurple);
+    border: none;
+}
+
+select:disabled {
+    color: var(--colorpurple);
+    border: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+label {
+    font-weight: bolder;
+}
