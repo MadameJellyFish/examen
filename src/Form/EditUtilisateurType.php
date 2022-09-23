@@ -43,7 +43,7 @@ class EditUtilisateurType extends AbstractType
             ])
             ->add('date', DateType::class, [
                 'years' => range($lastYear, $majorYear),
-                'format' => 'dd MM yyyy',
+                'format' => 'dd/MM/yyyy',
                 "disabled" => true,
                 'attr' => [
                     'class' => 'my-1',

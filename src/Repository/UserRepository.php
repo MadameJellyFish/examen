@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\User;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
@@ -54,6 +55,30 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $user->setPassword($newHashedPassword);
 
         $this->add($user, true);
+    }
+
+    /**
+     * Permet de verifier si nos examens sont passés de date
+     */
+    public function examenDate(InscriptionRepository $repoInscript, User $entity) {
+        $user = $entity->getId();
+        $inscriptions = $repoInscript->findBy(['user' => $user]);
+        $currentDate = new DateTime();
+
+        $examToCome = [];
+        $examPassed = [];
+        foreach ($inscriptions as $inscription) {
+            $exam = $inscription->getExamen();
+            $examDate = $exam->getDate();
+
+            if ($examDate > $currentDate) {
+                array_push($examToCome, $exam);
+            } else {
+                array_push($examPassed, $exam);
+            }
+        }
+
+        return $examToCome;
     }
 
 //    /**

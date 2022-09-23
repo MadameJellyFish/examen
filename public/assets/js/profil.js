@@ -9,6 +9,10 @@ btnModif.addEventListener('click', modifForm)
 function modifForm(e) {
     e.preventDefault();
     let dataId = btnModif.getAttribute('data-id');
+    let labelNom = document.querySelector('#label_form label:nth-child(1)');
+    let labelPrenom = document.querySelector('#label_form label:nth-child(2)');
+    labelNom.classList.toggle('active');
+    labelPrenom.classList.toggle('active');
 
     if (dataId == "modifier") {
         btnModif.setAttribute('data-id', "valider");
@@ -17,7 +21,6 @@ function modifForm(e) {
         inputForm.forEach(element => {
             element.removeAttribute('disabled');
         });
-
     } else if (dataId == "valider") {
         btnModif.setAttribute('data-id', "modifier");
         btnModif.textContent = "Modifier mon profil";
@@ -42,7 +45,9 @@ function modifForm(e) {
             .then(function (res) {
                 return res.json();
             }).then(function (data) {
-                console.log(data)
+                let profilName = document.querySelector('#profil_name');
+                profilName.textContent = data.nom + " " + data.prenom;
+                // console.log(data)
             }).catch(function (error) {
                 console.log(error);
             })
