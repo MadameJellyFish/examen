@@ -1,12 +1,18 @@
+/* registration form */
+
+
+.containerInscription{
+    gap:50px;
+}
 
 .containerImgInscription {
-    height: 670px;
+    height: 710px;
 }
 
 .imgInscription {
     width: 100%;
     object-fit: cover;
-    height: 670px;
+    height: 710px;
 }
 
 .containerRegisterForm>h1 {
@@ -14,6 +20,7 @@
     font-family: "Gambeta";
     font-weight: bold;
     font-size: 24px;
+    padding-left: 10px;
 }
 
 /* box noir avec ombre */
@@ -32,16 +39,23 @@
     border: var(--colorpurple) solid 2px;
     width: 100%;
     font-family: "Gambeta";
+    padding: 4px 9px;
 }
 
 .inputClassic{
     border-radius: 50px;
 }
 
+input:focus{
+    outline: none;
+    box-shadow: 0 0 10px var(--bgmauve);
+}
+
 #registration_form_plainPassword {
     border-radius: 50px;
     border: var(--colorpurple) solid 2px;
     width: 100%;
+    padding: 4px 9px;
 }
 
 .containerRegisterForm>form>div {
@@ -49,20 +63,26 @@
 }
 
 .containerRegisterForm>form>div>label {
-    font-family: "Gambeta";
+    font-family: Gambeta;
+    padding-left: 10px;
 }
 
 #registration_form_date {
     display: flex;
     gap:10px;
-    font-family: "Gambeta";
+    font-family: Gambeta;
+}
+
+#registration_form_date>select:focus{
+    outline: none;
+    box-shadow: 0 0 10px var(--bgmauve);
 }
 
 #registration_form_date>select {
     background-color: var(--colorwhite);
     border-color: var(--colorpurple);
     border-radius: 20px;
-    padding: 4px;
+    padding: 6px 4px 6px 5px;
     border-style: solid;
 }
 
@@ -73,6 +93,10 @@
 
 #registration_form_agreeTerms {
     margin-left: 10px;
+}
+
+input[type=checkbox]{
+    accent-color: var(--colorpurple);
 }
 
 /* btn purple */
@@ -87,7 +111,7 @@
     margin-top: 30px;
     border-style: none;
     padding: 4px;
-    font-family: "Gambeta";
+    font-family: Gambeta;
     font-weight: bold;
 }
 
