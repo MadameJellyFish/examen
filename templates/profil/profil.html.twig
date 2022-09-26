@@ -42,10 +42,10 @@
           {{ form_widget(form.telephone) }} 
         </div>
       </div>
-      <div class="d-flex">
+      <div class="d-flex justify-content-center align-items-center flex-column flex-lg-row">
         {{ form_row(form.submit) }} 
-        <a href="{{ path('app_edit_password') }}" class="btn btn-outline-secondary ms-3">Modifier mon mot de passe</a>
-        <a href="{{ path('app_delete') }}" class="btn btn-outline-danger ms-3">Supprimer mon profil</a>
+        <a href="{{ path('app_edit_password') }}" class="btn btn-outline-secondary mx-3 my-2 w-100">Changer de mot de passe</a>
+        <a href="{{ path('app_delete') }}" class="btn btn-outline-danger mx-3 my-2 w-100">Supprimer mon profil</a>
       </div>
       {{ form_end(form) }} 
     </div>
@@ -53,10 +53,31 @@
   
 
 
-  <div class="container">
+  <div class="container-fluid w-80 m-auto to_come my-3 p-4">
     <h2>EXAMEN A VENIR</h2>
     {% for examen in examToCome %}
-      <div class="border border-dark rounded-3 my-3 p-4">
+      <article class="d-flex flex-column flex-lg-row justify-content-between align-items-start gap-3 my-5">
+        <div class="container box p-3 text-light date_comp">
+          <h3 class="align-self-end">{{ examen.date|date('d/m') }} <br /></h3>
+          <p class="m-0">
+          <i class="fa-solid fa-clock"></i> {{ examen.date|date('H:i') }} <br />
+          <i class="fa-solid fa-city"></i> {{ examen.ville }}
+          </p>
+        </div>
+        <div class="container p-4 bg-light box">
+        <h3 class="comp_name">
+          {{ examen.competence.nom }} <br />
+        </h3>
+          {{ examen.competence.description }} <br />
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+  <div class="container-fluid">
+  <h2>EXAMEN PASSEES</h2>
+    {% for examen in examPassed %}
+      <div class="border border-dark rounded-3 my-3 p-4 box">
         {{ examen.competence.nom }} <br />
         {{ examen.competence.description }} <br />
         {{ examen.date|date('d/m/Y') }} <br />
@@ -65,17 +86,7 @@
     {% endfor %}
   </div>
 
-  <div class="container">
-  <h2>EXAMEN PASSEES</h2>
-    {% for examen in examPassed %}
-      <div class="border border-dark rounded-3 my-3 p-4">
-        {{ examen.competence.nom }} <br />
-        {{ examen.competence.description }} <br />
-        {{ examen.date|date('d/m/Y') }} <br />
-        {{ examen.ville }}
-      </div>
-    {% endfor %}
-  </div>
+<a href="{{ path('app_historique', {id : user.id}) }}" class="btn btn-outline-dark text-align-center">Voir tout mon historique</a>
 
   <script src={{asset('assets/js/profil.js')}}></script>
 {% endblock %}
