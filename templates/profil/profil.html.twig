@@ -86,7 +86,7 @@
     {% endfor %}
   </div>
 
-<a href="#" class="btn btn-outline-dark">Voir tout mon historique</a>
+<a href="{{ path('app_historique', {id : user.id}) }}" class="btn btn-outline-dark text-align-center">Voir tout mon historique</a>
 
   <script src={{asset('assets/js/profil.js')}}></script>
 {% endblock %}

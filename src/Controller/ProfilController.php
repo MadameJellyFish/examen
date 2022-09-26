@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Form\EditUtilisateurType;
 use App\Repository\InscriptionRepository;
-use App\Repository\UserRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -106,5 +106,28 @@ class ProfilController extends AbstractController
         $em->flush();
 
         return $this->redirectToRoute('app_logout');
+    }
+
+    #[Route('/profil/historique/{id}', name:'app_historique')]
+    public function historique(InscriptionRepository $repoInscript, PaginatorInterface $paginator, Request $request): Response
+    {
+        $user = $this->getUser();
+        $user->getId();
+        $inscriptions = $repoInscript->findBy(['user' => $user]);
+        $examens = [];
+
+        foreach ($inscriptions as $inscription) {
+            $examen = $inscription->getExamen();
+
+            array_push($examens, $examen);
+        }
+
+        usort($examens, function ($a, $b) {
+            return strtotime($b->getDate()->format('d-m-Y')) - strtotime($a->getDate()->format('d-m-Y'));
+        });
+
+        $examPage = $paginator->paginate($examens, $request->query->getInt('page', 1), 1);
+
+        return $this->render('profil/historique.html.twig', ["examens" => $examPage]);
     }
 }

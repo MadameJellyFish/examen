@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Mon Historique
+{% endblock %}
+
+{% block banniere_text %}
+  HISTORIQUE
+{% endblock %}
+
+{% block body %}
+  <h2>
+    Mon Historique
+  </h2>
+
+  {% for examen in examens %}
+    <div class="my-4">
+      {{ examen.competence.nom }}
+      {{ examen.competence.description }}
+      {{ examen.date|date('d/m/Y') }}
+    </div>
+  {% endfor %}
+  {{ knp_pagination_render(examens) }}
+{% endblock %}

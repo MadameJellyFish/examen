@@ -36,7 +36,7 @@ class CompetenceController extends AbstractController
     }
 
     #[Route('/competence/{id}', name: 'competence.show', methods: ['GET', 'POST'])]
-    public function show($id, ExamenRepository $examRepo, CompetenceRepository $compRepo, UserRepository $useRepo, InscriptionRepository $inscriRepo,Request $request, EntityManagerInterface $entityManager): Response
+    public function show($id, ExamenRepository $examRepo, CompetenceRepository $compRepo, UserRepository $useRepo, InscriptionRepository $repoInscript, Request $request, EntityManagerInterface $entityManager): Response
     {
 
         $competence = $this->repo->find($id);
@@ -47,7 +47,7 @@ class CompetenceController extends AbstractController
         $user = $this->getUser();
         $inscription = new Inscription;
         
-        $userExamToCome = $useRepo->examenDate($inscriRepo, $user); // je recupere tous les examens pas encore passe // cote user
+        $userExamToCome = $useRepo->examenDate($repoInscript, $user); // je recupere tous les examens pas encore passe // cote user
 
         $examDispo = $compRepo->examenDate($examRepo, $competence); // renvoie un tableau des examns pas encore passe vis a vis de la date d'aujourd'hui
 

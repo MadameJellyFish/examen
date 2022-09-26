@@ -1,8 +1,9 @@
-main{
+/* style page index de competence */
+
+.main-container{
     width: 80%;
     margin: auto;
     margin-top: 3rem;
-    
 }
 
 .box-comp {
@@ -27,7 +28,7 @@ h1{
     font-family: Gambetta;
     font-weight: 700;
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
 }
 
 h2{
@@ -43,3 +44,7 @@ p{
     font-weight: 500;
     font-family: Cabinet Grotesk;
 }
+
+
+/* style page show de competence */
+
