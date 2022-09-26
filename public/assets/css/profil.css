@@ -27,3 +27,28 @@ select:disabled {
 label {
     font-weight: bolder;
 }
+
+.box {
+    border: 3px solid var(--colorblack);
+    box-shadow: -5px 5px var(--colorblack);
+    border-radius: 20px;
+}
+
+.to_come {
+    background-color: var(--bgmauve);
+}
+
+.date_comp {
+    background-color: var(--colorpurple);
+    aspect-ratio: 1;
+    min-width: 100px;
+    max-width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.comp_name {
+    color: var(--colorpurple);
+}
