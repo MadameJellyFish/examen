@@ -4,6 +4,7 @@ body{
 
 .anim__banner{
     background-color: var(--colorwhite);
+    /* ligne a supprimer une fois que l'anim sera placé dans base.css */
 }
 
 .layout-accueil{
