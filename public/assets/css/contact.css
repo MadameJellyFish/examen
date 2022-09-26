@@ -24,7 +24,13 @@ span {
 }
 
 .inputGrand {
-    border-radius: 25px;
+    border-radius: 20px;
+    padding: 4px 9px;
+}
+
+.inputGrand:focus{
+    outline: none;
+    box-shadow: 0 0 10px var(--bgmauve);
 }
 
 .containerContactForm>div>h1{
@@ -32,6 +38,7 @@ span {
     font-family: "Gambeta";
     font-weight: bold;
     font-size: 24px;
+    padding-left: 10px;
 }
 
 .containerContactForm>div>form>div {
@@ -40,6 +47,7 @@ span {
 
 .containerContactForm>div>form>div>label {
     font-family: "Gambeta";
+    padding-left: 10px;
 }
 
 .reseauxsocial {
@@ -62,10 +70,16 @@ span {
     border: var(--colorpurple) solid 2px;
     width: 100%;
     font-family: "Gambeta";
+    padding-left: 9px;
 }
 
 .inputClassic {
     border-radius: 50px;
+}
+
+input:focus{
+    outline: none;
+    box-shadow: 0 0 10px var(--bgmauve);
 }
 
 
