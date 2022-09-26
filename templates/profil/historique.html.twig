@@ -1,24 +1,48 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  Mon Historique
+	Mon Historique
 {% endblock %}
 
 {% block banniere_text %}
-  HISTORIQUE
+	<p class="first__banner__text">Historique &nbsp; - &nbsp; Historique &nbsp; - &nbsp; Historique &nbsp; - &nbsp; Historique &nbsp; - &nbsp; Historique &nbsp; - &nbsp; Historique &nbsp; - &nbsp; Historique &nbsp; - &nbsp; Historique &nbsp; - </p>
+	<p class="second__banner__text">Historique &nbsp; - &nbsp; Historique &nbsp; - &nbsp; Historique &nbsp; - &nbsp; Historique &nbsp; - &nbsp; Historique &nbsp; - &nbsp; Historique &nbsp; - &nbsp; Historique &nbsp; - &nbsp; Historique &nbsp; - </p>
 {% endblock %}
 
 {% block body %}
-  <h2>
-    Mon Historique
-  </h2>
+	<link rel="stylesheet" href={{ asset('assets/css/profil.css') }}>
 
-  {% for examen in examens %}
-    <div class="my-4">
-      {{ examen.competence.nom }}
-      {{ examen.competence.description }}
-      {{ examen.date|date('d/m/Y') }}
-    </div>
-  {% endfor %}
-  {{ knp_pagination_render(examens) }}
+	<section class="container-fluid">
+		<h2 class="w-75 m-auto">
+			Historique des inscriptions
+		</h2>
+
+		{% for examen in examens %}
+			<article class="w-75 m-auto d-flex flex-column flex-lg-row justify-content-between align-items-start gap-3 my-5">
+				<div class="container p-4 bg-light box">
+					<a class="fs-3 text-decoration-none comp_name" href="{{ path( 'competence.show', { id: examen.competence.id } ) }}">
+						{{ examen.competence.nom }}
+						<br/>
+					</a>
+					{# {{ examen.competence.description }} #}
+                    {{ examen.competence.description|length > 500 ? examen.competence.description|slice(0, 500) ~ '...' : examen.competence.description }}
+					<br/>
+				</div>
+				<div class="container box p-3 text-dark bg-light date_comp">
+					<h3 class="align-self-end">
+						{{ examen.date|date('d/m') }}
+						<br/>
+					</h3>
+					<p class="m-0">
+						<i class="fa-solid fa-clock"></i>
+						{{ examen.date|date('H:i') }}
+						<br/>
+						<i class="fa-solid fa-city"></i>
+						{{ examen.ville }}
+					</p>
+				</div>
+			</article>
+		{% endfor %}
+		{{ knp_pagination_render(examens) }}
+	</section>
 {% endblock %}

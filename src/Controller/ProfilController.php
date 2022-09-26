@@ -108,7 +108,7 @@ class ProfilController extends AbstractController
         return $this->redirectToRoute('app_logout');
     }
 
-    #[Route('/profil/historique/{id}', name:'app_historique')]
+    #[Route('/profil/historique', name:'app_historique')]
     public function historique(InscriptionRepository $repoInscript, PaginatorInterface $paginator, Request $request): Response
     {
         $user = $this->getUser();
@@ -126,7 +126,7 @@ class ProfilController extends AbstractController
             return strtotime($b->getDate()->format('d-m-Y')) - strtotime($a->getDate()->format('d-m-Y'));
         });
 
-        $examPage = $paginator->paginate($examens, $request->query->getInt('page', 1), 1);
+        $examPage = $paginator->paginate($examens, $request->query->getInt('page', 1), 8);
 
         return $this->render('profil/historique.html.twig', ["examens" => $examPage]);
     }
