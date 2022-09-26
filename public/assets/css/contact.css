@@ -27,7 +27,7 @@ span {
     border-radius: 25px;
 }
 
-.containerContact>section>h1 {
+.containerContactForm>div>h1{
     color: var(--colorpurple);
     font-family: "Gambeta";
     font-weight: bold;
@@ -38,7 +38,7 @@ span {
     margin-top: 10px;
 }
 
-.containerContactForm>form>div>label {
+.containerContactForm>div>form>div>label {
     font-family: "Gambeta";
 }
 
