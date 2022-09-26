@@ -42,8 +42,6 @@ class CompetenceController extends AbstractController
         $competence = $this->repo->find($id);
         $examens = $examRepo->findBy(['competence' => $competence]);
 
-        
-        
         $submit = $request->get('submit');
         
         $user = $this->getUser();
@@ -51,7 +49,7 @@ class CompetenceController extends AbstractController
         
         $userExamToCome = $useRepo->examenDate($inscriRepo, $user); // je recupere tous les examens pas encore passe // cote user
 
-        $examDispo = $compRepo->examenDate($examRepo, $competence); // renvoie un tableua des examns pas encore passe vis a vis de la date d'aujourd'hui
+        $examDispo = $compRepo->examenDate($examRepo, $competence); // renvoie un tableau des examns pas encore passe vis a vis de la date d'aujourd'hui
 
         if (isset($submit)) {
             
