@@ -77,7 +77,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
                 array_push($examPassed, $exam);
             }
         }
-
+        
         return $examToCome;
     }
 

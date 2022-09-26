@@ -16,7 +16,6 @@ main{
 .layout-accueil{
 display: flex;
 /* overflow-x: scroll; */
-
 }
 
 .question-box{
@@ -30,7 +29,7 @@ h1{
     font-weight: 700;
     width: 80%;
     padding-top: 2rem;
- 
+    margin: 0 !important;
 }
 
 .h2-accueil{

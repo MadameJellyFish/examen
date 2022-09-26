@@ -1,6 +1,6 @@
 /* style page index de competence */
 
-body{
+main{
     background-color: var(--colorwhite) !important;
 }
 
@@ -8,10 +8,10 @@ body{
     width: 80%;
     margin: auto;
     margin-top: 3rem;
-}
 
+}
 .box-comp {
-    cursor: pointer;
+    /* cursor: pointer; */
     text-decoration: none;
 }
 
@@ -50,7 +50,7 @@ p {
 }
 
 
-/* style page show de competence */
+/* ///////////////////////// style page show de competence  ///////////////////////////*/
 
 main {
     margin-top: 0;
@@ -77,6 +77,7 @@ main {
 .details-date {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
 }
 
 .date {
@@ -107,7 +108,7 @@ main {
     margin: 0;
 }
 
-/* formulaire inscription */
+/*////////////////////////// formulaire inscription /////////////////////////*/
 
 .formulaire-comp {
     background-color: var(--bgmauve);
@@ -117,6 +118,7 @@ main {
 .form-examen {
     background-color: var(--colorwhite);
     margin-right: 0;
+    margin-top: 3rem;
 }
 
 h3 {

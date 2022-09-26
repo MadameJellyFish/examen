@@ -22,7 +22,7 @@
 						<h2>{{competence.nom}}</h2>
 						<i class="fa-sharp fa-solid fa-display picto-comp"></i>
 					</div>
-					<p class="mt-4">{{competence.description}}</p>
+					<p class="mt-4">{{competence.description|u.truncate(600, '...', false)}}</p>
 				</a>
 			</div>
 		{% endfor %}
