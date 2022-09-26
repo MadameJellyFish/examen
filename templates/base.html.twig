@@ -22,8 +22,9 @@
 	<body>
 	{% block header %}{% endblock %}
 	
-		<p class="anim__banner"> {% block banniere_text %}{% endblock %}
-			</p>
+		<div class="anim__banner"> 
+			{% block banniere_text %}{% endblock %}
+		</div>
 			<main>
 				{% for message in app.flashes('success') %}
 					<div class="alert alert-success">

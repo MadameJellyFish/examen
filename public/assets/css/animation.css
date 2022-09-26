@@ -4,12 +4,46 @@
     height: 5rem;
     font-size: 2rem;
     text-transform: uppercase;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    position: relative;
     flex-wrap: nowrap;
     border-top: 3px solid black;
     border-bottom: 3px solid black;
     margin: 0;
     background-color: white;
+}
+
+.anim__banner p {
+    position: absolute;
+    width: 103%;
+    top: 12%;
+    left: 0;
+}
+
+.anim__banner p:first-child {
+    animation: slideOut 15s infinite linear;
+}
+
+.anim__banner p:last-child {
+    transform: translateX(100%);
+    animation: slideIn 15s infinite linear;
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(102%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
 }
