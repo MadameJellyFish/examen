@@ -39,7 +39,7 @@ class ContactController extends AbstractController
         }
         
         if (empty($errors)) {
-            $this->addFlash('success', 'Message bien envoyé');
+            $this->addFlash('success', 'Message bien envoyé !');
             return $this->redirect('/contact');
         } else {
             return $this->renderForm('/contact/index.html.twig', [

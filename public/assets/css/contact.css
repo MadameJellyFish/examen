@@ -1,10 +1,5 @@
-/* registration form */
-
-
 /* contact form */
 
-
-.containerContact {}
 
 .containerContact>section>div>p,
 span {
@@ -39,7 +34,7 @@ span {
     font-size: 24px;
 }
 
-.containerContactForm>form>div {
+.containerContactForm>div>form>div {
     margin-top: 10px;
 }
 
