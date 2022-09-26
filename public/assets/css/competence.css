@@ -1,0 +1,45 @@
+main{
+    width: 80%;
+    margin: auto;
+    margin-top: 3rem;
+    
+}
+
+.box-comp {
+    cursor: pointer;
+    text-decoration:none; 
+}
+
+.title-comp{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.picto-comp{
+    font-size: 1.5rem !important;
+    font-weight: 600;
+    color: var(--colorpurple);
+}
+
+h1{
+    color:var(--colorblack);
+    font-family: Gambetta;
+    font-weight: 700;
+    width: 80%;
+    margin: auto;
+}
+
+h2{
+    color:var(--colorpurple);
+    font-family: Gambetta;
+    font-weight: 700;
+}
+
+p{
+    color: var(--colorblack);
+    text-align: justify;
+    font-size: 1.15rem;
+    font-weight: 500;
+    font-family: Cabinet Grotesk;
+}
