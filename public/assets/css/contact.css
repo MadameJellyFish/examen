@@ -58,6 +58,15 @@ span {
     margin-top: 3rem;
 }
 
+a{
+    text-decoration: none;
+    color: var(--colorpurple);
+}
+
+a:hover{
+    color:var(--colorblack);
+}
+
 .box {
     margin: auto;
     padding: 1.5rem;
