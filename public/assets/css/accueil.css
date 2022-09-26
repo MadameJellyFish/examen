@@ -1,0 +1,63 @@
+body{
+    background-color: var(--bgmauve);
+}
+
+.anim__banner{
+    background-color: var(--colorwhite);
+    /* ligne a supprimer une fois que l'anim sera placé dans base.css */
+}
+
+.layout-accueil{
+display: flex;
+/* overflow-x: scroll; */
+
+}
+
+/* .accueil-box{
+    width: 80%;
+    margin: auto;
+    padding: 1.5rem;
+    border: 3px solid var(--colorblack);
+    box-shadow: -5px 5px var(--colorblack);
+    border-radius: 20px;
+} */
+
+.question-box{
+margin-right: 2rem !important;
+background-color: var(--colorwhite);
+
+}
+
+h1{
+    margin: none;
+}
+
+.h2-accueil{
+    color:var(--colorpurple);
+    font-family: Gambetta;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.contenu-accueil{
+font-size: 1.05rem;
+}
+
+.picto-accueil{
+    font-size: 1.25rem !important;
+    font-weight: 600;
+    color: var(--colorpurple);
+}
+
+.btnMore{
+    border-radius: 20px;
+    border: 2.9px solid;
+    border-color: var(--colorpurple);
+    font-family: Gambeta;
+    background-color: var(--colorwhite);
+    display: flex;
+    margin: 0 auto;
+    color: var(--colorpurple);
+    font-weight: 700;
+    padding: 5px 10px 5px 10px;
+}
