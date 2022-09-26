@@ -8,7 +8,11 @@
 
 
 {% block body %}
-<form method="post">
+<link rel="stylesheet" href={{asset('assets/css/login.css')}}>
+
+<div class="containerLogin d-md-flex">
+<section class="col-md-5 mt-md-5 ms-md-5 ps-md-5 justify-content-center">
+<form method="post" class="box containerRegisterForm col-md-10 m-md-5 my-5 mx-5">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
@@ -19,11 +23,11 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Connectez-vous</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Mot de passe</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    <h1 class="h3 mb-3 font-weight-normal  ">Connectez-vous</h1>
+    <label for="inputEmail">Email : </label>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="inputStyle inputClassic" autocomplete="email" required autofocus>
+    <label for="inputPassword">Mot de passe : </label>
+    <input type="password" name="password" id="inputPassword" class="inputStyle inputClassic" autocomplete="current-password" required>
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
@@ -40,8 +44,12 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-primary" type="submit">
+    <button class="btnPurple col-12 col-md-4" type="submit">
         Valider
     </button>
 </form>
+</section>
+<section class="containerImgLogin col-md-6 d-none d-md-block">
+<img src={{asset('assets/img/login.jpg')}} class="imgLogin" alt="" srcset=""></section>
+</div>
 {% endblock %}

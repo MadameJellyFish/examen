@@ -1,0 +1,89 @@
+/* login */
+
+
+.containerLogin{
+    gap:50px;
+    background-color: var(--bgmauve);
+}
+
+.containerImgLogin{
+    height: 500px;
+    margin-left:auto;
+}
+
+.imgLogin{
+    width: 100%;
+    object-fit: cover;
+    height: 500px;
+}
+
+/* box noir avec ombre */
+.box {
+    margin: auto;
+    padding: 1.5rem;
+    border: 3px solid var(--colorblack);
+    box-shadow: -5px 5px var(--colorblack);
+    border-radius: 20px;
+    background-color: var(--colorwhite);
+}
+/* fin box noire avec ombre */
+
+h1{
+    color: var(--colorpurple);
+    font-family: "Gambeta";
+    font-weight: bold;
+    font-size: 24px;
+    padding-left: 10px;
+}
+
+label{
+    font-family: Gambeta;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.inputStyle {
+    border: var(--colorpurple) solid 2px;
+    width: 100%;
+    font-family: "Gambeta";
+    padding: 4px 9px;
+    margin-bottom: 10px;
+}
+
+.inputClassic{
+    border-radius: 50px;
+}
+
+input:focus{
+    outline: none;
+    box-shadow: 0 0 10px var(--bgmauve);
+}
+
+.btnPurple {
+    border-radius: 20px;
+    border-color: var(--colorpurple);
+    background-color: var(--colorpurple);
+    color: var(--colorwhite);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    border-style: none;
+    padding: 4px;
+    font-family: "Gambeta";
+    font-weight: bold;
+    padding: 6px;
+}
+
+.btnPurple:hover {
+    border: var(--colorblack);
+    background-color: var(--colorblack);
+}
+
+
+/* Responsive */
+@media screen and (max-width: 767px){
+    .containerLogin{
+        background-color: transparent;
+    }
+}

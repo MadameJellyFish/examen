@@ -65,6 +65,7 @@ input:focus{
 .containerRegisterForm>form>div>label {
     font-family: Gambeta;
     padding-left: 10px;
+    font-weight: bold;
 }
 
 #registration_form_date {
@@ -113,6 +114,7 @@ input[type=checkbox]{
     padding: 4px;
     font-family: Gambeta;
     font-weight: bold;
+    padding: 6px;
 }
 
 .btnPurple:hover {
