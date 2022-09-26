@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Competence;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -38,6 +39,31 @@ class CompetenceRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+
+     /**
+     * Permet de verifier si nos examens sont passés de date
+     */
+    public function examenDate(ExamenRepository $repoExam, Competence $entity) {
+        $comp = $entity;
+        $examens = $repoExam->findBy(['competence' => $comp]);
+        $currentDate = new DateTime();
+
+        $examToCome = [];
+        $examPassed = [];
+        foreach ($examens as $examen) {
+            $exam = $examen->getCompetence();
+            $examDate = $examen->getDate();
+
+            if ($examDate > $currentDate) {
+                array_push($examToCome, $exam);
+            } else {
+                array_push($examPassed, $exam);
+            }
+        }
+
+        return $examToCome;
+    }
+
 
 //    /**
 //     * @return Competence[] Returns an array of Competence objects

@@ -58,14 +58,16 @@
 {% endblock %}
 
 {% block body %}
+
+
+{# // ajouter bouclz for message flash erreur celine #}
   {% for examen in examens|sort((a, b) => a.date > b.date) %}
     <h1>
       <a href="{{ path('competence.show', { id: examen.competence.id }) }}">{{ examen.competence.nom }}</a>
     </h1>
-
-		<p>
-			{{ examen.competence.description }}
-		</p>
+    <p>
+      {{ examen.competence.description }}
+    </p>
 
 		<small>{{ examen.date|date('d/m/Y') }}</small>
 	{% endfor %}

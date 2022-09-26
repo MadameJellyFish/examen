@@ -12,9 +12,9 @@
   <link rel="stylesheet" href={{ asset('assets/css/profil.css') }}>
 
   {% for message in app.flashes('message') %}
-    <p>
+    <div class='alert-success' role="alert">
       {{ message }}
-    </p>
+    </div>
   {% endfor %}
 
   <section class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-4 mx-auto my-5">
@@ -53,25 +53,27 @@
   
 
 
-  <div>
-  <h2>EXAMEN A VENIR</h2>
+  <div class="container">
+    <h2>EXAMEN A VENIR</h2>
     {% for examen in examToCome %}
-      <p>
+      <div class="border border-dark rounded-3 my-3 p-4">
         {{ examen.competence.nom }} <br />
+        {{ examen.competence.description }} <br />
         {{ examen.date|date('d/m/Y') }} <br />
         {{ examen.ville }}
-      </p>
+      </div>
     {% endfor %}
   </div>
 
-  <div>
+  <div class="container">
   <h2>EXAMEN PASSEES</h2>
     {% for examen in examPassed %}
-      <p>
+      <div class="border border-dark rounded-3 my-3 p-4">
         {{ examen.competence.nom }} <br />
+        {{ examen.competence.description }} <br />
         {{ examen.date|date('d/m/Y') }} <br />
         {{ examen.ville }}
-      </p>
+      </div>
     {% endfor %}
   </div>
 
