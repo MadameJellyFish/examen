@@ -45,10 +45,24 @@ label {
     max-width: 150px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
 }
 
 .comp_name {
     color: var(--colorpurple);
+}
+
+.btn__histo {
+    color: var(--colorpurple);
+    border: 2px solid var(--colorpurple);
+    padding: 1rem;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all .2s linear;
+}
+
+.btn__histo:hover {
+    color: var(--colorpurple);
+    box-shadow: -5px 5px var(--colorpurple);
 }
