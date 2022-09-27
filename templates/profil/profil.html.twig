@@ -6,34 +6,34 @@
 
 {% block banniere_text %}
 	<div class="slider">
-    <ul class="slide">
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
+		<ul class="slide">
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
 
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-    </ul>
-  </div>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+		</ul>
+	</div>
 {% endblock %}
 
 {% block body %}
@@ -67,7 +67,7 @@
 		<div>
 			{{ form_start(form) }}
 			{# <p id="profil_name" class="fs-2 fw-bolder text-sm-center text-lg-start">{{ user.nom }}
-				{{ user.prenom }}</p> #}
+							{{ user.prenom }}</p> #}
 			<div class="d-flex gap-3">
 				<div id="label_form" class="d-flex flex-column justify-content-evenly">
 					{{ form_label(form.nom) }}
@@ -110,10 +110,10 @@
 					</p>
 				</div>
 				<div class="container p-4 bg-light box">
-						<a class="fs-3 text-decoration-none comp_name" href="{{ path( 'competence.show', { id: examen.competence.id } ) }}">{{ examen.competence.nom }}
-							<br/></a>
+					<a class="fs-3 text-decoration-none comp_name" href="{{ path( 'competence.show', { id: examen.competence.id } ) }}">{{ examen.competence.nom }}
+						<br/></a>
 					{# {{ examen.competence.description }} #}
-          {{ examen.competence.description|length > 500 ? examen.competence.description|slice(0, 500) ~ '...' : examen.competence.description|raw }}
+					{{ examen.competence.description|length > 500 ? examen.competence.description|slice(0, 500) ~ '...' : examen.competence.description|raw }}
 					<br/>
 				</div>
 			</article>
@@ -125,13 +125,12 @@
 		{% for examen in examPassed %}
 			<article class="w-75 m-auto d-flex flex-column flex-lg-row justify-content-between align-items-start gap-3 my-5">
 				<div class="container p-4 bg-light box">
-						<a class="fs-3 text-decoration-none comp_name" href="{{ path( 'competence.show', { id: examen.competence.id } ) }}">{{ examen.competence.nom }}
-							<br/></a>
-					{# {{ examen.competence.description }} #}
-          {{ examen.competence.description|length > 500 ? examen.competence.description|slice(0, 500) ~ '...' : examen.competence.description }}
+					<a class="fs-3 text-decoration-none comp_name" href="{{ path( 'competence.show', { id: examen.competence.id } ) }}">{{ examen.competence.nom }}
+						<br/></a>
+					{{ examen.competence.description|length > 500 ? examen.competence.description|slice(0, 500) ~ '...' : examen.competence.description }}
 					<br/>
 				</div>
-        <div class="container box p-3 text-dark bg-light date_comp">
+				<div class="container box p-3 text-dark bg-light date_comp">
 					<h3 class="align-self-end">{{ examen.date|date('d/m') }}
 						<br/></h3>
 					<p class="m-0">
@@ -146,9 +145,9 @@
 		{% endfor %}
 	</div>
 
-  <div class="d-flex align-item-center justify-content-center my-4">
-    <a href="{{ path('app_historique') }}" class="fs-3 btn__histo">Voir tout mon historique</a>
-  </div>
+	<div class="d-flex align-item-center justify-content-center my-4">
+		<a href="{{ path('app_historique') }}" class="fs-4 btn__histo">Voir tout mon historique</a>
+	</div>
 
 
 	<script src={{asset('assets/js/profil.js')}}></script>
