@@ -23,6 +23,7 @@ main {
 .comp-box {
     margin-right: 2rem;
     background-color: var(--colorwhite);
+    text-decoration: none;
 
     width: 80%;
     margin: auto;
@@ -80,4 +81,8 @@ h1 {
     color: var(--colorpurple);
     font-weight: 700;
     padding: 5px 10px 5px 10px;
+}
+
+.box-comp {
+    text-decoration: none;
 }

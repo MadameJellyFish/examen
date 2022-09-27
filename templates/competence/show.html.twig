@@ -13,23 +13,24 @@
 	<link rel="stylesheet" href={{ asset('assets/css/competence.css') }}>
 
 	<section class="row">
-			<section class="col-lg-7 col-md-12 p-lg-5 p-md-3">
-				<div>
-					<h2>{{competence.nom}}</h2>
-					<p class="mt-5 mb-5">{{competence.description}}</p>
+		<section class="col-lg-7 p-5">
+			<div>
+				<h2>{{competence.nom}}</h2>
+				<p class="mt-5 mb-5">{{competence.description}}</p>
+			</div>
+
+			{% for message in app.flashes('inscription_erreur') %}
+				<div class='alert-success' role="alert">
+					{{ message }}
 				</div>
+			{% endfor %}
 
-				{% for message in app.flashes('inscription_erreur') %}
-					<div class='alert-success' role="alert">
-						{{ message }}
-					</div>
-				{% endfor %}
-
-				<div class="row">
-					{% for examen in examens %}
-						<div class="col-lg-4">
-							<div class="box-examen">
-							<div class="details-date">
+			<div class="row">
+				{% for examen in examens %}
+					<div class="col-lg-4 mb-4">
+						<div class="box-examen">
+							<div
+								class="details-date">
 								{# <p class="date">{{examen.date|date('d/m')}}</p> #}
 								<p class="date">{{examen.date|date('d')}}</p>
 								<p class="date date-mois">{{examen.date|date('M')}}</p>
@@ -46,31 +47,32 @@
 								<i class="fa-solid fa-user"></i>
 								<p>{{examen.inscriptions|length}}&nbsp;Inscrits</p>
 							</div>
-							</div>
 						</div>
-						{# et limiter l'affichage des examens à 5 à partir du plus récent #}
-					{% endfor %}
-				</div>
-			</section>
-
-			<section class="col-lg-5 formulaire-comp col-md-12 p-lg-5 p-md-3">
-				<form action="/competence/{{competence.id}}" method="POST" class="form-box form-examen">
-					<h3>Inscription à un examen</h3>
-
-					<div class="details-date">
-						<libelle>Mon choix :</libelle>
-						<select name="examen_id" class="selection-examen">
-							{# verifier if si l'examen est passe ou non au moment ou je m'inscris pour ne pas proposer un examen deja passe #}
-							{% for examen in examens %}
-								<option value="{{examen.id}}">{{examen.ville}}
-									-
-									{{examen.date|date('d/m/Y - H:i')}}</option>
-							{% endfor %}
-						</select>
 					</div>
-					<button name="submit" type="submit" class="btnMore">Inscription</button>
-				</form>
-			</section>
+					{# et limiter l'affichage des examens à 5 à partir du plus récent #}
+				{% endfor %}
+			</div>
+		</section>
+
+		<section class="formulaire-comp col-lg-5 p-5">
+			<form action="/competence/{{competence.id}}" method="POST" class="form-box form-examen">
+				<h3>Inscription à un examen</h3>
+
+				<div class="details-date">
+					<libelle>Mon choix :</libelle>
+					<select
+						name="examen_id" class="selection-examen">
+						{# verifier if si l'examen est passe ou non au moment ou je m'inscris pour ne pas proposer un examen deja passe #}
+						{% for examen in examens %}
+							<option value="{{examen.id}}">{{examen.ville}}
+								-
+								{{examen.date|date('d/m/Y - H:i')}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<button name="submit" type="submit" class="btnMore">Inscription</button>
+			</form>
+		</section>
 	</section>
 
 {% endblock %}
