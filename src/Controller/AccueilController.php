@@ -7,6 +7,7 @@ use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Cookie;
 
 class AccueilController extends AbstractController
 {
@@ -19,7 +20,15 @@ class AccueilController extends AbstractController
     #[Route('/', name: 'app_accueil')]
     public function index(): Response
     {
+        $user = $this->getUser();
         $examen = $this->repo->findBy(array(), array("date" => "DESC"), 5);
+
+        $cookie = new Cookie("Cookie Test", $user->getEmail(), strtotime('tomorrow'), '/');
+        $res = new Response();
+        $res->headers->setCookie($cookie);
+        $res->send();
+
+        // dd($res);
 
         $currentDate = new DateTime();
         $examens = [];
@@ -34,7 +43,7 @@ class AccueilController extends AbstractController
             }
         }
 
-        return $this->render('accueil/index.html.twig', [ "examens" => $examens ]);
+        return $this->render('accueil/index.html.twig', [ "examens" => $examens]);
     }
 
     #[Route('/mentions-legales', name: 'app_cgu')]
