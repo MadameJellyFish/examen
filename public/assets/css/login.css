@@ -45,9 +45,11 @@ label{
 .inputStyle {
     border: var(--colorpurple) solid 2px;
     width: 100%;
-    font-family: "Gambeta";
     padding: 4px 9px;
-    margin-bottom: 10px;
+    color: var(--colorblack);
+    font-size: 1.15rem;
+    font-weight: 500;
+    font-family: Cabinet Grotesk;
 }
 
 .inputClassic{
