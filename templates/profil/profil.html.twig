@@ -113,7 +113,7 @@
 						<a class="fs-3 text-decoration-none comp_name" href="{{ path( 'competence.show', { id: examen.competence.id } ) }}">{{ examen.competence.nom }}
 							<br/></a>
 					{# {{ examen.competence.description }} #}
-          {{ examen.competence.description|length > 500 ? examen.competence.description|slice(0, 500) ~ '...' : examen.competence.description }}
+          {{ examen.competence.description|length > 500 ? examen.competence.description|slice(0, 500) ~ '...' : examen.competence.description|raw }}
 					<br/>
 				</div>
 			</article>
