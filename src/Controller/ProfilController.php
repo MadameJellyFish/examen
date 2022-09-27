@@ -105,7 +105,7 @@ class ProfilController extends AbstractController
     {   
         $user = $this->getUser();
         if(!$user){
-            return $this->redirectToRoute('app_login');  
+            return $this->redirectToRoute('app_login');   
         }
         $user->setOnline(false);
         $em->flush();
