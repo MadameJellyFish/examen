@@ -1,55 +1,61 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Connexion{% endblock %}
+{% block title %}Connexion
+{% endblock %}
 
 {% block banniere_text %}
-  CONNEXION - CONNEXION - CONNEXION - CONNEXION - CONNEXION
+	<p class="first__banner__text">CONNEXION &nbsp; - &nbsp; CONNEXION &nbsp; - &nbsp; CONNEXION &nbsp; - CONNEXION &nbsp; - &nbsp; CONNEXION &nbsp; CONNEXION &nbsp; - &nbsp; CONNEXION &nbsp; - &nbsp; CONNEXION  &nbsp; - &nbsp;</p>
+	<p class="second__banner__text">CONNEXION &nbsp; - &nbsp; CONNEXION &nbsp; - &nbsp; CONNEXION &nbsp; - CONNEXION &nbsp; - &nbsp; CONNEXION &nbsp; CONNEXION &nbsp; - &nbsp; CONNEXION &nbsp; - &nbsp; CONNEXION  &nbsp; - &nbsp;</p>
+	
 {% endblock %}
 
 
 {% block body %}
-<link rel="stylesheet" href={{asset('assets/css/login.css')}}>
+	<link rel="stylesheet" href={{asset('assets/css/login.css')}}>
 
-<div class="containerLogin d-md-flex">
-<section class="col-md-5 mt-md-5 ms-md-5 ps-md-5 justify-content-center">
-<form method="post" class="box containerRegisterForm col-md-10 m-md-5 my-5 mx-5">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+	<div class="containerLogin d-md-flex">
+		<section class="col-md-5 mt-md-5 ms-md-5 ps-md-5 justify-content-center">
+			<form method="post" class="box containerRegisterForm col-md-10 m-md-5 my-5 mx-5">
+				{% if error %}
+					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+				{% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
+				{% if app.user %}
+					<div class="mb-3">
+						You are logged in as
+						{{ app.user.userIdentifier }},
+						<a href="{{ path('app_logout') }}">Logout</a>
+					</div>
+				{% endif %}
 
-    <h1>Connectez-vous</h1>
-    <label for="inputEmail">Email : </label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="inputStyle inputClassic" autocomplete="email" required autofocus>
-    <label for="inputPassword">Mot de passe : </label>
-    <input type="password" name="password" id="inputPassword" class="inputStyle inputClassic" autocomplete="current-password" required>
+				<h1>Connectez-vous</h1>
+				<label for="inputEmail">Email :
+				</label>
+				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="inputStyle inputClassic" autocomplete="email" required autofocus>
+				<label for="inputPassword">Mot de passe :
+				</label>
+				<input type="password" name="password" id="inputPassword" class="inputStyle inputClassic" autocomplete="current-password" required>
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+				<input
+				type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
+				{#
+				        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+				        See https://symfony.com/doc/current/security/remember_me.html
+				
+				        <div class="checkbox mb-3">
+				            <label>
+				                <input type="checkbox" name="_remember_me"> Remember me
+				            </label>
+				        </div>
+				    #}
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
-
-    <button class="btnPurple col-12 col-md-4" type="submit">
-        Valider
-    </button>
-</form>
-</section>
-<section class="containerImgLogin col-md-6 d-none d-md-block">
-<img src={{asset('assets/img/login.jpg')}} class="imgLogin" alt="" srcset=""></section>
-</div>
+				<button class="btnPurple col-12 col-md-4" type="submit">
+					Valider
+				</button>
+			</form>
+		</section>
+		<section class="containerImgLogin col-md-6 d-none d-md-block">
+			<img src={{asset('assets/img/login.jpg')}} class="imgLogin" alt="" srcset=""></section>
+	</div>
 {% endblock %}

@@ -1,8 +1,8 @@
 /* registration form */
 
 
-.containerInscription{
-    gap:50px;
+.containerInscription {
+    gap: 50px;
 }
 
 .containerImgInscription {
@@ -25,28 +25,31 @@
 
 /* box noir avec ombre */
 .box {
-    /* width: 80%; */
     margin: auto;
     padding: 1.5rem;
-     /* padding: 50px; */
+    /* padding: 50px; */
     border: 3px solid var(--colorblack);
     box-shadow: -5px 5px var(--colorblack);
     border-radius: 20px;
 }
+
 /* fin box noire avec ombre */
 
 .inputStyle {
     border: var(--colorpurple) solid 2px;
     width: 100%;
-    font-family: "Gambeta";
     padding: 4px 9px;
+    color: var(--colorblack);
+    font-size: 1.15rem;
+    font-weight: 500;
+    font-family: Cabinet Grotesk;
 }
 
-.inputClassic{
+.inputClassic {
     border-radius: 50px;
 }
 
-input:focus{
+input:focus {
     outline: none;
     box-shadow: 0 0 10px var(--bgmauve);
 }
@@ -70,11 +73,10 @@ input:focus{
 
 #registration_form_date {
     display: flex;
-    gap:10px;
-    font-family: Gambeta;
+    gap: 10px;
 }
 
-#registration_form_date>select:focus{
+#registration_form_date>select:focus {
     outline: none;
     box-shadow: 0 0 10px var(--bgmauve);
 }
@@ -85,6 +87,10 @@ input:focus{
     border-radius: 20px;
     padding: 6px 4px 6px 5px;
     border-style: solid;
+    color: var(--colorblack);
+    font-size: 1.15rem;
+    font-weight: 500;
+    font-family: Cabinet Grotesk;
 }
 
 .containerRegisterForm>form>div:nth-child(7) {
@@ -96,7 +102,7 @@ input:focus{
     margin-left: 10px;
 }
 
-input[type=checkbox]{
+input[type=checkbox] {
     accent-color: var(--colorpurple);
 }
 
@@ -121,7 +127,7 @@ input[type=checkbox]{
     border: var(--colorblack);
     background-color: var(--colorblack);
 }
+
 /* fin btn purple */
 
 /* fin registration form */
-
