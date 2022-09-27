@@ -43,10 +43,12 @@ class ProfilController extends AbstractController
             return strtotime($b->getDate()->format('d-m-Y')) - strtotime($a->getDate()->format('d-m-Y'));
         });
 
+        $examPasse = array_slice($examPassed, 0, 3);
+
         $form = $this->createForm(EditUtilisateurType::class, $user, ['attr' => ['class' => 'formModif']]);
         $form->handleRequest($request);
 
-        return $this->renderForm('profil/profil.html.twig', ['user' => $user,'form' => $form, "examToCome" => $examToCome, "examPassed" => $examPassed]);
+        return $this->renderForm('profil/profil.html.twig', ['user' => $user,'form' => $form, "examToCome" => $examToCome, "examPassed" => $examPasse]);
     }
 
     #[Route('/profil/edit', name:'app_edit_profil')]
@@ -131,7 +133,7 @@ class ProfilController extends AbstractController
             return strtotime($b->getDate()->format('d-m-Y')) - strtotime($a->getDate()->format('d-m-Y'));
         });
 
-        $examPage = $paginator->paginate($examens, $request->query->getInt('page', 1), 8);
+        $examPage = $paginator->paginate($examens, $request->query->getInt('page', 1), 4);
 
         return $this->render('profil/historique.html.twig', ["examens" => $examPage]);
     }
