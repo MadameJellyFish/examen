@@ -46,9 +46,9 @@ span {
 }
 
 .containerContactForm>div>form>div>label {
-    font-family: "Gambeta";
+    font-family: Gambeta;
     padding-left: 10px;
-    font-weight: bold;
+    font-weight: 800;
 }
 
 .reseauxsocial {
@@ -79,8 +79,10 @@ a:hover{
 .inputStyle {
     border: var(--colorpurple) solid 2px;
     width: 100%;
-    font-family: "CabinetGrotesk";
+    /* font-family: "CabinetGrotesk"; */
     padding-left: 9px;
+    font-weight: 400;
+    font-family: Cabinet Grotesk;
 }
 
 .inputClassic {

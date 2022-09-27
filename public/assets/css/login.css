@@ -39,16 +39,14 @@ h1{
 label{
     font-family: Gambeta;
     padding-left: 10px;
-    font-weight: bold;
+    font-weight: 800;
 }
 
 .inputStyle {
     border: var(--colorpurple) solid 2px;
     width: 100%;
     padding: 4px 9px;
-    color: var(--colorblack);
-    font-size: 1.15rem;
-    font-weight: 500;
+    font-weight: 400;
     font-family: Cabinet Grotesk;
 }
 
