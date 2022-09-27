@@ -12,38 +12,32 @@
     background-color: white;
 }
 
-.anim__banner p {
-    position: absolute;
-    width: 103%;
-    top: 12%;
-    left: 0;
+.slider {
+    overflow: hidden;
+    position: relative;
+    top: 12px;
 }
 
-.anim__banner p:first-child {
-    animation: slideOut 15s infinite linear;
+.slide {
+    display: flex;
+    height: 100%;
+    width: calc(180px * 24);
+    list-style: none;
 }
 
-.anim__banner p:last-child {
-    transform: translateX(100%);
-    animation: slideIn 15s infinite linear;
+.item_slide {
+    flex: 1;
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: #343434;
+    animation: translateinfinite 15s linear infinite;
 }
 
-@keyframes slideOut {
-    0% {
-        transform: translateX(0%);
-    }
-
+@keyframes translateinfinite {
     100% {
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateX(102%);
-    }
-
-    100% {
-        transform: translateX(0%);
+        transform: translateX(calc(-180px * 12));
     }
 }

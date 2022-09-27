@@ -1,5 +1,11 @@
-body{
+main{
     background-color: var(--bgmauve);
+    margin: 0 !important;
+
+}
+
+.main-container{
+    margin-top: 0 !important;
 }
 
 .anim__banner{
@@ -10,26 +16,20 @@ body{
 .layout-accueil{
 display: flex;
 /* overflow-x: scroll; */
-
 }
 
-/* .accueil-box{
-    width: 80%;
-    margin: auto;
-    padding: 1.5rem;
-    border: 3px solid var(--colorblack);
-    box-shadow: -5px 5px var(--colorblack);
-    border-radius: 20px;
-} */
-
 .question-box{
-margin-right: 2rem !important;
-background-color: var(--colorwhite);
-
+    margin-right: 2rem !important;
+    background-color: var(--colorwhite) !important;
 }
 
 h1{
-    margin: none;
+    color: var(--colorblack);
+    font-family: Gambetta;
+    font-weight: 700;
+    width: 80%;
+    padding-top: 2rem;
+    margin: 0 !important;
 }
 
 .h2-accueil{
