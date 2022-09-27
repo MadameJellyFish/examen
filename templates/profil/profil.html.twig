@@ -66,8 +66,7 @@
 
 		<div>
 			{{ form_start(form) }}
-			{# <p id="profil_name" class="fs-2 fw-bolder text-sm-center text-lg-start">{{ user.nom }}
-							{{ user.prenom }}</p> #}
+			<p id="profil_name" class="fs-2 fw-bolder text-sm-center text-lg-start">{{ user.nom }} {{ user.prenom }}</p> 
 			<div class="d-flex gap-3">
 				<div id="label_form" class="d-flex flex-column justify-content-evenly">
 					{{ form_label(form.nom) }}
