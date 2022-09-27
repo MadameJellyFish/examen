@@ -43,15 +43,13 @@ body {
     height    : 100%;
     width     : 100%;
     min-height: 100vh;
-    overflow-y: scroll;
+    
 }
 
-
-/* Partie Header */
-
+/*////////////////////////////// Partie Header /////////////////////////////// */
 #header-wrapper {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1),
-            rgba(0, 0, 0, 0.1)), url('../img/etudierNB.jpg');
+    rgba(0, 0, 0, 0.1)), url('../img/etudierNB.jpg');
     background-repeat  : no-repeat;
     background-position: 70% 30%;
     background-size    : cover;
@@ -69,17 +67,17 @@ body {
     font-weight: 400;
     font-size  : 24px;
     padding-top: 4em;
-    color          : var(--colorwhite);
+    color      : var(--colorwhite);
 }
 
 #title {
     font-family: CabinetGrotesk;
-    color          : var(--colorwhite);
+    color      : var(--colorwhite);
 }
 
 #title p {
     font-size: 6em;
-    color          : var(--colorwhite);
+    color    : var(--colorwhite);
 }
 
 
@@ -115,7 +113,7 @@ p>a {
     font-size      : 22px;
     display        : flex;
     justify-content: flex-end;
-
+    
 }
 
 .navbars li {
@@ -137,15 +135,15 @@ p>a {
     margin-right: 2em;
 }
 
-/* Partie sous-navbar */
+/*////////////////////////////// partie sous navbar /////////////////////////////// */
 
 .navbar-height {
     height: 100%;
 }
 
-#header.hide {
-    display           : none;
-   overflow : auto;
+
+#header.hidden {
+ display: none;
 }
 
 .navbar {
@@ -174,8 +172,8 @@ p>a {
 .collapse {
     justify-content: center;
     align-content  : center;
-    margin-left: 3em;
-
+    margin-left    : 3em;
+    
 }
 
 .navbar-nav a {
@@ -186,7 +184,7 @@ p>a {
     color          : var(--colorblack);
 }
 
-a:hover{
+a:hover {
     color: var(--colorpurple);
 }
 
@@ -235,73 +233,3 @@ a:hover{
     text-align : right;
     font-family: "Gambetta";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
