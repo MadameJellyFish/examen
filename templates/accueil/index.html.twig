@@ -66,11 +66,16 @@
 	<section class="main-container">
 		<h1>Offre des compétences</h1>
 
-		{# // ajouter bouclz for message flash erreur celine #}
+		{% for message in app.flashes('erreur') %}
+			<div class='alert-success' role="alert">
+				{{ message }}
+			</div>
+		{% endfor %}
+
+
 		<div class="layout-accueil">
 			{% for examen in examens|sort((a, b) => a.date > b.date) %}
 				<div class="question-box mb-5 mt-5">
-					<a href="{{ path('competence.show', { id: examen.competence.id }) }}" class="box-comp">
 
 						<div class="title-comp">
 							<h2 class="h2-accueil">{{ examen.competence.nom }}</h2>
@@ -79,7 +84,7 @@
 						<p class="contenu-accueil mt-4 mb-4">
 							{{ examen.competence.description }}
 						</p>
-						{# <small>{{ examen.date|date('d/m/Y') }}</small> #}
+					<a href="{{ path('competence.show', { id: examen.competence.id }) }}" class="box-comp">
 						<button class="btnMore">Plus d'informations</button>
 					</a>
 				</div>
