@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\Length;
+use Knp\Component\Pager\PaginatorInterface;
 
 class CompetenceController extends AbstractController
 {
@@ -26,10 +27,11 @@ class CompetenceController extends AbstractController
     }
 
     #[Route('/competence', name: 'app_competence')]
-    public function index(): Response
+    public function index(PaginatorInterface $paginator, Request $request): Response
     {
 
-        $competences = $this->repo->findAll();
+        $competence = $this->repo->findAll();
+        $competences = $paginator->paginate($competence, $request->query->getInt('page', 1), 4);
         return $this->render('competence/index.html.twig', [
             'competences' => $competences
         ]);
