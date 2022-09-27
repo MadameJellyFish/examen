@@ -59,6 +59,11 @@ main {
 
 }
 
+/* .section-examen{
+    display: flex;
+    justify-content: space-around;
+} */
+
 .box-examen {
     padding: 1.5rem;
     border: 3px solid var(--colorblack);
