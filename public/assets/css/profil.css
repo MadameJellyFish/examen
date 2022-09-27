@@ -66,3 +66,15 @@ label {
     color: var(--colorpurple);
     box-shadow: -5px 5px var(--colorpurple);
 }
+
+.active>.page-link {
+    background-color: var(--bgmauve);
+    border: 1px solid var(--bgmauve);
+    color: var(--colorpurple);
+    font-weight: 700;
+}
+
+.page-link {
+    color: var(--colorpurple);
+    border: 1px solid var(--bgmauve);
+}
