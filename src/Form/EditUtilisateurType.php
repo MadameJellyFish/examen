@@ -61,7 +61,7 @@ class EditUtilisateurType extends AbstractType
                 'label' => 'Modifier mon profil',
                 'attr' => [
                     "data-id" => "modifier",
-                    "class" => "btn btn-outline-secondary"
+                    "class" => "btn btn__histo"
                 ]
             ])
         ;
