@@ -43,35 +43,26 @@ body {
     height    : 100%;
     width     : 100%;
     min-height: 100vh;
+    overflow-y: scroll;
 }
 
 
 /* Partie Header */
 
-header{
-    transition: all 300ms ease;
-    z-index: 2;
-    top: 0;
-    left: 0;
+#header-wrapper {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.1)), url('../img/etudierNB.jpg');
+    background-repeat  : no-repeat;
+    background-position: 70% 30%;
+    background-size    : cover;
 }
 
+.container-fluid {
+    padding-top   : 4em;
+    padding-bottom: 1em;
+}
 
-#header-wrapper {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1),
-        rgba(0, 0, 0, 0.1)), url('../img/etudierNB.jpg');
-        background-repeat  : no-repeat;
-        background-position: 70% 30%;
-        background-size    : cover;
-    }
-    
-    
-    
-    .container-fluid {
-        padding-top   : 4em;
-        padding-bottom: 1em;
-    }
-    
-    /* Slogan + Centre examen gros titre  */
+/* Slogan + Centre examen gros titre  */
 
 .header-title {
     font-family: Gambetta;
@@ -121,7 +112,7 @@ p>a {
     font-size      : 22px;
     display        : flex;
     justify-content: flex-end;
-    
+
 }
 
 .navbars li {
@@ -145,56 +136,62 @@ p>a {
 
 /* Partie sous-navbar */
 
-.navbar-height{
-    height: 100%; 
-}
-#header.hide{
-display: none;
+.navbar-height {
+    height: 100%;
 }
 
-
+#header.hide {
+    display           : none;
+    opacity           : 0;
+    -webkit-transition: height 0.5s ease;
+    -moz-transition   : height 0.5s ease;
+    -ms-transition    : height 0.5s ease;
+    -o-transition     : height 0.5s ease;
+    transition        : height 0.5s ease;
+    transition-delay  : 0.2s;
+}
 
 .navbar {
     box-sizing   : content-box;
     align-content: center;
     display      : flex;
     color        : var(--colorblack);
-    top: 0;
-    width: 100%;
-    display: block; 
-    transition: top 0.3s;
-    position: relative;
+    top          : 0;
+    width        : 100%;
+    display      : block;
+    transition   : top 0.3s;
+    position     : relative;
 }
 
 
 .navbar-brand h2 {
     margin-left   : 1em;
     font-family   : Cabinet Grotesk;
-    font-size     : 22px;
-    font-weight   : 900;
+    font-size     : 36px;
+    font-weight   : bold;
     line-height   : 1em;
     letter-spacing: 0.2em;
     color         : var(--colorblack);
 }
 
-
-
-
-
 .collapse {
     justify-content: center;
     align-content  : center;
-    
+    margin-left: 3em;
+
 }
 
 .navbar-nav a {
     font-weight    : bold;
-    font-size      : 16px;
+    font-size      : 20px;
     margin-right   : 4em;
     text-decoration: none;
     color          : var(--colorblack);
 }
 
+a:hover{
+    color: var(--colorpurple);
+}
 
 
 /* footer */

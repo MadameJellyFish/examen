@@ -1,7 +1,7 @@
 let nav = document.querySelector('.navbar');
 let header = document.querySelector('#header');
 let lastScrollY = window.scrollY; 
-/* console.log(header); */
+
 window.addEventListener('scroll', () => {
   if (
        lastScrollY < window.scrollY) {
