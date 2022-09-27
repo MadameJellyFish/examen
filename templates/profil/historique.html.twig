@@ -69,6 +69,8 @@
 				</div>
 			</article>
 		{% endfor %}
-		{{ knp_pagination_render(examens) }}
+		<div id="pagination__css">
+			{{ knp_pagination_render(examens) }}
+		</div>
 	</section>
 {% endblock %}
