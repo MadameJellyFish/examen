@@ -10,13 +10,10 @@
 
 {% block body %}
 
-	<link rel="stylesheet" href={{ asset('assets/css/faq.css') }}>
 	<link rel="stylesheet" href={{ asset('assets/css/competence.css') }}>
-	<link rel="stylesheet" href={{ asset('assets/css/accueil.css') }}>
 
-	<section>
-		<div class="d-flex">
-			<section class="w-75 m-5">
+	<section class="row">
+			<section class="col-lg-7 col-md-12 p-lg-5 p-md-3">
 				<div>
 					<h2>{{competence.nom}}</h2>
 					<p class="mt-5 mb-5">{{competence.description}}</p>
@@ -28,11 +25,11 @@
 					</div>
 				{% endfor %}
 
-				<div class="d-flex justify-content-around row">
+				<div class="row">
 					{% for examen in examens %}
-						<div class="box-examen col-12 col-md-4">
-							<div
-								class="details-date">
+						<div class="col-lg-4">
+							<div class="box-examen">
+							<div class="details-date">
 								{# <p class="date">{{examen.date|date('d/m')}}</p> #}
 								<p class="date">{{examen.date|date('d')}}</p>
 								<p class="date date-mois">{{examen.date|date('M')}}</p>
@@ -49,20 +46,20 @@
 								<i class="fa-solid fa-user"></i>
 								<p>{{examen.inscriptions|length}}&nbsp;Inscrits</p>
 							</div>
+							</div>
 						</div>
 						{# et limiter l'affichage des examens à 5 à partir du plus récent #}
 					{% endfor %}
 				</div>
 			</section>
 
-			<section class="w-50 formulaire-comp">
-				<form action="/competence/{{competence.id}}" method="POST" class="question-box form-examen">
+			<section class="col-lg-5 formulaire-comp col-md-12 p-lg-5 p-md-3">
+				<form action="/competence/{{competence.id}}" method="POST" class="form-box form-examen">
 					<h3>Inscription à un examen</h3>
 
 					<div class="details-date">
 						<libelle>Mon choix :</libelle>
-						<select
-							name="examen_id" class="selection-examen">
+						<select name="examen_id" class="selection-examen">
 							{# verifier if si l'examen est passe ou non au moment ou je m'inscris pour ne pas proposer un examen deja passe #}
 							{% for examen in examens %}
 								<option value="{{examen.id}}">{{examen.ville}}
@@ -74,7 +71,6 @@
 					<button name="submit" type="submit" class="btnMore">Inscription</button>
 				</form>
 			</section>
-		</div>
 	</section>
 
 {% endblock %}

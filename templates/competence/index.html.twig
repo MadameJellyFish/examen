@@ -10,13 +10,12 @@
 
 {% block body %}
 
-	<link rel="stylesheet" href={{ asset('assets/css/faq.css') }}>
 	<link rel="stylesheet" href={{ asset('assets/css/competence.css') }}>
 
-	<main class="main-container">
+	<section class="main-container">
 		<h1>Liste des compétences</h1>
 		{% for competence in competences %}
-			<div class="question-box comp-box mb-5 mt-5">
+			<div class="competence-box comp-box mb-5 mt-5">
 				<a href="/competence/{{competence.id}}" class="box-comp">
 					<div class="title-comp">
 						<h2>{{competence.nom}}</h2>
@@ -28,6 +27,6 @@
 		{% endfor %}
 		{{ knp_pagination_render(competences) }}
 
-	</main>
+	</section>
 
 {% endblock %}
