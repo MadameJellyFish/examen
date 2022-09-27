@@ -6,14 +6,40 @@
 
 
 {% block banniere_text %}
-	ACCUEIL - ACCUEIL - ACCUEIL - ACCUEIL - ACCUEIL - ACCUEIL -
+	<div class="slider">
+		<ul class="slide">
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+			<li class="item_slide">acceuil</li>
+		</ul>
+	</div>
 {% endblock %}
 
 {% block body %}
 
 	<link rel="stylesheet" href={{ asset('assets/css/accueil.css') }}>
-	<link rel="stylesheet" href={{ asset('assets/css/competence.css') }}>
-	<link rel="stylesheet" href={{ asset('assets/css/faq.css') }}>
 
 	<section class="main-container">
 		<h1>Offre des compétences</h1>
@@ -27,8 +53,7 @@
 
 		<div class="layout-accueil">
 			{% for examen in examens|sort((a, b) => a.date > b.date) %}
-				<div class="question-box mb-5 mt-5">
-
+				<div class="comp-box mb-5 mt-5">
 						<div class="title-comp">
 							<h2 class="h2-accueil">{{ examen.competence.nom }}</h2>
 							<i class="fa-sharp fa-solid fa-display picto-accueil"></i>

@@ -6,6 +6,8 @@ input:disabled {
 #edit_utilisateur_nom:disabled,
 #edit_utilisateur_prenom:disabled {
     display: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
 }
 
 select:disabled {
@@ -56,13 +58,50 @@ label {
 .btn__histo {
     color: var(--colorpurple);
     border: 2px solid var(--colorpurple);
-    padding: 1rem;
+    padding: .5rem;
     text-decoration: none;
     border-radius: 50px;
     transition: all .2s linear;
+    flex-basis: 30%;
+    text-align: center;
 }
 
 .btn__histo:hover {
-    color: var(--colorpurple);
+    color: var(--colorpurple) !important;
+    box-shadow: -5px 5px var(--colorpurple) !important;
+    border: 2px solid var(--colorpurple) !important;
+}
+
+.btn__histo__plain {
+    color: white;
+    background-color: var(--colorpurple);
+    border: 2px solid var(--colorpurple);
+    padding: .5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all .2s linear;
+    flex-basis: 30%;
+}
+
+.btn__histo__plain:hover {
+    color: var(--colorpurple) !important;
+    background-color: white !important;
     box-shadow: -5px 5px var(--colorpurple);
+    border: 2px solid var(--colorpurple) !important;
+}
+
+button[data-id="modifier"] {
+    flex-basis: 30%;
+}
+
+.active>.page-link {
+    background-color: var(--bgmauve);
+    border: 1px solid var(--bgmauve);
+    color: var(--colorpurple);
+    font-weight: 700;
+}
+
+.page-link {
+    color: var(--colorpurple);
+    border: 1px solid var(--bgmauve);
 }

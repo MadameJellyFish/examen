@@ -91,6 +91,7 @@ class CompetenceController extends AbstractController
             }
             
             $inscription = new Inscription;
+            
             $user->getId();
             $inscription->setUser($user);
             $inscription->setExamen($examen);

@@ -1,7 +1,7 @@
 /* style page index de competence */
 
-main{
-    background-color: var(--colorwhite) !important;
+main {
+    background-color: var(--colorwhite);
 }
 
 .main-container {
@@ -10,8 +10,18 @@ main{
     margin-top: 3rem;
 
 }
+
+.competence-box {
+    width: 80%;
+    margin: auto;
+    padding: 1.5rem;
+    border: 3px solid var(--colorblack);
+    box-shadow: -5px 5px var(--colorblack);
+    border-radius: 20px;
+}
+
 .box-comp {
-    /* cursor: pointer; */
+  
     text-decoration: none;
 }
 
@@ -49,6 +59,17 @@ p {
     font-family: Cabinet Grotesk;
 }
 
+.active>.page-link {
+    background-color: var(--bgmauve);
+    border: 1px solid var(--bgmauve);
+    color: var(--colorpurple);
+    font-weight: 700;
+}
+
+.page-link {
+    color: var(--colorpurple);
+    border: 1px solid var(--bgmauve);
+}
 
 /* ///////////////////////// style page show de competence  ///////////////////////////*/
 
@@ -56,6 +77,7 @@ main {
     margin-top: 0;
     margin-bottom: 0;
     /* min-height: 100vh; */
+    background-color: var(--colorwhite);
 
 }
 
@@ -65,10 +87,9 @@ main {
     box-shadow: -5px 5px var(--colorblack);
     border-radius: 20px;
     background-color: var(--colorpurple);
-    margin-right: 1rem;
-    width: 24%;
-    margin-bottom: 3rem;
-    padding: 20px;
+    /* margin-bottom: 1rem; */
+    height: 100%;
+    gap:20px;
 }
 
 .box-examen>p {
@@ -117,19 +138,29 @@ main {
 
 .formulaire-comp {
     background-color: var(--bgmauve);
-    padding: 5rem;
+    /* padding: 5rem; */
+}
+
+.form-box {
+    /* margin-right: 2rem; */
+    background-color: var(--colorwhite);
+
+    padding: 1.5rem;
+    border: 3px solid var(--colorblack);
+    box-shadow: -5px 5px var(--colorblack);
+    border-radius: 20px;
 }
 
 .form-examen {
     background-color: var(--colorwhite);
-    margin-right: 0;
-    margin-top: 3rem;
+    /* margin-right: 0; */
+    padding-top: 3rem;
 }
 
 h3 {
     color: var(--colorpurple);
     font-family: Gambetta;
-    font-weight: 600;
+    font-weight: 800;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
 }
@@ -143,10 +174,10 @@ libelle {
 }
 
 select {
-   appearance: none;
+    appearance: none;
 }
 
-.selection-examen{
+.selection-examen {
     border-radius: 20px;
     padding: 6px;
     border: 2px solid;
@@ -154,15 +185,25 @@ select {
     margin-bottom: 1rem;
     font-family: Cabinet Grotesk;
     font-weight: 500;
-/* 
+    /* 
     -webkit-appearance: none;
         -moz-appearance: none; */
-        /* appearance: none; */
+    /* appearance: none; */
 }
 
-option{
+option {
     font-family: Cabinet Grotesk;
 }
 
-
-
+.btnMore {
+    border-radius: 20px;
+    border: 2.9px solid;
+    border-color: var(--colorpurple);
+    font-family: Gambeta;
+    background-color: var(--colorwhite);
+    display: flex;
+    margin: 0 auto;
+    color: var(--colorpurple);
+    font-weight: 700;
+    padding: 5px 10px 5px 10px;
+}
