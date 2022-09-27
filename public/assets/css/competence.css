@@ -1,0 +1,168 @@
+/* style page index de competence */
+
+main{
+    background-color: var(--colorwhite) !important;
+}
+
+.main-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 3rem;
+
+}
+.box-comp {
+    /* cursor: pointer; */
+    text-decoration: none;
+}
+
+.title-comp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.picto-comp {
+    font-size: 1.5rem !important;
+    font-weight: 600;
+    color: var(--colorpurple);
+}
+
+h1 {
+    color: var(--colorblack);
+    font-family: Gambetta;
+    font-weight: 700;
+    width: 80%;
+    margin: 0 auto;
+}
+
+h2 {
+    color: var(--colorpurple);
+    font-family: Gambetta;
+    font-weight: 700;
+}
+
+p {
+    color: var(--colorblack);
+    text-align: justify;
+    font-size: 1.15rem;
+    font-weight: 500;
+    font-family: Cabinet Grotesk;
+}
+
+
+/* ///////////////////////// style page show de competence  ///////////////////////////*/
+
+main {
+    margin-top: 0;
+    margin-bottom: 0;
+    /* min-height: 100vh; */
+
+}
+
+.box-examen {
+    padding: 1.5rem;
+    border: 3px solid var(--colorblack);
+    box-shadow: -5px 5px var(--colorblack);
+    border-radius: 20px;
+    background-color: var(--colorpurple);
+    margin-right: 1rem;
+    width: 24%;
+    margin-bottom: 3rem;
+    padding: 20px;
+}
+
+.box-examen>p {
+    margin: 0;
+}
+
+.details-date {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.date {
+    font-family: Gambetta;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--colorwhite);
+    margin-left: auto;
+    margin-top: -10px;
+}
+
+.date-mois {
+    margin-top: -30px;
+    margin-bottom: -5px;
+}
+
+.details-examen {
+    display: flex;
+    align-items: center;
+    color: var(--colorwhite);
+    margin-top: 0.3rem;
+    margin-bottom: -5px;
+}
+
+
+
+.details-examen>p {
+    color: var(--colorwhite);
+    text-align: left;
+    padding-left: 0.7rem;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/*////////////////////////// formulaire inscription /////////////////////////*/
+
+.formulaire-comp {
+    background-color: var(--bgmauve);
+    padding: 5rem;
+}
+
+.form-examen {
+    background-color: var(--colorwhite);
+    margin-right: 0;
+    margin-top: 3rem;
+}
+
+h3 {
+    color: var(--colorpurple);
+    font-family: Gambetta;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+libelle {
+    color: var(--colorblack);
+    font-family: Gambetta;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+select {
+   appearance: none;
+}
+
+.selection-examen{
+    border-radius: 20px;
+    padding: 6px;
+    border: 2px solid;
+    border-color: var(--colorpurple);
+    margin-bottom: 1rem;
+    font-family: Cabinet Grotesk;
+    font-weight: 500;
+/* 
+    -webkit-appearance: none;
+        -moz-appearance: none; */
+        /* appearance: none; */
+}
+
+option{
+    font-family: Cabinet Grotesk;
+}
+
+
+

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{# <div class="form-Popup" id="popup-form">
+<form action=""></form>
+</div> #}
+<div class="form-popup" id="popup-Form">
+  <form action="/action_page.php" class="form-container">
+    <h2>Supprimer votre compte</h2>
+    <p>Êtes-vous sure de vouloir supprimer votre compte ?</p>
+    <button type="submit" class="btn">Supprimer</button>
+    <button type="submit" class="btn cancel" onclick="closeForm()">Annuler</button>
+  </form>
+</div>
+{% endblock %}

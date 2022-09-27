@@ -9,11 +9,24 @@
 {% endblock %}
 
 {% block body %}
-	{% for competence in competences %}
-		<a href="/competence/{{competence.id}}">
-			<h1>{{competence.nom}}</h1>
-			<p>{{competence.description}}</p>
-		</a>
-	{% endfor %}
+
+	<link rel="stylesheet" href={{ asset('assets/css/faq.css') }}>
+	<link rel="stylesheet" href={{ asset('assets/css/competence.css') }}>
+
+	<main class="main-container">
+		<h1>Liste des compétences</h1>
+		{% for competence in competences %}
+			<div class="question-box comp-box mb-5 mt-5">
+				<a href="/competence/{{competence.id}}" class="box-comp">
+					<div class="title-comp">
+						<h2>{{competence.nom}}</h2>
+						<i class="fa-sharp fa-solid fa-display picto-comp"></i>
+					</div>
+					<p class="mt-4">{{competence.description|u.truncate(600, '...', false)}}</p>
+				</a>
+			</div>
+		{% endfor %}
+
+	</main>
 
 {% endblock %}

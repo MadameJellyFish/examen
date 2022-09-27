@@ -1,79 +1,155 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  Profil 
+	Profil
 {% endblock %}
 
 {% block banniere_text %}
-  PROFIL
+	<div class="slider">
+    <ul class="slide">
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+      <li class="item_slide">PROFIL</li>
+    </ul>
+  </div>
 {% endblock %}
 
 {% block body %}
-  <link rel="stylesheet" href={{ asset('assets/css/profil.css') }}>
+	<link rel="stylesheet" href={{ asset('assets/css/profil.css') }}>
 
-  {% for message in app.flashes('message') %}
-    <p>
-      {{ message }}
-    </p>
-  {% endfor %}
+	{% for message in app.flashes('message') %}
+		<div class='alert-success' role="alert">
+			{{ message }}
+		</div>
+	{% endfor %}
 
-  <section class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-4 mx-auto my-5">
+	<section class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-4 mx-auto my-5">
 
-    <div class="">
-      <svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><mask id="mask__beam" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" rx="72" fill="#FFFFFF"></rect></mask><g mask="url(#mask__beam)"><rect width="36" height="36" fill="#7f5af0"></rect><rect x="0" y="0" width="36" height="36" transform="translate(-5 9) rotate(189 18 18) scale(1)" fill="#405059" rx="36"></rect><g transform="translate(-5 4.5) rotate(9 18 18)"><path d="M13,19 a1,0.75 0 0,0 10,0" fill="#FFFFFF"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect></g></g></svg>
-    </div>
+		<div class="">
+			<svg viewbox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+				<mask id="mask__beam" maskunits="userSpaceOnUse" x="0" y="0" width="36" height="36">
+					<rect width="36" height="36" rx="72" fill="#FFFFFF"></rect>
+				</mask>
+				<g mask="url(#mask__beam)">
+					<rect width="36" height="36" fill="#7f5af0"></rect>
+					<rect x="0" y="0" width="36" height="36" transform="translate(-5 9) rotate(189 18 18) scale(1)" fill="#405059" rx="36"></rect>
+					<g transform="translate(-5 4.5) rotate(9 18 18)">
+						<path d="M13,19 a1,0.75 0 0,0 10,0" fill="#FFFFFF"></path>
+						<rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect>
+						<rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect>
+					</g>
+				</g>
+			</svg>
+		</div>
 
-    <div>
-      {{ form_start(form) }} 
-        <p id="profil_name" class="fs-2 fw-bolder text-sm-center text-lg-start">{{ user.nom }} {{ user.prenom }}</p>
-      <div class="d-flex gap-3">
-        <div id="label_form" class="d-flex flex-column justify-content-evenly">
-          {{ form_label(form.nom) }}
-          {{ form_label(form.prenom) }} 
-          {{ form_label(form.email) }}
-          {{ form_label(form.date) }}
-          {{ form_label(form.telephone) }}
-        </div>
-        <div class="d-flex flex-column justify-content-evenly">
-          {{ form_widget(form.nom) }}
-          {{ form_widget(form.prenom) }} 
-          {{ form_widget(form.email) }} 
-          {{ form_widget(form.date) }} 
-          {{ form_widget(form.telephone) }} 
-        </div>
-      </div>
-      <div class="d-flex">
-        {{ form_row(form.submit) }} 
-        <a href="{{ path('app_edit_password') }}" class="btn btn-outline-secondary ms-3">Modifier mon mot de passe</a>
-        <a href="{{ path('app_delete') }}" class="btn btn-outline-danger ms-3">Supprimer mon profil</a>
-      </div>
-      {{ form_end(form) }} 
-    </div>
-  </section>
-  
+		<div>
+			{{ form_start(form) }}
+			{# <p id="profil_name" class="fs-2 fw-bolder text-sm-center text-lg-start">{{ user.nom }}
+				{{ user.prenom }}</p> #}
+			<div class="d-flex gap-3">
+				<div id="label_form" class="d-flex flex-column justify-content-evenly">
+					{{ form_label(form.nom) }}
+					{{ form_label(form.prenom) }}
+					{{ form_label(form.email) }}
+					{{ form_label(form.date) }}
+					{{ form_label(form.telephone) }}
+				</div>
+				<div class="d-flex flex-column justify-content-evenly">
+					{{ form_widget(form.nom) }}
+					{{ form_widget(form.prenom) }}
+					{{ form_widget(form.email) }}
+					{{ form_widget(form.date) }}
+					{{ form_widget(form.telephone) }}
+				</div>
+			</div>
+			<div class="d-flex justify-content-center align-items-center flex-column flex-lg-row">
+				{{ form_row(form.submit) }}
+				<a href="{{ path('app_edit_password') }}" class="btn btn-outline-secondary mx-3 my-2 w-100">Changer de mot de passe</a>
+				<a href="{{ path('app_delete') }}" class="btn btn-outline-danger mx-3 my-2 w-100">Supprimer mon profil</a>
+			</div>
+			{{ form_end(form) }}
+		</div>
+	</section>
 
 
-  <div>
-  <h2>EXAMEN A VENIR</h2>
-    {% for examen in examToCome %}
-      <p>
-        {{ examen.competence.nom }} <br />
-        {{ examen.date|date('d/m/Y') }} <br />
-        {{ examen.ville }}
-      </p>
-    {% endfor %}
+	<div class="container-fluid m-auto to_come my-3 p-4">
+		<h2 class="w-75 m-auto">EXAMEN A VENIR</h2>
+		{% for examen in examToCome %}
+			<article class="w-75 m-auto d-flex flex-column flex-lg-row justify-content-between align-items-start gap-3 my-5">
+				<div class="container box p-3 text-light date_comp">
+					<h3 class="align-self-end">{{ examen.date|date('d/m') }}
+						<br/></h3>
+					<p class="m-0">
+						<i class="fa-solid fa-clock"></i>
+						{{ examen.date|date('H:i') }}
+						<br/>
+						<i class="fa-solid fa-city"></i>
+						{{ examen.ville }}
+					</p>
+				</div>
+				<div class="container p-4 bg-light box">
+						<a class="fs-3 text-decoration-none comp_name" href="{{ path( 'competence.show', { id: examen.competence.id } ) }}">{{ examen.competence.nom }}
+							<br/></a>
+					{# {{ examen.competence.description }} #}
+          {{ examen.competence.description|length > 500 ? examen.competence.description|slice(0, 500) ~ '...' : examen.competence.description|raw }}
+					<br/>
+				</div>
+			</article>
+		{% endfor %}
+	</div>
+
+	<div class="container-fluid m-auto my-3 p-4">
+		<h2 class="w-75 m-auto">EXAMEN PASSEES</h2>
+		{% for examen in examPassed %}
+			<article class="w-75 m-auto d-flex flex-column flex-lg-row justify-content-between align-items-start gap-3 my-5">
+				<div class="container p-4 bg-light box">
+						<a class="fs-3 text-decoration-none comp_name" href="{{ path( 'competence.show', { id: examen.competence.id } ) }}">{{ examen.competence.nom }}
+							<br/></a>
+					{# {{ examen.competence.description }} #}
+          {{ examen.competence.description|length > 500 ? examen.competence.description|slice(0, 500) ~ '...' : examen.competence.description }}
+					<br/>
+				</div>
+        <div class="container box p-3 text-dark bg-light date_comp">
+					<h3 class="align-self-end">{{ examen.date|date('d/m') }}
+						<br/></h3>
+					<p class="m-0">
+						<i class="fa-solid fa-clock"></i>
+						{{ examen.date|date('H:i') }}
+						<br/>
+						<i class="fa-solid fa-city"></i>
+						{{ examen.ville }}
+					</p>
+				</div>
+			</article>
+		{% endfor %}
+	</div>
+
+  <div class="d-flex align-item-center justify-content-center my-4">
+    <a href="{{ path('app_historique') }}" class="fs-3 btn__histo">Voir tout mon historique</a>
   </div>
 
-  <div>
-  <h2>EXAMEN PASSEES</h2>
-    {% for examen in examPassed %}
-      <p>
-        {{ examen.competence.nom }} <br />
-        {{ examen.date|date('d/m/Y') }} <br />
-        {{ examen.ville }}
-      </p>
-    {% endfor %}
-  </div>
 
-  <script src={{asset('assets/js/profil.js')}}></script>
+	<script src={{asset('assets/js/profil.js')}}></script>
 {% endblock %}

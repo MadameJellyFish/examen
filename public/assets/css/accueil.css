@@ -1,0 +1,65 @@
+/*////////////////////////////// partie competence /////////////////////////////// */
+
+.anim__banner{
+    background-color: var(--bgmauve);
+    margin: 0 !important;
+
+}
+
+.main-container{
+    margin-top: 0 !important;
+}
+
+.anim__banner{
+    background-color: var(--colorwhite);
+    /* ligne a supprimer une fois que l'anim sera placé dans base.css */
+}
+
+.layout-accueil{
+display: flex;
+/* overflow-x: scroll; */
+}
+
+.question-box{
+    margin-right: 2rem !important;
+    background-color: var(--colorwhite) !important;
+}
+
+h1{
+    color: var(--colorblack);
+    font-family: Gambetta;
+    font-weight: 700;
+    width: 80%;
+    padding-top: 2rem;
+    margin: 0 !important;
+}
+
+.h2-accueil{
+    color:var(--colorpurple);
+    font-family: Gambetta;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.contenu-accueil{
+font-size: 1.05rem;
+}
+
+.picto-accueil{
+    font-size: 1.25rem !important;
+    font-weight: 600;
+    color: var(--colorpurple);
+}
+
+.btnMore{
+    border-radius: 20px;
+    border: 2.9px solid;
+    border-color: var(--colorpurple);
+    font-family: Gambeta;
+    background-color: var(--colorwhite);
+    display: flex;
+    margin: 0 auto;
+    color: var(--colorpurple);
+    font-weight: 700;
+    padding: 5px 10px 5px 10px;
+}

@@ -196,6 +196,7 @@ a:hover{
 
 /* footer */
 
+
 .containerFooter {
     background-color: var(--colorblack);
 }
@@ -205,9 +206,9 @@ a:hover{
 }
 
 .logoFooter {
-    font-family: "CabinetGrotesk";
+    font-family: CabinetGrotesk;
     font-size  : 60px;
-    font-weight: bold;
+    font-weight: bolder;
     color      : var(--colorwhite);
     line-height: 70px;
 }
@@ -224,7 +225,7 @@ a:hover{
 .liensFooter {
     text-decoration: none;
     color          : var(--colorwhite);
-    font-family    : "Gambetta";
+    font-family    : Gambetta;
 }
 
 .liensFooter:hover {
@@ -237,3 +238,73 @@ a:hover{
     text-align : right;
     font-family: "Gambetta";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

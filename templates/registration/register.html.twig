@@ -4,17 +4,18 @@
 {% endblock %}
 
 {% block banniere_text %}
-	REGISTRATION - REGISTRATION - REGISTRATION - REGISTRATION - REGISTRATION -
+	<p class="first__banner__text">REGISTRATION &nbsp; - &nbsp; REGISTRATION &nbsp; - &nbsp; REGISTRATION &nbsp; - REGISTRATION &nbsp; - &nbsp; REGISTRATION &nbsp; REGISTRATION &nbsp; - &nbsp; REGISTRATION &nbsp; - &nbsp; REGISTRATION  &nbsp; - &nbsp;</p> 
+	<p class="second__banner__text">REGISTRATION &nbsp; - &nbsp; REGISTRATION &nbsp; - &nbsp; REGISTRATION &nbsp; - &nbsp; REGISTRATION &nbsp; - &nbsp; REGISTRATION &nbsp; - &nbsp; REGISTRATION &nbsp; - &nbsp; REGISTRATION &nbsp; - &nbsp; REGISTRATION &nbsp; -</p>
 {% endblock %}
 
 {% block body %}
 	<link rel="stylesheet" href={{asset('assets/css/register.css')}}>
 
 	<div class="containerInscription d-md-flex">
-		<div class="containerImgInscription col-md-5 d-none d-md-block">
+		<div class="containerImgInscription col-md-6 d-none d-md-block">
 			<img src={{asset('assets/img/inscription.jpg')}} alt="" class="imgInscription">
 		</div>
-		<div class="col-md-7 justify-content-center">
+		<div class="col-md-5 justify-content-center">
 			<div class="box containerRegisterForm col-md-10 m-md-5 my-5 mx-5">
 				<h1>Inscription</h1>
 
@@ -25,10 +26,10 @@
 				{{ form_row(registrationForm.telephone) }}
 				{{ form_row(registrationForm.email) }}
 				{{ form_row(registrationForm.plainPassword, {
-            		label: 'Password :'}) }}
+            		label: 'Mot de passe :'}) }}
 				{{ form_row(registrationForm.agreeTerms) }}
 
-				<button type="submit" class="btnPurple col-12 col-md-6">Submit</button>
+				<button type="submit" class="btnPurple col-12 col-md-4">Valider</button>
 				{{ form_end(registrationForm) }}
 			</div>
 		</div>

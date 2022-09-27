@@ -4,11 +4,40 @@
     height: 5rem;
     font-size: 2rem;
     text-transform: uppercase;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    position: relative;
     flex-wrap: nowrap;
     border-top: 3px solid black;
     border-bottom: 3px solid black;
     margin: 0;
+    background-color: white;
+}
+
+.slider {
+    overflow: hidden;
+    position: relative;
+    top: 12px;
+}
+
+.slide {
+    display: flex;
+    height: 100%;
+    width: calc(180px * 24);
+    list-style: none;
+}
+
+.item_slide {
+    flex: 1;
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: #343434;
+    animation: translateinfinite 15s linear infinite;
+}
+
+@keyframes translateinfinite {
+    100% {
+        transform: translateX(calc(-180px * 12));
+    }
 }

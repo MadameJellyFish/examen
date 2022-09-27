@@ -20,7 +20,8 @@
 
 	</head>
 	<body>
-		<header id="header">
+		<header
+			id="header">
 			<!-- header -->
 			<div id="header-wrapper" class="d-none d-md-flex d-lg-flex text-start align-md-middle">
 				<div class="container-fluid text-center">
@@ -66,78 +67,80 @@
 				</div>
 			</div>
 		</header>
+
 		<!-- fin header -->
 
 		<!-- debut sous-navbar -->
 		<!-- Navbar -->
-	        <nav class="navbar d-flex navbar-expand-md navbar-light fixed-top">
-            <a class="navbar-brand" href="{{ path('app_accueil') }}"><h2>Centre </br> d'examen</h2></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ path('app_competence') }}">Mon Compte<span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
-                    </li>
-				  <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_login') }}"> Connexion</a>
-                    </li>
-					<li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_register') }}"> Inscription</a>
-                    </li> 
-                </ul>
-            </div>
-        </nav>
-			<!-- Navbar -->
+			<nav class="navbar d-flex navbar-expand-md navbar-light fixed-top"> <a class="navbar-brand" href="{{ path('app_accueil') }}">
+				<h2>Centre
+				</br>
+				d'examen</h2>
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ path('app_competence') }}">Mon Compte<span class="sr-only"></span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('app_login') }}">
+						Connexion</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('app_register') }}">
+						Inscription</a>
+				</li>
+			</ul>
+		</div>
+</nav><!-- Navbar --><!-- fin sous-navbar --><div class="anim__banner"> {% block banniere_text %}{% endblock %}
+</div>
 
-			<!-- fin sous-navbar -->
 
-				<p class="anim__banner">{% block banniere_text %}{% endblock %} </p>
+<main>
+	{% for message in app.flashes('success') %}
+		<div class="alert alert-success">
+			{{message}}
+		</div>
+	{% endfor %}
 
-				<main>
-					{% for message in app.flashes('success') %}
-						<div class="alert alert-success">
-							{{message}}
-						</div>
-					{% endfor %}
+	{% block body %}{% endblock %}
+</main>
 
-					{% block body %}{% endblock %}
-				</main>
-				<!-- Footer -->
-				<footer class="containerFooter px-3 py-5">
-					<div class="container">
-						<div class="d-block d-md-flex d-lg-flex">
-							<div class="col-lg-5 col-md-6 text-start">
-								<h5 class="logoFooter">
-									<b>
-										Centre d'examens
-									</b>
-								</h5>
-							</div>
-							<div class="containerMenuFooter col-md-6 d-block d-md-flex d-lg-flex text-start align-md-middle">
-								<div class="col-lg-2 col-md-2  menuFooter">
-									<a href="{{ path('app_contact') }}" class="liensFooter">Contact</a>
-								</div>
-								<div class="col-lg-3 col-md-4 menuFooter">
-									<a href="{{ path('app_cgu') }}" class="liensFooter">Mentions Légales</a>
-								</div>
-								<div class="col-lg-2 col-md-6 menuFooter">
-									<a href="{{ path('app_faq') }}" class="liensFooter">FAQ</a>
-								</div>
-							</div>
-						</div>
-						<div class="copyright text-start text-md-end text-lg-end">
-							© 2022 Copyright
-						</div>
-					</div>
-				</footer>
-				<script src="assets/js/accueil.js"></script>
-				<!-- Fin footer -->
-			</body>
-		</body>
-	</html>
+<!-- Footer -->
+
+<footer class="containerFooter px-3 py-5">
+	<div class="container">
+		<div class="d-block d-md-flex d-lg-flex">
+			<div class="col-lg-5 col-md-6 text-start">
+				<h5 class="logoFooter">
+					<b>
+						Centre d'examens
+					</b>
+				</h5>
+			</div>
+			<div class="containerMenuFooter col-md-6 d-block d-md-flex d-lg-flex text-start align-md-middle">
+				<div class="col-lg-2 col-md-2  menuFooter">
+					<a href="{{ path('app_contact') }}" class="liensFooter">Contact</a>
+				</div>
+				<div class="col-lg-3 col-md-4 menuFooter">
+					<a href="{{ path('app_cgu') }}" class="liensFooter">Mentions Légales</a>
+				</div>
+				<div class="col-lg-2 col-md-6 menuFooter">
+					<a href="{{ path('app_faq') }}" class="liensFooter">FAQ</a>
+				</div>
+			</div>
+		</div>
+		<div class="copyright text-start text-md-end text-lg-end">
+			© 2022 Copyright
+		</div>
+	</div>
+</footer>
+<script src="assets/js/accueil.js"></script>
+<!-- Fin footer --></body></html>
