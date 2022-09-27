@@ -17,16 +17,23 @@
 	<section>
 		<div class="d-flex">
 			<section class="w-75 m-5">
-				<div class="">
+				<div>
 					<h2>{{competence.nom}}</h2>
 					<p class="mt-5 mb-5">{{competence.description}}</p>
 				</div>
 
+				{% for message in app.flashes('inscription_erreur') %}
+					<div class='alert-success' role="alert">
+						{{ message }}
+					</div>
+				{% endfor %}
+
 				<div class="d-flex justify-content-around row">
 					{% for examen in examens %}
 						<div class="box-examen col-md-4 col-sm-12">
-							<div class="details-date">
-							{# <p class="date">{{examen.date|date('d/m')}}</p> #}
+							<div
+								class="details-date">
+								{# <p class="date">{{examen.date|date('d/m')}}</p> #}
 								<p class="date">{{examen.date|date('d')}}</p>
 								<p class="date date-mois">{{examen.date|date('M')}}</p>
 							</div>
@@ -50,17 +57,20 @@
 
 			<section class="w-50 formulaire-comp">
 				<form action="/competence/{{competence.id}}" method="POST" class="question-box form-examen">
-				<h3>Inscription à un examen</h3>
+					<h3>Inscription à un examen</h3>
 
-				<div class="details-date">
-					<libelle>Mon choix :</libelle>
-					<select name="examen_id" class="selection-examen">
-						{# verifier if si l'examen est passe ou non au moment ou je m'inscris pour ne pas proposer un examen deja passe #}
-						{% for examen in examens %}
-							<option value="{{examen.id}}">{{examen.ville}} - {{examen.date|date('d/m/Y - H:i')}}</option>
-						{% endfor %}
-					</select>
-				</div>
+					<div class="details-date">
+						<libelle>Mon choix :</libelle>
+						<select
+							name="examen_id" class="selection-examen">
+							{# verifier if si l'examen est passe ou non au moment ou je m'inscris pour ne pas proposer un examen deja passe #}
+							{% for examen in examens %}
+								<option value="{{examen.id}}">{{examen.ville}}
+									-
+									{{examen.date|date('d/m/Y - H:i')}}</option>
+							{% endfor %}
+						</select>
+					</div>
 					<button name="submit" type="submit" class="btnMore">Inscription</button>
 				</form>
 			</section>

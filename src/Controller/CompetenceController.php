@@ -47,23 +47,30 @@ class CompetenceController extends AbstractController
         $submit = $request->get('submit');
         
         $user = $this->getUser();
+        // dd($user); je recupere l'objet user
+   
+        $user_id = $this->getUser()->getId();
+        // dd($user_id); grace à l'objet $user je recupere sa propriete id je recupere l'id
 
-        // $user_id = $request->getId();
-        // $user_id = getUser()->getId();
-
-        $inscription = new Inscription;
-
-        // $inscription = repoInscript->findBy(['examen'=>$examen_id])
-        
         $userExamToCome = $useRepo->examenDate($repoInscript, $user); // je recupere tous les examens pas encore passe // cote user
-
+        
         $examDispo = $compRepo->examenDate($examRepo, $competence); // renvoie un tableau des examns pas encore passe vis a vis de la date d'aujourd'hui
-
+        
         if (isset($submit)) {
             
             $examen_id = $request->get('examen_id');
             $examen = $examRepo->find($examen_id);
             
+            $inscription = $repoInscript->findOneBy(['examen' => $examen_id , 'user' => $user_id]); // retourne 1 element
+
+            // dd($inscription); // retourn null
+
+            if($inscription !== null){
+                $this->addFlash('inscription_erreur', 'Vous vous êtes déjà inscrit à cet examen');
+                // dd('ici');
+                return $this->render('/competence/show.html.twig', ['competence' => $competence, 'examens' => $examens]);
+            }
+
             // 1 verfier user nb inscription ==3 max et verfier que ca soit sur les examens pas encore passer
             // 2 verifier nb par examen <= 5 max
             // que la date sois passer ou non l'inscription à des est limité à 3
@@ -83,6 +90,7 @@ class CompetenceController extends AbstractController
                 }
             }
             
+            $inscription = new Inscription;
             $user->getId();
             $inscription->setUser($user);
             $inscription->setExamen($examen);

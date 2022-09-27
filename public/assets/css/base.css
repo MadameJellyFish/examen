@@ -69,14 +69,17 @@ body {
     font-weight: 400;
     font-size  : 24px;
     padding-top: 4em;
+    color          : var(--colorwhite);
 }
 
 #title {
     font-family: CabinetGrotesk;
+    color          : var(--colorwhite);
 }
 
 #title p {
     font-size: 6em;
+    color          : var(--colorwhite);
 }
 
 
@@ -142,13 +145,7 @@ p>a {
 
 #header.hide {
     display           : none;
-    opacity           : 0;
-    -webkit-transition: height 0.5s ease;
-    -moz-transition   : height 0.5s ease;
-    -ms-transition    : height 0.5s ease;
-    -o-transition     : height 0.5s ease;
-    transition        : height 0.5s ease;
-    transition-delay  : 0.2s;
+   overflow : auto;
 }
 
 .navbar {
