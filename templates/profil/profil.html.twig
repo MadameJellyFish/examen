@@ -85,8 +85,8 @@
 			</div>
 			<div class="d-flex justify-content-center align-items-center flex-column flex-lg-row">
 				{{ form_row(form.submit) }}
-				<a href="{{ path('app_edit_password') }}" class="btn btn-outline-secondary mx-3 my-2 w-100">Changer de mot de passe</a>
-				<a href="{{ path('app_delete') }}" class="btn btn-outline-danger mx-3 my-2 w-100">Supprimer mon profil</a>
+				<a href="{{ path('app_edit_password') }}" class="btn flex-grow-1 flex-shrink-1 mx-3 my-2 w-100 btn__histo">Changer de mot de passe</a>
+				<a href="{{ path('app_delete') }}" class="btn flex-grow-1 flex-shrink-1 btn-outline-danger mx-3 my-2 w-100 btn__histo__plain">Supprimer mon profil</a>
 			</div>
 			{{ form_end(form) }}
 		</div>
@@ -95,6 +95,11 @@
 
 	<div class="container-fluid m-auto to_come my-3 p-4">
 		<h2 class="w-75 m-auto">EXAMEN A VENIR</h2>
+		{% if examToCome is empty %}
+			<article class="w-75 m-auto d-flex flex-column flex-lg-row justify-content-between align-items-start gap-3 my-5">
+				<p>Tu n'as pas d'examen prévu</p>
+			</article>
+		{% endif %}
 		{% for examen in examToCome %}
 			<article class="w-75 m-auto d-flex flex-column flex-lg-row justify-content-between align-items-start gap-3 my-5">
 				<div class="container box p-3 text-light date_comp">
@@ -121,6 +126,11 @@
 
 	<div class="container-fluid m-auto my-3 p-4">
 		<h2 class="w-75 m-auto">EXAMEN PASSEES</h2>
+		{% if examPassed is empty %}
+			<article class="w-75 m-auto d-flex flex-column flex-lg-row justify-content-between align-items-start gap-3 my-5">
+				<p>Tu n'as pas encore passé d'examen</p>
+			</article>
+		{% endif %}
 		{% for examen in examPassed %}
 			<article class="w-75 m-auto d-flex flex-column flex-lg-row justify-content-between align-items-start gap-3 my-5">
 				<div class="container p-4 bg-light box">
