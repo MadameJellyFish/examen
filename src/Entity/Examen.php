@@ -123,6 +123,6 @@ class Examen
 
     public function __toString()
     {
-        return $this->competence." à ".$this->ville;
+        return $this->competence." à ".$this->ville." le ".$this->date->format('d/m/Y');
     }
 }

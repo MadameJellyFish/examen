@@ -62,7 +62,6 @@ class InscriptionCrudController extends AbstractCrudController
                     ->hideOnIndex(),
             AssociationField::new('examen'),
             AssociationField::new('user')
-                    ->autocomplete()
         ];
     }
 }
