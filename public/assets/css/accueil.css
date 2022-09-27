@@ -1,4 +1,6 @@
-main{
+/*////////////////////////////// partie competence /////////////////////////////// */
+
+.anim__banner{
     background-color: var(--bgmauve);
     margin: 0 !important;
 

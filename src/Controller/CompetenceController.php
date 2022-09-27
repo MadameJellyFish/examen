@@ -45,7 +45,13 @@ class CompetenceController extends AbstractController
         $submit = $request->get('submit');
         
         $user = $this->getUser();
+
+        // $user_id = $request->getId();
+        // $user_id = getUser()->getId();
+
         $inscription = new Inscription;
+
+        // $inscription = repoInscript->findBy(['examen'=>$examen_id])
         
         $userExamToCome = $useRepo->examenDate($repoInscript, $user); // je recupere tous les examens pas encore passe // cote user
 
@@ -59,6 +65,7 @@ class CompetenceController extends AbstractController
             // 1 verfier user nb inscription ==3 max et verfier que ca soit sur les examens pas encore passer
             // 2 verifier nb par examen <= 5 max
             // que la date sois passer ou non l'inscription à des est limité à 3
+
             // 3 faire une difference entre les examens passe et à venir pour que le user ne soit pas bloqué par ces anciennes isncriptions 
 
             if(count($userExamToCome)>= 3 || $examen->getInscriptions()->count() >=5){
@@ -69,7 +76,7 @@ class CompetenceController extends AbstractController
 
                 } else if($examen->getInscriptions()->count() >=5){
 
-                    $this->addFlash('erreur', 'L\examen est complet');
+                    $this->addFlash('erreur', 'L\'examen est complet');
                     return $this->redirectToRoute(('app_accueil'));
                 }
             }

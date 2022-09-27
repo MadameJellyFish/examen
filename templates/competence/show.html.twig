@@ -19,10 +19,10 @@
 			<section class="w-75 m-5">
 				<div class="">
 					<h2>{{competence.nom}}</h2>
-					<p class="mt-5">{{competence.description}}</p>
+					<p class="mt-5 mb-5">{{competence.description}}</p>
 				</div>
 
-				<div class="d-flex justify-content-between row">
+				<div class="d-flex justify-content-around row">
 					{% for examen in examens %}
 						<div class="box-examen col-md-4 col-sm-12">
 							<div class="details-date">
@@ -31,15 +31,15 @@
 								<p class="date date-mois">{{examen.date|date('M')}}</p>
 							</div>
 							<div class="details-examen">
-								<i class="fa-solid fa-clock"></i>
+								<i class="fa-solid fa-clock icon"></i>
 								<p>À&nbsp;{{examen.date|date('H:i')}}</p>
 							</div>
 							<div class="details-examen">
-								<i class="fa-sharp fa-solid fa-location-dot"></i>
+								<i class="fa-sharp fa-solid fa-location-dot icon"></i>
 								<p>Ville de&nbsp;{{examen.ville}}</p>
 							</div>
 							<div class="details-examen">
-								<i class="fa-solid fa-user-clock"></i>
+								<i class="fa-solid fa-user"></i>
 								<p>{{examen.inscriptions|length}}&nbsp;Inscrits</p>
 							</div>
 						</div>
@@ -57,7 +57,7 @@
 					<select name="examen_id" class="selection-examen">
 						{# verifier if si l'examen est passe ou non au moment ou je m'inscris pour ne pas proposer un examen deja passe #}
 						{% for examen in examens %}
-							<option value="{{examen.id}}">{{examen.ville}} {{examen.date|date('d/m/Y H:i')}}</option>
+							<option value="{{examen.id}}">{{examen.ville}} - {{examen.date|date('d/m/Y - H:i')}}</option>
 						{% endfor %}
 					</select>
 				</div>

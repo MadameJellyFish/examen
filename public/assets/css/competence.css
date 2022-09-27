@@ -66,8 +66,9 @@ main {
     border-radius: 20px;
     background-color: var(--colorpurple);
     margin-right: 1rem;
-    width: 30%;
+    width: 24%;
     margin-bottom: 3rem;
+    padding: 20px;
 }
 
 .box-examen>p {
@@ -82,29 +83,33 @@ main {
 
 .date {
     font-family: Gambetta;
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 700;
     color: var(--colorwhite);
     margin-left: auto;
+    margin-top: -10px;
 }
 
 .date-mois {
-    margin-top: -20px;
+    margin-top: -30px;
     margin-bottom: -5px;
 }
 
 .details-examen {
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
     color: var(--colorwhite);
     margin-top: 0.3rem;
+    margin-bottom: -5px;
 }
+
+
 
 .details-examen>p {
     color: var(--colorwhite);
     text-align: left;
-    padding-left: 1rem;
+    padding-left: 0.7rem;
+    font-size: 1rem;
     margin: 0;
 }
 
@@ -152,7 +157,7 @@ select {
 /* 
     -webkit-appearance: none;
         -moz-appearance: none; */
-        appearance: none;
+        /* appearance: none; */
 }
 
 option{
