@@ -6,38 +6,40 @@
 
 {% block banniere_text %}
 	<div class="slider">
-    <ul class="slide">
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
+		<ul class="slide">
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
 
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-      <li class="item_slide">PROFIL</li>
-    </ul>
-  </div>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+			<li class="item_slide">PROFIL</li>
+		</ul>
+	</div>
 {% endblock %}
 
 {% block body %}
 	<link rel="stylesheet" href={{ asset('assets/css/profil.css') }}>
+
+	<link rel="stylesheet" href={{ asset('assets/css/popup.css') }}>
 
 	{% for message in app.flashes('message') %}
 		<div class='alert-success' role="alert">
@@ -67,7 +69,7 @@
 		<div>
 			{{ form_start(form) }}
 			{# <p id="profil_name" class="fs-2 fw-bolder text-sm-center text-lg-start">{{ user.nom }}
-				{{ user.prenom }}</p> #}
+							{{ user.prenom }}</p> #}
 			<div class="d-flex gap-3">
 				<div id="label_form" class="d-flex flex-column justify-content-evenly">
 					{{ form_label(form.nom) }}
@@ -84,15 +86,30 @@
 					{{ form_widget(form.telephone) }}
 				</div>
 			</div>
-			<div class="d-flex justify-content-center align-items-center flex-column flex-lg-row">
+			<div class="d-flex justify-content-center align-items-center flex-column flex-lg-row positionContainer">
 				{{ form_row(form.submit) }}
 				<a href="{{ path('app_edit_password') }}" class="btn btn-outline-secondary mx-3 my-2 w-100">Changer de mot de passe</a>
-				<a href="{{ path('app_delete') }}" class="btn btn-outline-danger mx-3 my-2 w-100">Supprimer mon profil</a>
+				{# <a href="{{ path('app_delete') }}" class="btn btn-outline-danger mx-3 my-2 w-100" id="">Supprimer mon profil</a> #}
+				<button type="button" class="btn btn-outline-danger mx-3 my-2 w-100" data-bs-toggle="modal" data-bs-target="#modalId">Supprimer mon profil</button>
 			</div>
+
+			<!-- Modal -->
+			<div class="modal fade" id="modalId" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content box">
+						<h5>Supprimer votre compte</h5>
+							<p class="">Êtes-vous sure de vouloir supprimer votre compte ?</p>
+							<a href="{{ path('app_delete') }}" class="btnPurple col-12">Supprimer</a>
+							<button type="button" class="btnContourPurple col-12 col-md-4" data-bs-dismiss="modal">Annuler</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Fin de Modal -->
+
 			{{ form_end(form) }}
 		</div>
 	</section>
-
 
 	<div class="container-fluid m-auto to_come my-3 p-4">
 		<h2 class="w-75 m-auto">EXAMEN A VENIR</h2>
@@ -110,10 +127,10 @@
 					</p>
 				</div>
 				<div class="container p-4 bg-light box">
-						<a class="fs-3 text-decoration-none comp_name" href="{{ path( 'competence.show', { id: examen.competence.id } ) }}">{{ examen.competence.nom }}
-							<br/></a>
+					<a class="fs-3 text-decoration-none comp_name" href="{{ path( 'competence.show', { id: examen.competence.id } ) }}">{{ examen.competence.nom }}
+						<br/></a>
 					{# {{ examen.competence.description }} #}
-          {{ examen.competence.description|length > 500 ? examen.competence.description|slice(0, 500) ~ '...' : examen.competence.description }}
+					{{ examen.competence.description|length > 500 ? examen.competence.description|slice(0, 500) ~ '...' : examen.competence.description }}
 					<br/>
 				</div>
 			</article>
@@ -125,13 +142,13 @@
 		{% for examen in examPassed %}
 			<article class="w-75 m-auto d-flex flex-column flex-lg-row justify-content-between align-items-start gap-3 my-5">
 				<div class="container p-4 bg-light box">
-						<a class="fs-3 text-decoration-none comp_name" href="{{ path( 'competence.show', { id: examen.competence.id } ) }}">{{ examen.competence.nom }}
-							<br/></a>
+					<a class="fs-3 text-decoration-none comp_name" href="{{ path( 'competence.show', { id: examen.competence.id } ) }}">{{ examen.competence.nom }}
+						<br/></a>
 					{# {{ examen.competence.description }} #}
-          {{ examen.competence.description|length > 500 ? examen.competence.description|slice(0, 500) ~ '...' : examen.competence.description }}
+					{{ examen.competence.description|length > 500 ? examen.competence.description|slice(0, 500) ~ '...' : examen.competence.description }}
 					<br/>
 				</div>
-        <div class="container box p-3 text-dark bg-light date_comp">
+				<div class="container box p-3 text-dark bg-light date_comp">
 					<h3 class="align-self-end">{{ examen.date|date('d/m') }}
 						<br/></h3>
 					<p class="m-0">
@@ -146,10 +163,10 @@
 		{% endfor %}
 	</div>
 
-  <div class="d-flex align-item-center justify-content-center my-4">
-    <a href="{{ path('app_historique') }}" class="fs-3 btn__histo">Voir tout mon historique</a>
-  </div>
+	<div class="d-flex align-item-center justify-content-center my-4">
+		<a href="{{ path('app_historique') }}" class="fs-3 btn__histo">Voir tout mon historique</a>
+	</div>
 
-
+	<script src={{asset('assets/js/popup.js')}}></script>
 	<script src={{asset('assets/js/profil.js')}}></script>
 {% endblock %}
