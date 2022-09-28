@@ -1,25 +1,18 @@
 // console.log('helooooo');
 // alert('yooyoyoyoooyo');
 
-// let btnL = document.querySelector('#btnLeft');
-// let btnR = document.querySelector('#btnRight');
-// let boxComp = document.querySelector('#boite');
+let mainContainer = document.querySelector('#main-box');
+let box = document.querySelector('#boite-comp');
 
-// btnL = 'tooozk,kxdmdc';
+mainContainer.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    mainContainer.scrollLeft += evt.deltaY;
+});
 
-// btnL.addEventListener('click', slideL);
-// console.log(btnL);
 
-// function slideL(){
-    //     let imageActive = document.querySelector('.active');
+// box.addEventListener('wheel', slide)
 
-//     imageActive.classList.remove('active');
-  
-//     if (imageActive.previousElementSibling) {
-//         imageActive.previousElementSibling.classList.add('active');
-//     } else {
-//         imageActive.parentElement.lastElementChild.classList.add('active');
-       
-//     }
-
+// function slide(){
+//     // mainContainer.style.overflow-x = 'scroll';
+//     console.log(box);
 // }
