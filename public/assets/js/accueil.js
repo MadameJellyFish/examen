@@ -1,26 +1,23 @@
-let lastScrollY = window.scrollY
-
-
-/* lastScrollY = window.scrollY */
-
-/* Header scroll */
-
-/* let navbars = document.querySelector('.navbar')
 let header = document.querySelector('#header')
+let nav = document.querySelector('.navbar')
+let lastScrollY = 0;
 
+window.addEventListener('scroll', () => {
+  {
+    if (lastScrollY < window.scrollY) {
+      header.classList.add('hidden')
+         console.log('test down')
+    } else {
+      header.classList.remove('hidden')
+          console.log('test up')
+    }
+    lastScrollY = window.scrollY
 
-
-/* window.addEventListener('scroll', () => {
-  if (lastScrollY  ) {
-    header.classList.add('hidden')   
-    console.log('test down')
-  } else {
-    header.classList.remove('hidden');
-    console.log('test up')
   }
+})
 
-  
-}) */
+/* scrollY
+console.log(scrollY) */
 
 /* MENU DEROULANT */
 let btnmenu = document.querySelector('.navbar-toggler')
