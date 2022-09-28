@@ -61,7 +61,7 @@ input:focus{
 
 .btnPurple {
     border-radius: 20px;
-    border-color: var(--colorpurple);
+    border-color: 2px solid var(--colorpurple);
     background-color: var(--colorpurple);
     color: var(--colorwhite);
     margin: 0 auto;
