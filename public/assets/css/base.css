@@ -207,7 +207,7 @@ a:hover {
     font-family: CabinetGrotesk;
     font-size  : 60px;
     font-weight: bolder;
-    color      : var(--colorwhite);
+    color      : var(--colorpurple);
     line-height: 70px;
 }
 
