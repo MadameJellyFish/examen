@@ -6,13 +6,13 @@
 }
 
 .containerImgInscription {
-    height: 710px;
+    height: 716px;
 }
 
 .imgInscription {
     width: 100%;
     object-fit: cover;
-    height: 710px;
+    height: 716px;
 }
 
 .containerRegisterForm>h1 {
@@ -39,9 +39,7 @@
     border: var(--colorpurple) solid 2px;
     width: 100%;
     padding: 4px 9px;
-    color: var(--colorblack);
-    font-size: 1.15rem;
-    font-weight: 500;
+    font-weight: 400;
     font-family: Cabinet Grotesk;
 }
 
@@ -68,7 +66,7 @@ input:focus {
 .containerRegisterForm>form>div>label {
     font-family: Gambeta;
     padding-left: 10px;
-    font-weight: bold;
+    font-weight: 800;
 }
 
 #registration_form_date {
@@ -87,9 +85,7 @@ input:focus {
     border-radius: 20px;
     padding: 6px 4px 6px 5px;
     border-style: solid;
-    color: var(--colorblack);
-    font-size: 1.15rem;
-    font-weight: 500;
+    font-weight: 400;
     font-family: Cabinet Grotesk;
 }
 
@@ -109,7 +105,7 @@ input[type=checkbox] {
 /* btn purple */
 .btnPurple {
     border-radius: 20px;
-    border-color: var(--colorpurple);
+    border-color: 2px solid var(--colorpurple);
     background-color: var(--colorpurple);
     color: var(--colorwhite);
     margin: 0 auto;

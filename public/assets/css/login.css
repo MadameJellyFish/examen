@@ -36,19 +36,38 @@ h1{
     padding-left: 10px;
 }
 
+/* message déjà online */
+.textLogout{
+    text-align: center;
+    font-weight: 400;
+    font-family: Cabinet Grotesk;
+}
+
+.textLogout>a{
+    color:var(--colorpurple);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 700; 
+    margin-left: 5px;
+}
+
+.textLogout>a:hover{
+    color:var(--colorblack);
+}
+
+/* fin message */
+
 label{
     font-family: Gambeta;
     padding-left: 10px;
-    font-weight: bold;
+    font-weight: 800;
 }
 
 .inputStyle {
     border: var(--colorpurple) solid 2px;
     width: 100%;
     padding: 4px 9px;
-    color: var(--colorblack);
-    font-size: 1.15rem;
-    font-weight: 500;
+    font-weight: 400;
     font-family: Cabinet Grotesk;
 }
 
@@ -63,7 +82,7 @@ input:focus{
 
 .btnPurple {
     border-radius: 20px;
-    border-color: var(--colorpurple);
+    border-color: 2px solid var(--colorpurple);
     background-color: var(--colorpurple);
     color: var(--colorwhite);
     margin: 0 auto;

@@ -10,23 +10,17 @@ main {
     padding-top: 3rem;
 }
 
-.anim__banner {
-    background-color: var(--colorwhite);
-    /* ligne a supprimer une fois que l'anim sera placé dans base.css */
-}
-
 .layout-accueil {
     display: flex;
+    padding-bottom: 7rem;
     /* overflow-x: scroll; */
 }
 
 .comp-box {
-    margin-right: 2rem;
+    margin-right: 2rem !important;
     background-color: var(--colorwhite);
     text-decoration: none;
-
-    width: 80%;
-    margin: auto;
+   
     padding: 1.5rem;
     border: 3px solid var(--colorblack);
     box-shadow: -5px 5px var(--colorblack);
