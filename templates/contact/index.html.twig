@@ -89,7 +89,7 @@
 						<input class="col-sm-2 col-form-label inputStyle inputClassic" name="nom" id="nom" type="text" value=""/>
 
 						{% if errors.nom is defined %}
-							<div class="text-danger">{{errors.nom}}</div>
+							<div class="text-danger ps-2">{{errors.nom}}</div>
 						{% endif %}
 					</div>
 
@@ -98,7 +98,7 @@
 							Email :</label>
 						<input class="col-sm-2 col-form-label inputStyle inputClassic" name="email" id="email" type="text" value=""/>
 						{% if errors.email is defined %}
-							<div class="text-danger">{{errors.email}}</div>
+							<div class="text-danger ps-2">{{errors.email}}</div>
 						{% endif %}
 					</div>
 
@@ -106,7 +106,7 @@
 						<label for="message">Message :</label>
 						<textarea class="col-sm-2 col-form-label inputStyle inputGrand" id="message" name="message" value="" style="height: 12rem"></textarea>
 						{% if errors.message is defined %}
-							<div class="text-danger">{{errors.message}}</div>
+							<div class="text-danger ps-2">{{errors.message}}</div>
 						{% endif %}
 
 					</div>
