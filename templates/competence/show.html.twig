@@ -5,66 +5,101 @@
 {% endblock %}
 
 {% block banniere_text %}
-	DETAILS COMPETENCES - DETAILS COMPETENCES - DETAILS COMPETENCES - DETAILS COMPETENCES - DETAILS COMPETENCES
+	<div class="slider">
+		<ul class="slide">
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+			<li class="item_slide">détails</li>
+		</ul>
+	</div>
 {% endblock %}
 
 {% block body %}
 
-	<link rel="stylesheet" href={{ asset('assets/css/faq.css') }}>
 	<link rel="stylesheet" href={{ asset('assets/css/competence.css') }}>
-	<link rel="stylesheet" href={{ asset('assets/css/accueil.css') }}>
 
-	<section>
-		<div class="d-flex">
-			<section class="w-75 m-5">
-				<div class="">
-					<h2>{{competence.nom}}</h2>
-					<p class="mt-5">{{competence.description}}</p>
+	<section class="row">
+		<section class="col-lg-7 p-5">
+			<div>
+				<h2>{{competence.nom}}</h2>
+				<p class="mt-5 mb-5">{{competence.description}}</p>
+			</div>
+
+			{% for message in app.flashes('inscription_erreur') %}
+				<div class='alert-success' role="alert">
+					{{ message }}
 				</div>
+			{% endfor %}
 
-				<div class="d-flex justify-content-between row">
-					{% for examen in examens %}
-						<div class="box-examen col-md-4 col-sm-12">
-							<div class="details-date">
-							{# <p class="date">{{examen.date|date('d/m')}}</p> #}
+			<div class="row">
+
+					{% for examen in examens|sort((a, b) => a.date > b.date) %}
+				{# {% for examen in examens %} #}
+					<div class="col-lg-4 mb-4">
+						<div class="box-examen">
+							<div
+								class="details-date">
+								{# <p class="date">{{examen.date|date('d/m')}}</p> #}
 								<p class="date">{{examen.date|date('d')}}</p>
 								<p class="date date-mois">{{examen.date|date('M')}}</p>
 							</div>
 							<div class="details-examen">
-								<i class="fa-solid fa-clock"></i>
+								<i class="fa-solid fa-clock icon"></i>
 								<p>À&nbsp;{{examen.date|date('H:i')}}</p>
 							</div>
 							<div class="details-examen">
-								<i class="fa-sharp fa-solid fa-location-dot"></i>
+								<i class="fa-sharp fa-solid fa-location-dot icon"></i>
 								<p>Ville de&nbsp;{{examen.ville}}</p>
 							</div>
 							<div class="details-examen">
-								<i class="fa-solid fa-user-clock"></i>
+								<i class="fa-solid fa-user"></i>
 								<p>{{examen.inscriptions|length}}&nbsp;Inscrits</p>
 							</div>
 						</div>
-						{# et limiter l'affichage des examens à 5 à partir du plus récent #}
-					{% endfor %}
-				</div>
-			</section>
+					</div>
+				{% endfor %}
+			</div>
+		</section>
 
-			<section class="w-50 formulaire-comp">
-				<form action="/competence/{{competence.id}}" method="POST" class="question-box form-examen">
+		<section class="formulaire-comp col-lg-5 p-5">
+			<form action="/competence/{{competence.id}}" method="POST" class="form-box form-examen">
 				<h3>Inscription à un examen</h3>
 
 				<div class="details-date">
 					<libelle>Mon choix :</libelle>
 					<select name="examen_id" class="selection-examen">
-						{# verifier if si l'examen est passe ou non au moment ou je m'inscris pour ne pas proposer un examen deja passe #}
 						{% for examen in examens %}
-							<option value="{{examen.id}}">{{examen.ville}} {{examen.date|date('d/m/Y H:i')}}</option>
+							<option value="{{examen.id}}">{{examen.ville}}
+								-
+								{{examen.date|date('d/m/Y - H:i')}}</option>
 						{% endfor %}
 					</select>
 				</div>
-					<button name="submit" type="submit" class="btnMore">Inscription</button>
-				</form>
-			</section>
-		</div>
+				<button name="submit" type="submit" class="btnMore">Inscription</button>
+			</form>
+		</section>
 	</section>
 
 {% endblock %}

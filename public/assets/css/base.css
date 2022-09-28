@@ -43,42 +43,42 @@ body {
     height    : 100%;
     width     : 100%;
     min-height: 100vh;
+    
 }
 
-
-/* Partie Header */
-
+/*////////////////////////////// Partie Header /////////////////////////////// */
 #header-wrapper {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1),
-            rgba(0, 0, 0, 0.1)), url('../img/etudierNB.jpg');
+    rgba(0, 0, 0, 0.1)), url('../img/etudierNB.jpg');
     background-repeat  : no-repeat;
     background-position: 70% 30%;
-
-    background-size    : cover;  
+    background-size    : cover;
 }
 
-
-.container-fluid{
-    padding-top: 4em;
+.container-fluid {
+    padding-top   : 4em;
     padding-bottom: 1em;
 }
 
 /* Slogan + Centre examen gros titre  */
 
 .header-title {
-    font-family: "Gambetta";
+    font-family: Gambetta;
     font-weight: 400;
     font-size  : 24px;
     padding-top: 4em;
+    color      : var(--colorwhite);
 }
 
 #title {
-    font-family: "CabinetGrotesk";
+    font-family: CabinetGrotesk;
+    color      : var(--colorwhite);
 }
 
 #title p {
- font-size: 6em;
-} 
+    font-size: 6em;
+    color    : var(--colorwhite);
+}
 
 
 #title a {
@@ -91,7 +91,7 @@ body {
 .title-left {
     margin-left: 1.3em;
     text-align : left;
-    line-height: 1; 
+    line-height: 1;
 }
 
 .title-right {
@@ -105,34 +105,87 @@ p>a {
     color          : var(--colorwhite);
 }
 
-/* partie navbar (contact/Connexion/Inscription) */
+/* partie navbar header (contact/Connexion/Inscription) */
 
-.navbar {
-   /*  margin     : 0 auto; */
-    font-family: "Gambetta";
-    font-size  : 22px;
-     display        : flex;
-    justify-content: flex-end;  
-  
+.navbars {
+    /*  margin     : 0 auto; */
+    font-family    : Gambetta;
+    font-size      : 22px;
+    display        : flex;
+    justify-content: flex-end;
+    
 }
 
-.navbar li {
+.navbars li {
     margin-right: 2em;
 }
 
-.navbar a {
+.navbars a {
     text-decoration: none;
     font-weight    : 300;
     color          : var(--colorwhite);
 }
 
-.navbar-left{
-  margin-left: 28em;  
+.navbars-left {
+    margin-left: 33em;
 }
 
-.navbar-right{
-    margin-left: auto;
+.navbars-right {
+    margin-left : auto;
     margin-right: 2em;
+}
+
+/*////////////////////////////// partie sous navbar /////////////////////////////// */
+
+.navbar-height {
+    height: 100%;
+}
+
+
+#header.hidden {
+ display: none;
+}
+
+.navbar {
+    box-sizing   : content-box;
+    align-content: center;
+    display      : flex;
+    color        : var(--colorblack);
+    top          : 0;
+    width        : 100%;
+    display      : block;
+    transition   : top 0.3s;
+    position     : relative;
+}
+
+
+.navbar-brand h2 {
+    margin-left   : 1em;
+    font-family   : Cabinet Grotesk;
+    font-size     : 36px;
+    font-weight   : bold;
+    line-height   : 1em;
+    letter-spacing: 0.2em;
+    color         : var(--colorblack);
+}
+
+.collapse {
+    justify-content: center;
+    align-content  : center;
+    margin-left    : 3em;
+    
+}
+
+.navbar-nav a {
+    font-weight    : bold;
+    font-size      : 20px;
+    margin-right   : 4em;
+    text-decoration: none;
+    color          : var(--colorblack);
+}
+
+a:hover {
+    color: var(--colorpurple);
 }
 
 
@@ -178,74 +231,5 @@ p>a {
     align-self : flex-end;
     color      : var(--colorwhite);
     text-align : right;
-    font-family: Gambetta;
+    font-family: "Gambetta";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,55 +1,76 @@
-main{
+/*////////////////////////////// partie competence /////////////////////////////// */
+
+main {
     background-color: var(--bgmauve);
-    margin: 0 !important;
-
 }
 
-.main-container{
-    margin-top: 0 !important;
+.main-container {
+    margin: 0 auto;
+    width: 80%;
+    padding-top: 3rem;
 }
 
-.anim__banner{
+.anim__banner {
     background-color: var(--colorwhite);
     /* ligne a supprimer une fois que l'anim sera placé dans base.css */
 }
 
-.layout-accueil{
-display: flex;
-/* overflow-x: scroll; */
+.layout-accueil {
+    display: flex;
+    /* overflow-x: scroll; */
 }
 
-.question-box{
-    margin-right: 2rem !important;
-    background-color: var(--colorwhite) !important;
+.comp-box {
+    margin-right: 2rem;
+    background-color: var(--colorwhite);
+    text-decoration: none;
+
+    width: 80%;
+    margin: auto;
+    padding: 1.5rem;
+    border: 3px solid var(--colorblack);
+    box-shadow: -5px 5px var(--colorblack);
+    border-radius: 20px;
 }
 
-h1{
+h1 {
     color: var(--colorblack);
     font-family: Gambetta;
     font-weight: 700;
     width: 80%;
     padding-top: 2rem;
-    margin: 0 !important;
 }
 
-.h2-accueil{
-    color:var(--colorpurple);
+.h2-accueil {
+    color: var(--colorpurple);
     font-family: Gambetta;
     font-weight: 700;
     font-size: 1.4rem;
 }
 
-.contenu-accueil{
-font-size: 1.05rem;
+.contenu-accueil {
+    font-size: 1.05rem;
+    color: var(--colorblack);
+    text-align: justify;
+    /* font-size: 1.15rem; */
+    font-weight: 500;
+    font-family: Cabinet Grotesk;
+
 }
 
-.picto-accueil{
-    font-size: 1.25rem !important;
+.title-comp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.picto-accueil {
+    font-size: 1.25rem;
     font-weight: 600;
     color: var(--colorpurple);
 }
 
-.btnMore{
+.btnMore {
     border-radius: 20px;
     border: 2.9px solid;
     border-color: var(--colorpurple);
@@ -60,4 +81,8 @@ font-size: 1.05rem;
     color: var(--colorpurple);
     font-weight: 700;
     padding: 5px 10px 5px 10px;
+}
+
+.box-comp {
+    text-decoration: none;
 }
