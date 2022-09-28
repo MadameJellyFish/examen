@@ -6,13 +6,13 @@
 }
 
 .containerImgInscription {
-    height: 716px;
+    height: 757px;
 }
 
 .imgInscription {
     width: 100%;
     object-fit: cover;
-    height: 716px;
+    height: 757px;
 }
 
 .containerRegisterForm>h1 {
@@ -125,5 +125,14 @@ input[type=checkbox] {
 }
 
 /* fin btn purple */
+
+/* message erreur email existant */
+ul{
+    list-style-type: none;  
+    font-family: gambeta;
+    color:red;
+    padding-left: 10px;
+}
+
 
 /* fin registration form */

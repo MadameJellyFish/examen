@@ -47,10 +47,10 @@
 				{% endif %}
 
 				{% if app.user %}
-					<div class="mb-3">
-						You are logged in as
+					<div class="mb-3 textLogout">
+						Tu es connecté en tant que 
 						{{ app.user.userIdentifier }},
-						<a href="{{ path('app_logout') }}">Logout</a>
+						<a href="{{ path('app_logout') }}" class="">Logout</a>
 					</div>
 				{% endif %}
 

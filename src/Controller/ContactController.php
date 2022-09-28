@@ -19,17 +19,17 @@ class ContactController extends AbstractController
 
         $nom = trim($request->get('nom'));
         if (empty($nom)) {
-            [($errors['nom'] = 'le nom est obligatoire')];
+            [($errors['nom'] = 'Le nom est obligatoire *')];
         }
 
         $email = trim($request->get('email'));
         if (empty($email)) {
-            [($errors['email'] = 'l\'email est obligatoire')];
+            [($errors['email'] = 'L\'email est obligatoire *')];
         }
 
         $message = trim($request->get('message'));
         if (empty($message)) {
-            [($errors['message'] = 'Le message est obligatoire')];
+            [($errors['message'] = 'Le message est obligatoire *')];
         }
 
         $datas = ['nom' => $nom, 'email' => $email, 'message' => $message];

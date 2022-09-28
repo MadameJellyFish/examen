@@ -116,6 +116,11 @@ input:focus{
     background-color: var(--colorblack);
 }
 
+/* message d'erreur */
+.text-danger{
+    font-size: 0.8em;
+}
+
 /* responsive */
 
 @media screen and (max-width: 767px) {

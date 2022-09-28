@@ -36,6 +36,27 @@ h1{
     padding-left: 10px;
 }
 
+/* message déjà online */
+.textLogout{
+    text-align: center;
+    font-weight: 400;
+    font-family: Cabinet Grotesk;
+}
+
+.textLogout>a{
+    color:var(--colorpurple);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 700; 
+    margin-left: 5px;
+}
+
+.textLogout>a:hover{
+    color:var(--colorblack);
+}
+
+/* fin message */
+
 label{
     font-family: Gambeta;
     padding-left: 10px;
@@ -79,6 +100,13 @@ input:focus{
     border: var(--colorblack);
     background-color: var(--colorblack);
 }
+
+/* message flash */
+.alert-success{
+    margin-bottom: 0px;
+    font-family: gambeta;
+}
+/* fin message flash */
 
 
 /* Responsive */

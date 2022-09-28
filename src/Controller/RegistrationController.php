@@ -32,7 +32,7 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
                 );
-            $this->addFlash('success', 'Maintenat vous faites désormais partie du plus grand réseau d`examens en France !');
+            $this->addFlash('success', 'Maintenat tu fais désormais partie du plus grand réseau d`examens en France !');
 
             $entityManager->persist($user);
             $entityManager->flush();
