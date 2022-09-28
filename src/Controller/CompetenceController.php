@@ -42,7 +42,7 @@ class CompetenceController extends AbstractController
     {
 
         $competence = $this->repo->find($id);
-        $examens = $examRepo->findBy(['competence' => $competence]);
+        $examens = $examRepo->findBy(['competence' => $competence],);
 
         $submit = $request->get('submit');
         
