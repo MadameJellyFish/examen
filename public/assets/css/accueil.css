@@ -12,6 +12,7 @@ main {
 
 .layout-accueil {
     display: flex;
+    padding-bottom: 7rem;
     /* overflow-x: scroll; */
 }
 
