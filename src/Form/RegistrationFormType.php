@@ -40,7 +40,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('email', options: [
                 "label" => "Email : ",
-                "attr" => ["class" => "inputStyle inputClassic form-control-mb4"],
+                "attr" => ["class" => "inputStyle inputClassic form-control-mb4 mail"],
                 "label_attr" => ["class" => ""]
             ])
 
@@ -48,7 +48,7 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Tu dois accepter nos conditions.',
                     ]),
                 ],
             ])
@@ -56,14 +56,14 @@ class RegistrationFormType extends AbstractType
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password'],
+                'attr' => ['autocomplete' => 'Nouveau-mot-de-passe'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Veuillez entrer un mot de passe',
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'minMessage' => 'Ton mot de passe doit être au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),

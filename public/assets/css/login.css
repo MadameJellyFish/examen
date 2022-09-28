@@ -101,6 +101,13 @@ input:focus{
     background-color: var(--colorblack);
 }
 
+/* message flash */
+.alert-success{
+    margin-bottom: 0px;
+    font-family: gambeta;
+}
+/* fin message flash */
+
 
 /* Responsive */
 @media screen and (max-width: 767px){
