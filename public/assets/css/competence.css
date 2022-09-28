@@ -81,6 +81,12 @@ main {
 
 }
 
+.message_alerte{
+font-family: Cabinet Grotesk;
+font-weight: 600;
+font-size: 1.2rem;
+}
+
 .box-examen {
     padding: 1.5rem;
     border: 3px solid var(--colorblack);

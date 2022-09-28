@@ -13,7 +13,25 @@ main {
 .layout-accueil {
     display: flex;
     padding-bottom: 7rem;
-    /* overflow-x: scroll; */
+    overflow-x: scroll;
+    /* overflow-x: auto; */
+    
+    /* scroll-snap-type: x mandatory; */
+    /* white-space: nowrap;  */
+    /* overflow-x: hidden;  */
+   
+}
+
+::-webkit-scrollbar-track {
+    appearance: none !important;
+}
+::-webkit-scrollbar {
+    height: 6px;
+    appearance: none !important;
+}
+::-webkit-scrollbar-thumb {
+    appearance: none !important;
+    border-radius: 3px;
 }
 
 .comp-box {
@@ -25,6 +43,13 @@ main {
     border: 3px solid var(--colorblack);
     box-shadow: -5px 5px var(--colorblack);
     border-radius: 20px;
+    box-sizing: 0;
+
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 400px;
+    margin-left: 1rem;
+    /* scroll-snap-align: start; */
 }
 
 h1 {
@@ -34,6 +59,12 @@ h1 {
     width: 80%;
     padding-top: 2rem;
 }
+
+.message_alerte{
+    font-family: Cabinet Grotesk;
+    font-weight: 600;
+    font-size: 1.2rem;
+    }
 
 .h2-accueil {
     color: var(--colorpurple);
