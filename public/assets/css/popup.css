@@ -1,3 +1,6 @@
+/* popup */
+
+
 *{
     box-sizing: border-box;
 }
@@ -16,6 +19,7 @@ h5{
     font-family: "Gambeta";
     font-weight: bold;
     font-size: 24px;
+    margin-bottom: 1rem;
 }
 
 p{
@@ -73,3 +77,5 @@ a:hover{
     background-color: var(--colorblack);
     color: var(--colorwhite);
 }
+
+/* fin popup */
