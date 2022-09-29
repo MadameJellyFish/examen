@@ -12,32 +12,24 @@ main {
 
 .layout-accueil {
     display: flex;
-    padding-bottom: 7rem;
     overflow-x: scroll;
-    /* overflow-x: auto; */
-    
-    /* scroll-snap-type: x mandatory; */
-    /* white-space: nowrap;  */
-    /* overflow-x: hidden;  */
-   
+    padding-bottom: 3rem;
 }
 
 ::-webkit-scrollbar-track {
-    appearance: none !important;
+    appearance: none;
 }
 ::-webkit-scrollbar {
     height: 6px;
-    appearance: none !important;
+    appearance: none;
 }
 ::-webkit-scrollbar-thumb {
-    appearance: none !important;
-    border-radius: 3px;
+    appearance: none;
 }
 
 .comp-box {
-    margin-right: 2rem !important;
+    margin-right: 2rem;
     background-color: var(--colorwhite);
-    text-decoration: none;
    
     padding: 1.5rem;
     border: 3px solid var(--colorblack);
@@ -45,11 +37,12 @@ main {
     border-radius: 20px;
     box-sizing: 0;
 
-    flex-grow: 1;
-    flex-shrink: 0;
-    flex-basis: 400px;
+    /* empecher que les 5 compétences rentrent dans le contenair(parent).
+    on reserve une place minimal à chaque box, on empeche le display:flex de les compresser sur le meme ligne, dans leur contenair width 80%. */
+     flex-grow: 1; /*les box on totue la même taille */
+    flex-shrink: 0; /* avec le 0 on interdit aux box de se retrecir */
+    flex-basis: 400px; /* on donne une taille minimum au box */
     margin-left: 1rem;
-    /* scroll-snap-align: start; */
 }
 
 h1 {
@@ -58,6 +51,7 @@ h1 {
     font-weight: 700;
     width: 80%;
     padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .message_alerte{
@@ -110,4 +104,13 @@ h1 {
 
 .box-comp {
     text-decoration: none;
+}
+
+/* responsive */
+
+@media screen and (max-width: 767px) {
+
+    .comp-box{
+      flex-basis: 300px;
+    }
 }
