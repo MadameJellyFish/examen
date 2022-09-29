@@ -8,6 +8,7 @@ main {
     margin: 0 auto;
     width: 80%;
     padding-top: 3rem;
+    height: 1000px;
 }
 
 .layout-accueil {
@@ -16,21 +17,24 @@ main {
     padding-bottom: 3rem;
 }
 
-::-webkit-scrollbar-track {
-    appearance: none;
+.layout-accueil::-webkit-scrollbar {
+    width: 10px;
 }
-::-webkit-scrollbar {
-    height: 6px;
-    appearance: none;
+
+.layout-accueil::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 20px;
 }
-::-webkit-scrollbar-thumb {
-    appearance: none;
+
+.layout-accueil::-webkit-scrollbar-thumb {
+    background-color: var(--colorpurple);
+    border-radius: 20px;
 }
 
 .comp-box {
     margin-right: 2rem;
     background-color: var(--colorwhite);
-   
+
     padding: 1.5rem;
     border: 3px solid var(--colorblack);
     box-shadow: -5px 5px var(--colorblack);
@@ -39,9 +43,12 @@ main {
 
     /* empecher que les 5 compétences rentrent dans le contenair(parent).
     on reserve une place minimal à chaque box, on empeche le display:flex de les compresser sur le meme ligne, dans leur contenair width 80%. */
-     flex-grow: 1; /*les box on totue la même taille */
-    flex-shrink: 0; /* avec le 0 on interdit aux box de se retrecir */
-    flex-basis: 400px; /* on donne une taille minimum au box */
+    flex-grow: 1;
+    /*les box on totue la même taille */
+    flex-shrink: 0;
+    /* avec le 0 on interdit aux box de se retrecir */
+    flex-basis: 400px;
+    /* on donne une taille minimum au box */
     margin-left: 1rem;
 }
 
@@ -54,11 +61,11 @@ h1 {
     padding-bottom: 2rem;
 }
 
-.message_alerte{
+.message_alerte {
     font-family: Cabinet Grotesk;
     font-weight: 600;
     font-size: 1.2rem;
-    }
+}
 
 .h2-accueil {
     color: var(--colorpurple);
@@ -110,7 +117,7 @@ h1 {
 
 @media screen and (max-width: 767px) {
 
-    .comp-box{
-      flex-basis: 300px;
+    .comp-box {
+        flex-basis: 300px;
     }
 }
