@@ -64,10 +64,22 @@ body {
 /* Caché la partie du Header */
 
 #header.hidden {
-    transition-duration: 0.3s;
-    transform: translateY(-80px); 
-  }
+    transition-duration: 500ms;
+    transform: translateY(-770px); 
+    transform: translate3d(0px, 66.6667px, 0px);
+    opacity: 0.878788;
+ 
+}
 
+
+.navbar.fixed{
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    padding: 4px;
+    background: var(--colorwhite);
+   
+}
 
 /* Slogan + Centre examen gros titre  */
 
