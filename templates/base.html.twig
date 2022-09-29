@@ -33,44 +33,15 @@
 									<p class="title-left">Centre</p>
 									<p class="title-right">examen</p>
 								</a>
-							</div>
-							<!-- Navbar -->
-							<nav class="navbars d-flex">
-								<ul class="navbars-left d-flex">
-									<li class="nav-link">
-										<a href="{{ path('app_competence') }}">Toutes les compétences</a>
-									</li>
-									<li class="nav-link ">
-										<a href="{{ path('app_contact') }}">Contact</a>
-									</li>
-								</ul>
-								<ul class="navbars-right d-flex">
-									{% if app.user %}
-										<li class="nav-link">
-											<a href="{{ path('app_profil') }}">Mon profil</a>
-										</li>
-										<li class="nav-link">
-											<a href="{{ path('app_logout') }}">Déconnexion</a>
-										</li>
-									{% else %}
-										<li class="nav-link">
-											<a href="{{ path('app_login') }}">Connexion</a>
-										</li>
-										<li class="nav-link">
-											<a href="{{ path('app_register') }}">Inscription</a>
-										</li>
-									{% endif %}
-								</ul>
-							</nav>
+							</div>											
 						</div>
 					</div>
 				</div>
 			</div>
 		</header>
-
 		<!-- fin header -->
 
-		<!-- debut sous-navbar -->
+	
 		<!-- Navbar -->
 			<nav class="navbar d-flex navbar-expand-md navbar-light fixed-top"> <a class="navbar-brand" href="{{ path('app_accueil') }}">
 				<h2>Centre
@@ -108,7 +79,7 @@
 						</ul>
 		</div>
 	</body>
-</html></nav><!-- Navbar --><!-- fin sous-navbar --><div class="anim__banner"> {% block banniere_text %}{% endblock %}
+</html></nav><!-- fin sous-navbar --><div class="anim__banner"> {% block banniere_text %}{% endblock %}
 </div>
 
 
