@@ -46,6 +46,10 @@ body {
 
 }
 
+main{
+    overflow: hidden;
+}
+
 /*////////////////////////////// Partie Header /////////////////////////////// */
 
 #header-wrapper {

@@ -122,8 +122,8 @@
 		<article class="w-75 m-auto d-flex flex-column flex-lg-row justify-content-between align-items-start gap-3 my-5">
 			<div class="container box p-3 text-light date_comp">
 				<h3 class="align-self-end">
-				{# {{ examen.date|date('d/m') }} #}
-				{{ examen.date|date('d') }}&nbsp;{{examen.date|date('M')}}
+				{{ examen.date|date('d/m') }}
+				{# {{ examen.date|date('d') }}&nbsp;{{examen.date|date('M')}} #}
 					<br/></h3>
 				<p class="m-0">
 					<i class="fa-solid fa-clock"></i>
@@ -160,7 +160,9 @@
 				<br/>
 			</div>
 			<div class="container box p-3 text-dark bg-light date_comp">
-				<h3 class="align-self-end">{{ examen.date|date('d') }}&nbsp;{{examen.date|date('M')}}
+				<h3 class="align-self-end">
+				{{ examen.date|date('d/m') }}
+				{# {{ examen.date|date('d') }}&nbsp;{{examen.date|date('M')}} #}
 					<br/></h3>
 				<p class="m-0">
 					<i class="fa-solid fa-clock"></i>

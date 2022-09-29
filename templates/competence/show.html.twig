@@ -57,13 +57,12 @@
 
 					{% for examen in examens|sort((a, b) => a.date > b.date) %}
 				{# {% for examen in examens %} #}
-					<div class="col-lg-4 mb-4">
+					<div class="mb-4 col-lg-12">
 						<div class="box-examen">
-							<div
-								class="details-date">
-								{# <p class="date">{{examen.date|date('d/m')}}</p> #}
-								<p class="date">{{examen.date|date('d')}}</p>
-								<p class="date date-mois">{{examen.date|date('M')}}</p>
+							<div>
+								<p class="date">{{examen.date|date('d/m')}}</p>
+								{# <p class="date">{{examen.date|date('d')}} {{examen.date|date('M')}}</p> #}
+								{# <p class="date date-mois">{{examen.date|date('M')}}</p> #}
 							</div>
 							<div class="details-examen">
 								<i class="fa-solid fa-clock icon"></i>
@@ -71,7 +70,7 @@
 							</div>
 							<div class="details-examen">
 								<i class="fa-sharp fa-solid fa-location-dot icon"></i>
-								<p>Ville de&nbsp;{{examen.ville}}</p>
+								<p>{{examen.ville}}</p>
 							</div>
 							<div class="details-examen">
 								<i class="fa-solid fa-user"></i>
@@ -84,11 +83,11 @@
 		</section>
 
 		<section class="formulaire-comp col-lg-5 p-5">
-			<form action="/competence/{{competence.id}}" method="POST" class="form-box form-examen">
+			<form action="/competence/{{competence.id}}" method="POST" class="form-box">
 				<h3>Inscription à un examen</h3>
 
 				<div class="details-date">
-					<libelle>Mon choix :</libelle>
+					<label>Mon choix :</label>
 					<select name="examen_id" class="selection-examen">
 						{% for examen in examens %}
 							<option value="{{examen.id}}">{{examen.ville}}

@@ -92,29 +92,28 @@ font-size: 1.2rem;
     border: 3px solid var(--colorblack);
     box-shadow: -5px 5px var(--colorblack);
     border-radius: 20px;
-    background-color: var(--colorpurple);
+    background-color: var(--colorwhite);
     /* margin-bottom: 1rem; */
     height: 100%;
     gap:20px;
+    display: flex;
 }
 
 .box-examen>p {
-    margin: 0;
+    /* margin: 0; */
+    /* color: var(--colorblack); */
 }
 
-.details-date {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-}
+
 
 .date {
     font-family: Gambetta;
     font-size: 1.7rem;
     font-weight: 700;
-    color: var(--colorwhite);
-    margin-left: auto;
-    margin-top: -10px;
+    color: var(--colorpurple);
+    /* margin-left: auto;
+    margin-top: -10px; */
+    margin: 0;
 }
 
 .date-mois {
@@ -125,16 +124,16 @@ font-size: 1.2rem;
 .details-examen {
     display: flex;
     align-items: center;
-    color: var(--colorwhite);
-    margin-top: 0.3rem;
-    margin-bottom: -5px;
+    color: var(--colorblack);
+    /* margin-top: 0.3rem;
+    margin-bottom: -5px; */
 }
 
 .details-examen>p {
-    color: var(--colorwhite);
+    color: var(--colorblack);
     text-align: left;
     padding-left: 0.7rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin: 0;
 }
 
@@ -146,19 +145,18 @@ font-size: 1.2rem;
 }
 
 .form-box {
-    /* margin-right: 2rem; */
     background-color: var(--colorwhite);
+
+    position: sticky !important;
+    top: 150px !important;
 
     padding: 1.5rem;
     border: 3px solid var(--colorblack);
     box-shadow: -5px 5px var(--colorblack);
     border-radius: 20px;
-}
 
-.form-examen {
-    background-color: var(--colorwhite);
-    /* margin-right: 0; */
-    padding-top: 3rem;
+    width: 80%;
+    margin: auto;
 }
 
 h3 {
@@ -169,7 +167,13 @@ h3 {
     margin-bottom: 1.5rem;
 }
 
-libelle {
+.details-date {
+    display: flex;
+    flex-direction: column; 
+    /* margin-bottom: 1rem;  */
+}
+
+label {
     color: var(--colorblack);
     font-family: Gambetta;
     font-weight: 600;
@@ -177,9 +181,9 @@ libelle {
     margin-bottom: 0.5rem;
 }
 
-select {
+/* select {
     appearance: none;
-}
+} */
 
 .selection-examen {
     border-radius: 20px;
@@ -189,10 +193,7 @@ select {
     margin-bottom: 1rem;
     font-family: Cabinet Grotesk;
     font-weight: 500;
-    /* 
-    -webkit-appearance: none;
-        -moz-appearance: none; */
-    /* appearance: none; */
+    
 }
 
 option {
