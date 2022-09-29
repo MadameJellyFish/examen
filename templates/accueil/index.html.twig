@@ -49,19 +49,15 @@
 				{{ message }}
 			</div>
 		{% endfor %}
+		
 
 		<div class="layout-accueil" id="main-box">
 
-			{# <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
-				<div class="carousel-inner">  #}
-			{# <i class="fa-solid fa-angle-left" id=" btnLeft"></i> #}
-
 				{% for examen in examens|sort((a, b) => a.date > b.date) %}
-				{# {% if loop.index %2 %} #}
-					<div class="comp-box mb-5 mt-5 carousel-item active" id="boite-comp"> 
+					<div class="comp-box" id="boite-comp"> 
 						<div class="title-comp">
 							<h2 class="h2-accueil">{{ examen.competence.nom }}</h2>
-							<i class="fa-sharp fa-solid fa-display picto-accueil"></i>
+							{# <i class="fa-sharp fa-solid fa-display picto-accueil"></i> #}
 						</div>
 						<p class="contenu-accueil mt-4 mb-4">
 							{{ examen.competence.description|u.truncate(250, '...', false) }}
@@ -70,20 +66,9 @@
 							<button class="btnMore">Plus d'informations</button>
 						</a>
 					</div>
-				{# {% endif %} #}
 			{% endfor %}
-
-			{# <i class="fa-solid fa-angle-right btnRight" id=" btnRight"></i> #}
-{# 		</div>
-				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
-			</div>    #}
 		</div>
-	</section>
+	
+</section>
+	
 {% endblock %}

@@ -4,15 +4,17 @@
 let mainContainer = document.querySelector('#main-box');
 let box = document.querySelector('#boite-comp');
 
-mainContainer.addEventListener("wheel", (evt) => {
-    evt.preventDefault();
-    mainContainer.scrollLeft += evt.deltaY;
-});
+//evenement wheel a 4 propriete dont deltaY (propriete de l'objet évènement) et obtenu par le parametre evt
+mainContainer.addEventListener("wheel", slide)
+function slide(evt){
+    event.preventDefault();
+    mainContainer.scrollLeft +=evt.deltaY;
+    // scrollLeft pour faire un scroll horizontal, c'est une prpriéte du mainContainer
+}
 
+// mainContainer.addEventListener("wheel", (evt) => {
+//     evt.preventDefault();
+//     mainContainer.scrollLeft += evt.deltaY;
+// mainContainer.scrollLeft = mainContainer.scrollLeft + event.deltaY;
+// });
 
-// box.addEventListener('wheel', slide)
-
-// function slide(){
-//     // mainContainer.style.overflow-x = 'scroll';
-//     console.log(box);
-// }
