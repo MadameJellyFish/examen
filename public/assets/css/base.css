@@ -128,38 +128,6 @@ p>a {
     color          : var(--colorwhite);
 }
 
-/* partie navbar header (contact/Connexion/Inscription) */
-
-.navbars {
-    /*  margin     : 0 auto; */
-    font-family    : Gambetta;
-    font-size      : 22px;
-    display        : flex;
-    justify-content: flex-end;
-    margin-left: -5em;
-
-}
-
-.navbars li {
-    margin-right: 2em;
-}
-
-.navbars a {
-    text-decoration: none;
-    font-weight    : 300;
-    color          : var(--colorwhite);
-}
-
-.navbars-left {
-    margin-left: 33em;
-}
-
-.navbars-right {
-    margin-left : auto;
-    margin-right: 2em;
-}
-
-
 /*////////////////////////////// partie sous navbar /////////////////////////////// */
 .navbar {
     box-sizing   : content-box;
