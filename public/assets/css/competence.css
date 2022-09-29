@@ -99,13 +99,6 @@ font-size: 1.2rem;
     display: flex;
 }
 
-.box-examen>p {
-    /* margin: 0; */
-    /* color: var(--colorblack); */
-}
-
-
-
 .date {
     font-family: Gambetta;
     font-size: 1.7rem;
