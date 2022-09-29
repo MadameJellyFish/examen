@@ -23,10 +23,12 @@ class AccueilController extends AbstractController
         $user = $this->getUser();
         $examen = $this->repo->findBy(array(), array("date" => "DESC"), 5);
 
-        $cookie = new Cookie("Cookie Test", $user->getEmail(), strtotime('tomorrow'), '/');
-        $res = new Response();
-        $res->headers->setCookie($cookie);
-        $res->send();
+        if ($user) {
+            $cookie = new Cookie("Cookie Test", $user->getEmail(), strtotime('tomorrow'), '/');
+            $res = new Response();
+            $res->headers->setCookie($cookie);
+            $res->send();
+        }
 
         // dd($res);
 
