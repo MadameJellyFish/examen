@@ -39,7 +39,7 @@
 {% block body %}
 	<link rel="stylesheet" href={{ asset('assets/css/profil.css') }}>
 
-	<link rel="stylesheet" href={{ asset('assets/css/popup.css') }}>
+	{# <link rel="stylesheet" href={{ asset('assets/css/popup.css') }}> #}
 
 	{% for message in app.flashes('message') %}
 		<div class='alert-success' role="alert">
@@ -121,7 +121,9 @@
 	{% for examen in examToCome %}
 		<article class="w-75 m-auto d-flex flex-column flex-lg-row justify-content-between align-items-start gap-3 my-5">
 			<div class="container box p-3 text-light date_comp">
-				<h3 class="align-self-end">{{ examen.date|date('d/m') }}
+				<h3 class="align-self-end">
+				{{ examen.date|date('d/m') }}
+				{# {{ examen.date|date('d') }}&nbsp;{{examen.date|date('M')}} #}
 					<br/></h3>
 				<p class="m-0">
 					<i class="fa-solid fa-clock"></i>
@@ -158,7 +160,9 @@
 				<br/>
 			</div>
 			<div class="container box p-3 text-dark bg-light date_comp">
-				<h3 class="align-self-end">{{ examen.date|date('d/m') }}
+				<h3 class="align-self-end">
+				{{ examen.date|date('d/m') }}
+				{# {{ examen.date|date('d') }}&nbsp;{{examen.date|date('M')}} #}
 					<br/></h3>
 				<p class="m-0">
 					<i class="fa-solid fa-clock"></i>
