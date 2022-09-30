@@ -5,14 +5,17 @@ let lastScrollY = 0;
 window.addEventListener('scroll', () => {
   {
     if (lastScrollY < window.scrollY) {
+
+if(window.scrollY >= 500){
+  nav.classList.add('hide');
+}/* 
       header.classList.add('hidden')
       nav.classList.add("fixed");
-         console.log('test down')
+         console.log('test down') */
     } else {
-
-      header.classList.remove('hidden')
+/*      header.classList.remove('hidden')
       nav.classList.remove("fixed");
-          console.log('test up')
+          console.log('test up') */
     }
     lastScrollY = window.scrollY
 

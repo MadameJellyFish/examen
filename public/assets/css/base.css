@@ -48,12 +48,18 @@ body {
 
 /*////////////////////////////// Partie Header /////////////////////////////// */
 
+ #header{
+    position: relative;
+ }
+
+
 #header-wrapper {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1),
             rgba(0, 0, 0, 0.1)), url('../img/etudierNB.jpg');
     background-repeat  : no-repeat;
     background-position: 70% 30%;
     background-size    : cover;
+    flex-direction: column;
 }
 
 .container-fluid {
@@ -67,19 +73,24 @@ body {
     transition-duration: 500ms;
     transform: translateY(-770px); 
     transform: translate3d(0px, 66.6667px, 0px);
-    opacity: 0.878788;
- 
+    opacity: 0.878788; 
 }
 
-
 .navbar.fixed{
-    position: fixed;
+/*     position: fixed; */
     top: 0;
     z-index: 999;
     padding: 4px;
-    background: var(--colorwhite);
-   
+    background: var(--colorwhite);   
 }
+
+.hide{
+    position: sticky;
+    top : 500;
+    background-color: var(--colorwhite);
+    color: var(--colorblack);
+}
+
 
 /* Slogan + Centre examen gros titre  */
 
@@ -134,13 +145,14 @@ p>a {
     align-content: center;
     display      : flex;
     color        : var(--colorblack);
-    top          : 0;
+ /*    top          : 0; */
     width        : 100%;
     display      : block;
     transition   : top 0.3s;
-    position     : relative;
+    position     : absolute;
+    bottom: 0;
+}   
 
-}
 
 
 .navbar-brand h2 {
@@ -175,7 +187,6 @@ a:hover {
 
 
 /* footer */
-
 
 .containerFooter {
     background-color: var(--colorblack);
