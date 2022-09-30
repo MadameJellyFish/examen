@@ -40,6 +40,7 @@ main {
     box-shadow: -5px 5px var(--colorblack);
     border-radius: 20px;
     box-sizing: 0;
+    margin-bottom: 1rem;
 
     /* empecher que les 5 compétences rentrent dans le contenair(parent).
     on reserve une place minimal à chaque box, on empeche le display:flex de les compresser sur le meme ligne, dans leur contenair width 80%. */
