@@ -39,7 +39,7 @@
 {% block body %}
 	<link rel="stylesheet" href={{ asset('assets/css/profil.css') }}>
 
-	{# <link rel="stylesheet" href={{ asset('assets/css/popup.css') }}> #}
+	<link rel="stylesheet" href={{ asset('assets/css/popup.css') }}>
 
 	{% for message in app.flashes('message') %}
 		<div class='alert-success' role="alert">
