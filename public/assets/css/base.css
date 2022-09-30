@@ -37,18 +37,41 @@
     box-sizing : border-box;
 } */
 
-body {
+/* body {
     margin    : 0;
     padding   : 0;
     height    : 100%;
     width     : 100%;
     min-height: 100vh;
 
+} */
+
+.main-container{
+    transform: translateY(204px);
 }
 
+.imgHeader {
+    height: 100vh;
+    width: 100%;
+    /* background-image: url('{{asset('assets/img/etudierNB.jpg')}}'); */
+    background-size: cover;
+  }
+  
+  .navMenu {
+    position: sticky;
+    bottom: 0;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    /* background-color: rgb(255, 255, 255);
+    top: 0px; */
+  }
+  
 /*////////////////////////////// Partie Header /////////////////////////////// */
 
- #header{
+ /* #header{
     position: relative;
  }
 
@@ -65,11 +88,11 @@ body {
 .container-fluid {
     padding-top   : 4em;
     padding-bottom: 1em;
-}
+} */
 
 /* Caché la partie du Header */
 
-#header.hidden {
+/* #header.hidden {
     transition-duration: 500ms;
     transform: translateY(-770px); 
     transform: translate3d(0px, 66.6667px, 0px);
@@ -78,28 +101,29 @@ body {
 
 .navbar.fixed{
 /*     position: fixed; */
-    top: 0;
+    /* top: 0;
     z-index: 999;
     padding: 4px;
     background: var(--colorwhite);   
-}
-
+} */
+/* 
 .hide{
     position: sticky;
     top : 500;
     background-color: var(--colorwhite);
-    color: var(--colorblack);
-}
+    color: var(--colorblack); */
+/* } */ 
 
 
 /* Slogan + Centre examen gros titre  */
 
 .header-title {
-    font-family: Gambetta !important;
+    font-family: Gambetta;
     font-weight: 500;
     font-size  : 24px;
     padding-top: 4em;
     color      : var(--colorwhite);
+    text-align: center;
 }
 
 #title {
@@ -155,14 +179,16 @@ p>a {
 
 
 
-.navbar-brand h2 {
+.logo {
     margin-left   : 1em;
     font-family   : Cabinet Grotesk;
     font-size     : 36px;
     font-weight   : 800;
     line-height   : 1em;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.2px;
     color         : var(--colorblack);
+    text-align: left;
+    display: none;
 }
 
 .collapse {
@@ -172,12 +198,12 @@ p>a {
 
 }
 
-.navbar-nav a {
+.liensColor1 , .liensColor2, .liensColor3, .liensColor4, .liensColor5, .liensColor6 {
     font-weight    : bold;
     font-size      : 20px;
     margin-right   : 4em;
     text-decoration: none;
-    color          : var(--colorblack);
+    color          : var(--colorwhite);
 }
 
 a:hover {

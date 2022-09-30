@@ -28,8 +28,11 @@ class CompetenceController extends AbstractController
 
     #[Route('/competence', name: 'app_competence')]
     public function index(PaginatorInterface $paginator, Request $request): Response
-    {
-
+    {    
+        $user = $this->getUser();
+        if(!$user){
+            return $this->redirectToRoute('app_login');   
+        }
         $competence = $this->repo->findAll();
         $competences = $paginator->paginate($competence, $request->query->getInt('page', 1), 4);
         return $this->render('competence/index.html.twig', [
@@ -42,6 +45,9 @@ class CompetenceController extends AbstractController
     {
 
         $competence = $this->repo->find($id);
+        if(!$competence){
+            throw $this->createNotFoundException();
+        }
         // $examens = $examRepo->findBy(['competence' => $competence]);
 
         if(!$competence){
@@ -54,7 +60,13 @@ class CompetenceController extends AbstractController
         
         $user = $this->getUser();
         // dd($user); je recupere l'objet user
-   
+
+        // REGARDER CET ERREUR
+        // if(!$competence){
+        //     throw $this->createNotFoundException();
+        // }
+
+
         $user_id = $this->getUser()->getId();
         // dd($user_id); grace à l'objet $user je recupere sa propriete id je recupere l'id
 
