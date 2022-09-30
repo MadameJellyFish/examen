@@ -7,8 +7,13 @@ main {
 .main-container {
     width: 80%;
     margin: auto;
-    margin-top: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 7rem;
 
+}
+
+.back-color{
+background-color: var(--bgmauve) !important;
 }
 
 .competence-box {
@@ -18,6 +23,7 @@ main {
     border: 3px solid var(--colorblack);
     box-shadow: -5px 5px var(--colorblack);
     border-radius: 20px;
+    background-color: var(--colorwhite);
 }
 
 .box-comp {
