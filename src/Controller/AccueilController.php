@@ -21,6 +21,7 @@ class AccueilController extends AbstractController
     public function index(): Response
     {
         $user = $this->getUser();
+
         $examen = $this->repo->findBy(array(), array("date" => "DESC"), 5);
 
         if ($user) {
