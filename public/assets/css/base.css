@@ -32,6 +32,16 @@
     src        : url("../fonts/CabinetGrotesk-Thin.otf");
 }
 
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    display:flex;
+    flex-direction: column;
+}
+
 /* * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     box-sizing : border-box;
@@ -40,33 +50,52 @@
 /* body {
     margin    : 0;
     padding   : 0;
-    height    : 100%;
+    height    : 100%;gHeader
     width     : 100%;
     min-height: 100vh;
-
-} */
+}  */
 
 .main-container{
-    transform: translateY(204px);
+    /* transform: translateY(204px); */
+    /* min-height: 100vh; */
+    /* flex:1; */
+    /* position: relative; */
 }
 
 .imgHeader {
+    /* height: calc(100vh - 90px); */
     height: 100vh;
     width: 100%;
-    /* background-image: url('{{asset('assets/img/etudierNB.jpg')}}'); */
+    /* background-image: url('/public/assets/img/etudierNB.jpg');  */
+    background-color: rgb(23, 86, 110);
     background-size: cover;
+ 
+  }
+
+  .sticky{
+    position: sticky;
+    top:0;
+    /* background-color: blue; */
+    background-color: transparent;
+    height: 90px;
+    color: var(--colorwhite);
+    transform: translateY(-90px);
   }
   
-  .navMenu {
-    position: sticky;
+  .menu {
+    /* position: sticky;
     bottom: 0;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
-    /* background-color: rgb(255, 255, 255);
-    top: 0px; */
+    z-index: 999; */
+   /* background-color: rgb(102, 20, 20);
+   position: sticky;
+   top:0; */
+   
+    /* top: 0px;  */
+
   }
   
 /*////////////////////////////// Partie Header /////////////////////////////// */
@@ -164,20 +193,17 @@ p>a {
 }
 
 /*////////////////////////////// partie sous navbar /////////////////////////////// */
-.navbar {
+/* .navbar {
     box-sizing   : content-box;
     align-content: center;
     display      : flex;
     color        : var(--colorblack);
- /*    top          : 0; */
     width        : 100%;
     display      : block;
     transition   : top 0.3s;
     position     : absolute;
     bottom: 0;
-}   
-
-
+}    */
 
 .logo {
     margin-left   : 1em;
@@ -216,6 +242,9 @@ a:hover {
 
 .containerFooter {
     background-color: var(--colorblack);
+    /* position: absolute;
+    bottom: 0; */
+    width: 100%;
 }
 
 .containerLogo {

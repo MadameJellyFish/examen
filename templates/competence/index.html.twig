@@ -40,12 +40,12 @@
 
 	<link rel="stylesheet" href={{ asset('assets/css/competence.css') }}>
 
-	<section class="back-color">
+	<section class="back-color pb-5">
 	
-	<section class="main-container">
-		<h1>Liste des compétences</h1>
+	<section class="main-container mb-5">
+		<h1 class="mb-5">Liste des compétences</h1>
 		{% for competence in competences %}
-			<div class="competence-box comp-box mt-5">
+			<div class="competence-box comp-box mb-5">
 				<a href="/competence/{{competence.id}}" class="box-comp">
 					<div class="title-comp">
 						<h2>{{competence.nom}}</h2>

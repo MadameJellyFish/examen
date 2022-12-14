@@ -1,224 +1,209 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>
-			{% block title %}Welcome!
-			{% endblock %}
-		</title>
-		<link
-		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-		<!-- CSS only -->
-		<link
-		href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-		<!-- Font Awesome icons (free version)-->
-		<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"/>
-		<link rel="stylesheet" href={{asset('assets/css/base.css')}}>
-		<link rel="stylesheet" href={{asset('assets/css/style.css')}}>
-		<link rel="stylesheet" href={{asset('assets/css/animation.css')}}>
-		<link rel="stylesheet" href={{ asset('assets/css/experiment.css') }}>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {% block title %}Welcome!
+            {% endblock %}
+        </title>
+        <link
+        rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <!-- CSS only -->
+        <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"/>
+        <link
+        rel="stylesheet" href={{ asset('assets/css/base.css') }}>
+    <!--<link rel="stylesheet" href={{asset('assets/css/style.css')}}>
+    		<link rel="stylesheet" href={{asset('assets/css/animation.css')}}>
+    		<link rel="stylesheet" href={{ asset('assets/css/experiment.css') }}>-->
 
-	</head>
-	<body>
-	{% block header %}
-	<header>
-	<div class="imgHeader" style="background-image: url('{{asset('assets/img/etudierNB.jpg')}}')">
-        <h5 class="header-title">Un slogan d'accroche pour le centre d'examen</h5>
-        <div id="title">
-            <a href="{{ path('app_accueil') }}">
-                <p class="title-left">Centre</p>
-                <p class="title-right">examen</p>
-            </a>
-        </div>
-    </div>
-	</header>
-		<nav class="navbar navbar-expand-lg navbar-light navMenu" style=" top: 0px;">
-       <a class="navbar-brand logo" href="{{ path('app_accueil') }}">
-							<h2>Centre
-								<br>
-								d'examen</h2>
-						</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    </head>
+    <body>
+        <header>
+                <div class="imgHeader" style="background-image:url({{asset('assets/img/etudierNB.jpg')}})">
+                    <h5 class="header-title">Un slogan d'accroche pour le centre d'examen</h5>
+                    <div id="title">
+                        <a href="{{ path('app_accueil') }}">
+                            <p class="title-left">Centre</p>
+                            <p class="title-right">examen</p>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <nav class="navbar navbar-expand-lg navbar-light sticky">
+                <div class="logo-show">
+                    <a class="navbar-brand logo" href="{{ path('app_accueil') }}">
+                        <h2>Centre
+                            <br>
+                            d'examen</h2>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="navs-link liensColor1" href="{{ path('app_competence') }}">Toutes les compétences<span class="sr-only"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navs-link liensColor2" href="{{ path('app_contact') }}">Contact</a>
+                        </li>
+                        {% if app.user %}
+                            <li class="nav-item">
+                                <a class="navs-link liensColor3" href="{{ path('app_profil') }}">Mon profil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="navs-link liensColor4" href="{{ path('app_logout') }}">Déconnexion</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="navs-link liensColor5" href="{{ path('app_login') }}">Connexion</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="navs-link liensColor6" href="{{ path('app_register') }}">Inscription</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
 
-							<li class="nav-item">
-									<a class="navs-link liensColor1" href="{{ path('app_competence') }}">Toutes les compétences<span class="sr-only"></span>
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="navs-link liensColor2" href="{{ path('app_contact') }}">Contact</a>
-								</li>
-								{% if app.user %}
-									<li class="nav-item">
-										<a class="navs-link liensColor3" href="{{ path('app_profil') }}">Mon profil</a>
-									</li>
-									<li class="nav-item">
-										<a class="navs-link liensColor4" href="{{ path('app_logout') }}">Déconnexion</a>
-									</li>
-								{% else %}
-									<li class="nav-item">
-										<a class="navs-link liensColor5" href="{{ path('app_login') }}">Connexion</a>
-									</li>
-									<li class="nav-item">
-										<a class="navs-link liensColor6" href="{{ path('app_register') }}">Inscription</a>
-									</li>
-								{% endif %}
-            {# <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li> #}
-            </ul>
+<div>
+        {% block banniere_text %}
+            <div class="slider">
+                <ul class="slide">
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                    <li class="item_slide">Accueil</li>
+                </ul>
+            </div>
+        {% endblock %}
+        {# <div class="anim__banner"> {% block banniere_text %}{% endblock %}
+        			</div> #}
+        {# <header id="header">
+        			<section id="header-wrapper" class="text-start align-md-middle">
+        				<div class="container-fluid text-center">
+        					<div class="align-items-center text-center">
+        						<h5 class="header-title">Un slogan d'accroche pour le centre d'examen</h5>
+        						<div id="title">
+        							<a href="{{ path('app_accueil') }}">
+        								<p class="title-left">Centre</p>
+        								<p class="title-right">examen</p>
+        							</a>
+        						</div>
+        					</div>
         
-        </div>
-    </nav>
+        					<nav class="navbar d-md-flex navbar-expand-md navbar-light fixed-top">
+        						<a class="navbar-brand" href="{{ path('app_accueil') }}">
+        							<h2>Centre
+        								<br>
+        								d'examen</h2>
+        						</a>
+        						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        							<span class="navbar-toggler-icon"></span>
+        						</button>
+        
+        						<div class="collapse navbar-collapse" id="navbarNav">
+        							<ul class="navbar-nav">
+        								<li class="nav-item active">
+        									<a class="navs-link" href="{{ path('app_competence') }}">Toutes les compétences<span class="sr-only"></span>
+        									</a>
+        								</li>
+        								<li class="nav-item">
+        									<a class="navs-link" href="{{ path('app_contact') }}">Contact</a>
+        								</li>
+        								{% if app.user %}
+        									<li class="nav-item">
+        										<a class="navs-link" href="{{ path('app_profil') }}">Mon profil</a>
+        									</li>
+        									<li class="nav-item">
+        										<a class="navs-link" href="{{ path('app_logout') }}">Déconnexion</a>
+        									</li>
+        								{% else %}
+        									<li class="nav-item">
+        										<a class="navs-link" href="{{ path('app_login') }}">Connexion</a>
+        									</li>
+        									<li class="nav-item">
+        										<a class="navs-link" href="{{ path('app_register') }}">Inscription</a>
+        									</li>
+        								{% endif %}
+        							</ul>
+        						</div>
+        					</nav>
+        				</div>
+        			</section>
+        		</header> #}
 
-	
-	{% endblock %}
 
-	{% block banniere_text %}
-	<div class="slider">
-		<ul class="slide">
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
+        <main class="main_content">
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
 
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-			<li class="item_slide">Accueil</li>
-		</ul>
+            {% block body %}{% endblock %}
+        </main>
+
+		{# Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque quis similique quasi recusandae tenetur cumque eius accusamus ad minus unde deleniti laudantium nisi laborum, vel ex molestias. Error aut soluta velit! At debitis maxime atque, velit doloribus pariatur laboriosam tenetur fuga neque vel maiores! Dolorem atque, deleniti inventore perspiciatis, eveniet voluptatem sed autem enim maxime eaque fugit asperiores doloribus laborum nostrum numquam officia? Consequatur et dolorum eum veritatis illum rerum repellat suscipit quam, similique rem! Impedit est tenetur ex ad architecto, rerum omnis molestiae quaerat! Unde in numquam sed possimus dolorem cum sunt. Tempore, aut ipsam natus vero, quam est non numquam minus repudiandae fugiat voluptas sequi atque eaque? Repellendus ad fugiat dolor laboriosam quae, eligendi similique! Error ducimus quibusdam nulla, sint ipsam porro reiciendis itaque, est quaerat nemo aut blanditiis commodi provident necessitatibus reprehenderit libero, voluptas fugiat facilis labore? Dolores, quaerat quidem ipsum voluptates architecto enim neque. Delectus tenetur iusto dolorum illum ipsa voluptates rerum quis. Odio suscipit neque magni nostrum voluptatibus amet unde repellat molestiae! Asperiores rem alias assumenda dolore consequuntur quisquam earum molestiae corporis eos adipisci iste fugit minus quasi distinctio inventore eligendi sequi vel ratione eum odit, minima animi facere quod deleniti. Minima dolore accusamus rerum suscipit illo? Quas pariatur quisquam quibusdam tenetur vel corrupti, sapiente aut atque? Neque ea mollitia praesentium possimus.  #}
 	</div>
-{% endblock %}
-		{# <div class="anim__banner"> {% block banniere_text %}{% endblock %}
-			</div> #}
-		{# <header id="header">
-			<section id="header-wrapper" class="text-start align-md-middle">
-				<div class="container-fluid text-center">
-					<div class="align-items-center text-center">
-						<h5 class="header-title">Un slogan d'accroche pour le centre d'examen</h5>
-						<div id="title">
-							<a href="{{ path('app_accueil') }}">
-								<p class="title-left">Centre</p>
-								<p class="title-right">examen</p>
-							</a>
-						</div>
-					</div>
+        <!-- Footer -->
 
-					<nav class="navbar d-md-flex navbar-expand-md navbar-light fixed-top">
-						<a class="navbar-brand" href="{{ path('app_accueil') }}">
-							<h2>Centre
-								<br>
-								d'examen</h2>
-						</a>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
+        <footer class="containerFooter px-3 py-5">
+            <div class="container">
+                <div class="d-block d-md-flex d-lg-flex">
+                    <div class="col-8 col-lg-4 col-md-6 text-start">
+                        <h5 class="logoFooter">
+                            Centre d'examen
+                        </h5>
+                    </div>
+                    <div class="containerMenuFooter col-md-6 d-block d-md-flex d-lg-flex text-start align-md-middle">
+                        <div class="col-lg-2 col-md-2  menuFooter">
+                            <a href="{{ path('app_contact') }}" class="liensFooter">Contact</a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 menuFooter">
+                            <a href="{{ path('app_cgu') }}" class="liensFooter">Mentions Légales</a>
+                        </div>
+                        <div class="col-lg-2 col-md-6 menuFooter">
+                            <a href="{{ path('app_faq') }}" class="liensFooter">FAQ</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright text-start text-md-end text-lg-end">
+                    © 2022 Copyright
+                </div>
+            </div>
+        </footer>
+        <!-- <script src="assets/js/experiment.js"></script>-->
+        <!--<script src="assets/js/accueil.js"></script>-->
+        <!--<script src="assets/js/caroussel_accueil.js"></script>--><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"> </script>
 
-						<div class="collapse navbar-collapse" id="navbarNav">
-							<ul class="navbar-nav">
-								<li class="nav-item active">
-									<a class="navs-link" href="{{ path('app_competence') }}">Toutes les compétences<span class="sr-only"></span>
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="navs-link" href="{{ path('app_contact') }}">Contact</a>
-								</li>
-								{% if app.user %}
-									<li class="nav-item">
-										<a class="navs-link" href="{{ path('app_profil') }}">Mon profil</a>
-									</li>
-									<li class="nav-item">
-										<a class="navs-link" href="{{ path('app_logout') }}">Déconnexion</a>
-									</li>
-								{% else %}
-									<li class="nav-item">
-										<a class="navs-link" href="{{ path('app_login') }}">Connexion</a>
-									</li>
-									<li class="nav-item">
-										<a class="navs-link" href="{{ path('app_register') }}">Inscription</a>
-									</li>
-								{% endif %}
-							</ul>
-						</div>
-					</nav>
-				</div>
-			</section>
-		</header> #}
-
-
-
-			<main class="main_content">
-				{% for message in app.flashes('success') %}
-					<div class="alert alert-success">
-						{{message}}
-					</div>
-				{% endfor %}
-
-				{% block body %}{% endblock %}
-			</main>
-
-			<!-- Footer -->
-
-			<footer class="containerFooter px-3 py-5">
-				<div class="container">
-					<div class="d-block d-md-flex d-lg-flex">
-						<div class="col-8 col-lg-4 col-md-6 text-start">
-							<h5 class="logoFooter">
-
-								Centre d'examen
-
-							</h5>
-						</div>
-						<div class="containerMenuFooter col-md-6 d-block d-md-flex d-lg-flex text-start align-md-middle">
-							<div class="col-lg-2 col-md-2  menuFooter">
-								<a href="{{ path('app_contact') }}" class="liensFooter">Contact</a>
-							</div>
-							<div class="col-lg-3 col-md-4 menuFooter">
-								<a href="{{ path('app_cgu') }}" class="liensFooter">Mentions Légales</a>
-							</div>
-							<div class="col-lg-2 col-md-6 menuFooter">
-								<a href="{{ path('app_faq') }}" class="liensFooter">FAQ</a>
-							</div>
-						</div>
-					</div>
-					<div class="copyright text-start text-md-end text-lg-end">
-						© 2022 Copyright
-					</div>
-				</div>
-			</footer>
-			<script src="assets/js/experiment.js"></script>
-			<script src="assets/js/accueil.js"></script>
-			<script src="assets/js/caroussel_accueil.js"></script>
-			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-
-			<!-- Fin footer -->
-		</body>
-	</html>
+        <!-- Fin footer -->
+    </body>
+</html>

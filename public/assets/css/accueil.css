@@ -9,6 +9,7 @@ main {
     width: 80%;
     padding-top: 3rem;
     height: 750px;
+    /* position: relative; */
 }
 
 .layout-accueil {
